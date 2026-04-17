@@ -62,6 +62,18 @@ export function LessonView({ lesson }: Props) {
   const completedCount = solved.filter(Boolean).length;
   const currentPhase: PhaseKey = stage.phase === "done" ? "recap" : stage.phase;
 
+  const goToPhase = (phase: PhaseKey) => {
+    if (phase === "listen" && dialogues.length > 0) {
+      setStage({ phase: "listen", dialogueIdx: 0 });
+    } else if (phase === "vocab" && vocabSets.length > 0) {
+      setStage({ phase: "vocab", vocabIdx: 0 });
+    } else if (phase === "practice" && tasks.length > 0) {
+      setStage({ phase: "practice", taskIdx: 0 });
+    } else if (phase === "recap") {
+      setStage({ phase: "recap" });
+    }
+  };
+
   const onSolved = () => {
     if (stage.phase !== "practice") return;
     setSolved((s) => {
@@ -123,6 +135,7 @@ export function LessonView({ lesson }: Props) {
                   ? { solved: completedCount, total: tasks.length }
                   : undefined
               }
+              onPhaseClick={goToPhase}
             />
           </div>
         </div>
