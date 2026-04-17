@@ -1,4 +1,5 @@
 import type { Task } from "@/data/lessons";
+import { TaskInstructions } from "./TaskInstructions";
 import { SpeedrunCard } from "./tasks/SpeedrunCard";
 import { BattleCard } from "./tasks/BattleCard";
 import { ConstructorCard } from "./tasks/ConstructorCard";
@@ -32,6 +33,7 @@ export function TaskEngine({ task, onSolved }: Props) {
           {TYPE_LABELS[task.type]}
         </span>
       </div>
+      <TaskInstructions type={task.type} />
       {task.type === "speedrun" && <SpeedrunCard task={task} onSolved={onSolved} />}
       {task.type === "battle" && <BattleCard task={task} onSolved={onSolved} />}
       {task.type === "constructor" && <ConstructorCard task={task} onSolved={onSolved} />}
