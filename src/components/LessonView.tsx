@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, PartyPopper } from "lucide-react";
+import { ArrowLeft, ArrowRight, PartyPopper, RotateCcw } from "lucide-react";
 import type { Lesson } from "@/data/lessons";
 import { PhaseBar, type PhaseKey } from "./PhaseBar";
 import { TaskEngine } from "./TaskEngine";
@@ -42,6 +42,22 @@ export function LessonView({ lesson }: Props) {
 
   const [stage, setStage] = useState<Stage>(initial);
   const [solved, setSolved] = useState<boolean[]>(() => tasks.map(() => false));
+  const [taskAttempt, setTaskAttempt] = useState<number[]>(() => tasks.map(() => 0));
+
+  const restartTask = () => {
+    if (stage.phase !== "practice") return;
+    setSolved((s) => {
+      if (!s[stage.taskIdx]) return s;
+      const n = [...s];
+      n[stage.taskIdx] = false;
+      return n;
+    });
+    setTaskAttempt((a) => {
+      const n = [...a];
+      n[stage.taskIdx] = (n[stage.taskIdx] ?? 0) + 1;
+      return n;
+    });
+  };
 
   const completedCount = solved.filter(Boolean).length;
   const currentPhase: PhaseKey = stage.phase === "done" ? "recap" : stage.phase;
