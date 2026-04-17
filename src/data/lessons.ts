@@ -600,14 +600,38 @@ const lesson2Tasks: Task[] = [
   {
     id: "l2-t7",
     type: "simulation",
-    prompt: "Karen asks if she can refuse an invitation bluntly. Reply naturally.",
-    npcMessage: "我可以直接说\"不行\"吗？",
-    npcPinyin: "Wǒ kěyǐ zhíjiē shuō \"bù xíng\" ma?",
-    npcTranslation: "Can I just bluntly say 'no'?",
-    options: [
-      { hanzi: "尽量别这么说，对方会没面子。", pinyin: "Jǐnliàng bié zhème shuō, duìfāng huì méi miànzi.", correct: true, reply: "明白了，我会注意的。" },
-      { hanzi: "可以，越直接越好。", pinyin: "Kěyǐ, yuè zhíjiē yuè hǎo.", correct: false },
-      { hanzi: "不用回邮件了。", pinyin: "Bùyòng huí yóujiàn le.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我可以直接说\"不行\"吗？",
+        npcPinyin: "Wǒ kěyǐ zhíjiē shuō \"bù xíng\" ma?",
+        npcTranslation: "Можно я просто прямо скажу «нет»?",
+        options: [
+          { hanzi: "尽量别这么说，对方会没面子。", pinyin: "Jǐnliàng bié zhème shuō, duìfāng huì méi miànzi.", correct: true, reply: "明白了，我会注意的。" },
+          { hanzi: "可以，越直接越好。", pinyin: "Kěyǐ, yuè zhíjiē yuè hǎo.", correct: false },
+          { hanzi: "不用回邮件了。", pinyin: "Bùyòng huí yóujiàn le.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我应该怎么开头写商务邮件？",
+        npcPinyin: "Wǒ yīnggāi zěnme kāitóu xiě shāngwù yóujiàn?",
+        npcTranslation: "Как мне начать деловое письмо?",
+        options: [
+          { hanzi: "用「您好」加上对方的姓和职位。", pinyin: "Yòng \"nín hǎo\" jiāshàng duìfāng de xìng hé zhíwèi.", correct: true, reply: "好的，这样比较有礼貌。" },
+          { hanzi: "直接写「嘿」就行。", pinyin: "Zhíjiē xiě \"hēi\" jiù xíng.", correct: false },
+          { hanzi: "不用打招呼。", pinyin: "Búyòng dǎ zhāohu.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我忘了附文件就把邮件发出去了，怎么办？",
+        npcPinyin: "Wǒ wàng le fù wénjiàn jiù bǎ yóujiàn fā chūqù le, zěnme bàn?",
+        npcTranslation: "Я отправил письмо и забыл прикрепить файл, что делать?",
+        options: [
+          { hanzi: "再发一封邮件，附上文件并说明原因。", pinyin: "Zài fā yì fēng yóujiàn, fù shàng wénjiàn bìng shuōmíng yuányīn.", correct: true, reply: "好主意，我马上去做。" },
+          { hanzi: "等对方问你再说。", pinyin: "Děng duìfāng wèn nǐ zài shuō.", correct: false },
+          { hanzi: "删掉那个邮件账号。", pinyin: "Shāndiào nà ge yóujiàn zhànghào.", correct: false },
+        ],
+      },
     ],
   },
   {
