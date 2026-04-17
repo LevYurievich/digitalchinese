@@ -301,11 +301,34 @@ const lesson1Tasks: Task[] = [
   {
     id: "l1-t3",
     type: "constructor",
-    prompt: "Drag the blocks to build the sentence",
-    blocks: ["我", "写出", "了", "这个", "字"],
-    answer: ["我", "写出", "了", "这个", "字"],
-    pinyin: "Wǒ xiě chū le zhè ge zì.",
-    translation: "I wrote out this character.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["我", "写出", "了", "这个", "字"],
+        answer: ["我", "写出", "了", "这个", "字"],
+        translationRu: "Я написал этот иероглиф.",
+      },
+      {
+        blocks: ["电脑", "中文输入法", "成了", "写中文的", "主要方式"],
+        answer: ["电脑", "中文输入法", "成了", "写中文的", "主要方式"],
+        translationRu: "Компьютерные методы ввода китайского стали основным способом письма на китайском.",
+      },
+      {
+        blocks: ["我们", "用", "拼音输入法", "输入", "汉字"],
+        answer: ["我们", "用", "拼音输入法", "输入", "汉字"],
+        translationRu: "Мы вводим иероглифы с помощью пиньинь-метода.",
+      },
+      {
+        blocks: ["我", "可以", "在", "电脑屏幕上", "又快又容易地", "打字"],
+        answer: ["我", "可以", "在", "电脑屏幕上", "又快又容易地", "打字"],
+        translationRu: "Я могу быстро и легко печатать на экране компьютера.",
+      },
+      {
+        blocks: ["中文输入法", "是", "沟通汉字", "和", "现代生活的", "重要工具"],
+        answer: ["中文输入法", "是", "沟通汉字", "和", "现代生活的", "重要工具"],
+        translationRu: "Метод ввода китайского — это важный инструмент, связывающий иероглифы и современную жизнь.",
+      },
+    ],
   },
   {
     id: "l1-t4",
@@ -341,14 +364,38 @@ const lesson1Tasks: Task[] = [
   {
     id: "l1-t7",
     type: "simulation",
-    prompt: "Reply naturally in the chat",
-    npcMessage: "我想换一下键盘布局，怎么做？",
-    npcPinyin: "Wǒ xiǎng huàn yīxià jiànpán bùjú, zěnme zuò?",
-    npcTranslation: "I want to switch keyboard layout — how?",
-    options: [
-      { hanzi: "点击切换", pinyin: "Diǎnjī qiēhuàn", correct: true, reply: "明白了，谢谢！" },
-      { hanzi: "买新电脑", pinyin: "Mǎi xīn diànnǎo", correct: false },
-      { hanzi: "关机重启", pinyin: "Guānjī chóngqǐ", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我想换一下键盘布局，怎么做？",
+        npcPinyin: "Wǒ xiǎng huàn yīxià jiànpán bùjú, zěnme zuò?",
+        npcTranslation: "Хочу сменить раскладку клавиатуры — как это сделать?",
+        options: [
+          { hanzi: "点击切换", pinyin: "Diǎnjī qiēhuàn", correct: true, reply: "明白了，谢谢！" },
+          { hanzi: "买新电脑", pinyin: "Mǎi xīn diànnǎo", correct: false },
+          { hanzi: "关机重启", pinyin: "Guānjī chóngqǐ", correct: false },
+        ],
+      },
+      {
+        npcMessage: "你平时用什么输入法打中文？",
+        npcPinyin: "Nǐ píngshí yòng shénme shūrùfǎ dǎ Zhōngwén?",
+        npcTranslation: "Каким методом ввода ты обычно набираешь по-китайски?",
+        options: [
+          { hanzi: "我用拼音输入法，比较容易。", pinyin: "Wǒ yòng pīnyīn shūrùfǎ, bǐjiào róngyì.", correct: true, reply: "对，拼音输入法最适合初学者。" },
+          { hanzi: "我从来不打中文。", pinyin: "Wǒ cónglái bù dǎ Zhōngwén.", correct: false },
+          { hanzi: "我只会用毛笔。", pinyin: "Wǒ zhǐ huì yòng máobǐ.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我打字的时候老是打错字，怎么办？",
+        npcPinyin: "Wǒ dǎzì de shíhou lǎoshi dǎcuò zì, zěnme bàn?",
+        npcTranslation: "Я всё время делаю опечатки, что делать?",
+        options: [
+          { hanzi: "你可以慢一点，再仔细选择正确的字。", pinyin: "Nǐ kěyǐ màn yìdiǎn, zài zǐxì xuǎnzé zhèngquè de zì.", correct: true, reply: "好的，我试试看。" },
+          { hanzi: "把电脑关了就行。", pinyin: "Bǎ diànnǎo guān le jiù xíng.", correct: false },
+          { hanzi: "换一个新的键盘吧。", pinyin: "Huàn yí ge xīn de jiànpán ba.", correct: false },
+        ],
+      },
     ],
   },
   {
