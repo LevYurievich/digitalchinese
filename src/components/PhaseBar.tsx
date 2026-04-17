@@ -7,6 +7,8 @@ interface Props {
   current: PhaseKey;
   /** practice phase sub-progress: solved tasks / total tasks */
   practiceProgress?: { solved: number; total: number };
+  /** when provided, phases become clickable; return false to block navigation */
+  onPhaseClick?: (phase: PhaseKey) => void;
 }
 
 const PHASES: { key: PhaseKey; label: string; Icon: LucideIcon }[] = [
@@ -18,7 +20,7 @@ const PHASES: { key: PhaseKey; label: string; Icon: LucideIcon }[] = [
 
 const ORDER: PhaseKey[] = ["listen", "vocab", "practice", "recap"];
 
-export function PhaseBar({ current, practiceProgress }: Props) {
+export function PhaseBar({ current, practiceProgress, onPhaseClick }: Props) {
   const currentIdx = ORDER.indexOf(current);
 
   return (
@@ -27,9 +29,10 @@ export function PhaseBar({ current, practiceProgress }: Props) {
         const done = i < currentIdx;
         const active = i === currentIdx;
         const showSub = active && key === "practice" && practiceProgress;
+        const clickable = !!onPhaseClick && !active;
 
-        return (
-          <div key={key} className="flex flex-1 flex-col gap-1">
+        const inner = (
+          <>
             <div className="flex items-center gap-1.5">
               <div
                 className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition ${
@@ -38,14 +41,14 @@ export function PhaseBar({ current, practiceProgress }: Props) {
                     : active
                       ? "bg-primary/15 text-primary ring-1 ring-primary/40"
                       : "bg-surface text-muted-foreground"
-                }`}
+                } ${clickable ? "group-hover:ring-1 group-hover:ring-primary/60 group-hover:text-primary" : ""}`}
               >
                 <Icon className="h-3 w-3" />
               </div>
               <span
                 className={`hidden font-mono text-[10px] uppercase tracking-widest sm:inline ${
                   done || active ? "text-primary" : "text-muted-foreground"
-                }`}
+                } ${clickable ? "group-hover:text-primary" : ""}`}
               >
                 {label}
               </span>
@@ -72,6 +75,22 @@ export function PhaseBar({ current, practiceProgress }: Props) {
                 ))}
               </div>
             )}
+          </>
+        );
+
+        return clickable ? (
+          <button
+            key={key}
+            type="button"
+            onClick={() => onPhaseClick?.(key)}
+            className="group flex flex-1 cursor-pointer flex-col gap-1 text-left"
+            aria-label={`Перейти к фазе ${label}`}
+          >
+            {inner}
+          </button>
+        ) : (
+          <div key={key} className="flex flex-1 flex-col gap-1">
+            {inner}
           </div>
         );
       })}
