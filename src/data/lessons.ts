@@ -27,12 +27,21 @@ export interface BaseTask {
   audio?: string;
 }
 
+export interface SpeedrunRound {
+  pinyin: string;
+  answer: string;
+  translation: string;
+}
+
 export interface SpeedrunTask extends BaseTask {
   type: "speedrun";
   mode: "pinyin-to-hanzi" | "audio-to-hanzi";
+  // New: multi-round speedrun (6 words from lesson vocab).
+  rounds?: SpeedrunRound[];
+  // Legacy single-round fields (kept for backward compatibility).
   pinyin?: string;
-  answer: string;
-  translation: string;
+  answer?: string;
+  translation?: string;
 }
 
 export interface BattleTask extends BaseTask {
