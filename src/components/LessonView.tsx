@@ -199,15 +199,29 @@ export function LessonView({ lesson }: Props) {
               transition={{ duration: 0.25 }}
               className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
             >
-              <div className="mb-3 flex items-center justify-between">
+              <div className="mb-3 flex items-center justify-between gap-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
                   Phase 3 · Practice
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  {stage.taskIdx + 1}/{tasks.length}
-                </span>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={restartTask}
+                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition hover:border-primary hover:text-primary"
+                    aria-label="Начать задание сначала"
+                  >
+                    <RotateCcw className="h-3 w-3" />
+                    Сначала
+                  </button>
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {stage.taskIdx + 1}/{tasks.length}
+                  </span>
+                </div>
               </div>
-              <TaskEngine task={tasks[stage.taskIdx]} onSolved={onSolved} />
+              <TaskEngine
+                key={`task-${stage.taskIdx}-${taskAttempt[stage.taskIdx] ?? 0}`}
+                task={tasks[stage.taskIdx]}
+                onSolved={onSolved}
+              />
             </motion.div>
           ) : (
             <motion.div
