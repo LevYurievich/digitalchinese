@@ -2526,5 +2526,15 @@ export const lessons: Lesson[] = [
     tasks: lesson9Tasks,
     recap: lesson9Recap,
   },
-  { id: 10, title: "网络游戏", titleEn: "Online Gaming", theme: "Gaming worlds", status: "locked" },
+  {
+    id: 10,
+    title: "网络游戏",
+    titleEn: "Online Gaming",
+    theme: "Gaming worlds",
+    status: "available",
+    dialogues: lesson10Dialogues,
+    vocabulary: lesson10Vocab,
+    tasks: lesson10Tasks,
+    recap: lesson10Recap,
+  },
 ];
