@@ -1512,6 +1512,237 @@ const lesson6Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// Lesson 7 — 网络文学 / Internet Literature
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson7Dialogues: Dialogue[] = [
+  {
+    id: "l7-text1",
+    title: "课文一",
+    titleEn: "Text 1 — A primer on Chinese internet literature",
+    audio: "/audio/lesson_7_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "中国的网络文学始于二十世纪九十年代，是一种新的文学形式。它以互联网为创作和传播平台，利用数字化及多媒体技术来展示文学作品。",
+        pinyin: "Zhōngguó de wǎngluò wénxué shǐyú èrshí shìjì jiǔshí niándài, shì yì zhǒng xīn de wénxué xíngshì. Tā yǐ hùliánwǎng wéi chuàngzuò hé chuánbō píngtái, lìyòng shùzìhuà jí duōméitǐ jìshù lái zhǎnshì wénxué zuòpǐn.",
+        translation: "China's internet literature began in the 1990s — a new literary form. It takes the internet as its platform for creation and dissemination, using digital and multimedia technology to showcase literary works.",
+      },
+      {
+        hanzi: "中国网络文学的特点是题材广泛，形式多样，更新快速，互动性强。在内容上，网络文学作品有多种类型，如科幻、玄幻、武侠、都市、言情、历史等。",
+        pinyin: "Zhōngguó wǎngluò wénxué de tèdiǎn shì tícái guǎngfàn, xíngshì duōyàng, gēngxīn kuàisù, hùdòngxìng qiáng. Zài nèiróng shàng, wǎngluò wénxué zuòpǐn yǒu duō zhǒng lèixíng, rú kēhuàn, xuánhuàn, wǔxiá, dūshì, yánqíng, lìshǐ děng.",
+        translation: "Its features: wide subject matter, varied forms, fast updates, strong interactivity. In terms of content, works span many genres — sci-fi, fantasy, martial arts, urban, romance, history, and so on.",
+      },
+      {
+        hanzi: "在形式上，作者主要采用连载的方式来发布自己的作品，而读者可以通过评论、点赞与作者进行互动，并以这样的方式影响作品的创作。",
+        pinyin: "Zài xíngshì shàng, zuòzhě zhǔyào cǎiyòng liánzǎi de fāngshì lái fābù zìjǐ de zuòpǐn, ér dúzhě kěyǐ tōngguò pínglùn, diǎnzàn yǔ zuòzhě jìnxíng hùdòng, bìng yǐ zhèyàng de fāngshì yǐngxiǎng zuòpǐn de chuàngzuò.",
+        translation: "Format-wise, authors mainly serialize their works, while readers interact with them via comments and likes — in this way influencing the creation itself.",
+      },
+      {
+        hanzi: "中国有很多网络文学平台，其中知名的有起点中文网、纵横中文网、创世中文网、晋江文学城、以及潇湘书院等。这些网站各有特色，提供了大量的文学作品，满足了不同读者的阅读需求，同时也为网络文学作家提供了展示才华的舞台。",
+        pinyin: "Zhōngguó yǒu hěn duō wǎngluò wénxué píngtái, qízhōng zhīmíng de yǒu Qǐdiǎn Zhōngwén Wǎng, Zònghéng Zhōngwén Wǎng, Chuàngshì Zhōngwén Wǎng, Jìnjiāng Wénxué Chéng, yǐjí Xiāoxiāng Shūyuàn děng. Zhèxiē wǎngzhàn gè yǒu tèsè, tígōng le dàliàng de wénxué zuòpǐn, mǎnzú le bùtóng dúzhě de yuèdú xūqiú, tóngshí yě wèi wǎngluò wénxué zuòjiā tígōng le zhǎnshì cáihuá de wǔtái.",
+        translation: "China has many online literature platforms — well-known ones include Qidian, Zongheng, Chuangshi, Jinjiang Literature City, and Xiaoxiang Academy. Each has its own character, offering many works that meet diverse reading needs while giving authors a stage to showcase their talent.",
+      },
+      {
+        hanzi: "在中国，网络文学已成为大众文化的重要组成部分，拥有庞大的读者群体和产业链。许多优秀的网络文学作品被改编成电影、电视剧以及动漫，进一步扩大了其影响力。总之，网络文学正在推动中国文学的创新和发展，为中国文学注入了新的活力。",
+        pinyin: "Zài Zhōngguó, wǎngluò wénxué yǐ chéngwéi dàzhòng wénhuà de zhòngyào zǔchéng bùfèn, yōngyǒu pángdà de dúzhě qúntǐ hé chǎnyè liàn. Xǔduō yōuxiù de wǎngluò wénxué zuòpǐn bèi gǎibiān chéng diànyǐng, diànshìjù yǐjí dòngmàn, jìnyíbù kuòdà le qí yǐngxiǎnglì. Zǒngzhī, wǎngluò wénxué zhèngzài tuīdòng Zhōngguó wénxué de chuàngxīn hé fāzhǎn, wèi Zhōngguó wénxué zhùrù le xīn de huólì.",
+        translation: "In China, internet literature has become a major part of mass culture, with a huge readership and industry chain. Many top works are adapted into films, TV dramas, and anime, further expanding their influence. In short, internet literature is driving innovation and growth in Chinese literature, injecting new vitality into it.",
+      },
+    ],
+  },
+  {
+    id: "l7-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen asks for novel recommendations",
+    audio: "/audio/lesson_7_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "王钢，你能给我推荐一些文学作品吗？我想通过读书来提高我的中文阅读水平。", pinyin: "Wáng Gāng, nǐ néng gěi wǒ tuījiàn yìxiē wénxué zuòpǐn ma? Wǒ xiǎng tōngguò dúshū lái tígāo wǒ de Zhōngwén yuèdú shuǐpíng.", translation: "Wang Gang, can you recommend some literary works? I want to improve my Chinese reading through reading." },
+      { speaker: "王钢", hanzi: "当然可以，凯伦。但我建议你看网络小说。", pinyin: "Dāngrán kěyǐ, Kǎilún. Dàn wǒ jiànyì nǐ kàn wǎngluò xiǎoshuō.", translation: "Of course, Karen. But I'd suggest reading web novels." },
+      { speaker: "凯伦", hanzi: "网络小说？为什么呢？", pinyin: "Wǎngluò xiǎoshuō? Wèishénme ne?", translation: "Web novels? Why?" },
+      { speaker: "王钢", hanzi: "网络小说比较通俗易懂，语言也接近口语，对学中文很有帮助。", pinyin: "Wǎngluò xiǎoshuō bǐjiào tōngsú yìdǒng, yǔyán yě jiējìn kǒuyǔ, duì xué Zhōngwén hěn yǒu bāngzhù.", translation: "Web novels are accessible, the language is close to spoken Chinese — very helpful for learning." },
+      { speaker: "凯伦", hanzi: "哦，这样啊，那我应该去哪里找这些网络小说呢？", pinyin: "Ò, zhèyàng a, nà wǒ yīnggāi qù nǎlǐ zhǎo zhèxiē wǎngluò xiǎoshuō ne?", translation: "Oh, I see. So where should I find these web novels?" },
+      { speaker: "王钢", hanzi: "网上有很多文学网站。如果你对科幻和历史小说感兴趣，可以去起点中文网，它是中国最大的网络文学平台。", pinyin: "Wǎng shàng yǒu hěn duō wénxué wǎngzhàn. Rúguǒ nǐ duì kēhuàn hé lìshǐ xiǎoshuō gǎn xìngqù, kěyǐ qù Qǐdiǎn Zhōngwén Wǎng, tā shì Zhōngguó zuì dà de wǎngluò wénxué píngtái.", translation: "There are many literature sites online. If you're into sci-fi and historical novels, try Qidian — China's largest online literature platform." },
+      { speaker: "凯伦", hanzi: "但我更喜欢看都市言情小说，尤其是女作家写的。", pinyin: "Dàn wǒ gèng xǐhuān kàn dūshì yánqíng xiǎoshuō, yóuqí shì nǚ zuòjiā xiě de.", translation: "But I prefer urban romance novels, especially by female authors." },
+      { speaker: "王钢", hanzi: "那你可以去晋江文学城或者潇湘书院，那里有很多女作家写的都市言情小说。", pinyin: "Nà nǐ kěyǐ qù Jìnjiāng Wénxué Chéng huòzhě Xiāoxiāng Shūyuàn, nàlǐ yǒu hěn duō nǚ zuòjiā xiě de dūshì yánqíng xiǎoshuō.", translation: "Then try Jinjiang Literature City or Xiaoxiang Academy — lots of urban romance by female authors there." },
+      { speaker: "凯伦", hanzi: "太好了。网上有没有什么阅读工具可以帮助我更好地阅读网络小说呢？", pinyin: "Tài hǎo le. Wǎng shàng yǒu méi yǒu shénme yuèdú gōngjù kěyǐ bāngzhù wǒ gèng hǎo de yuèdú wǎngluò xiǎoshuō ne?", translation: "Great. Are there any online reading tools to help me read web novels better?" },
+      { speaker: "王钢", hanzi: "当然有，你可以试试有道词典、金山词霸，还有百度翻译。这些工具都能帮你快速查找生词，理解句子的意思。", pinyin: "Dāngrán yǒu, nǐ kěyǐ shìshi Yǒudào Cídiǎn, Jīnshān Cíbà, hái yǒu Bǎidù Fānyì. Zhèxiē gōngjù dōu néng bāng nǐ kuàisù cházhǎo shēngcí, lǐjiě jùzi de yìsi.", translation: "Sure — try Youdao Dictionary, Kingsoft PowerWord, or Baidu Translate. They help you quickly look up new words and understand sentences." },
+    ],
+  },
+];
+
+const lesson7Vocab: VocabSet[] = [
+  {
+    id: "l7-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_7_text_1_vocab.mp3",
+    items: [
+      { hanzi: "网络文学", pinyin: "wǎngluò wénxué", pos: "NP", meaning: "internet literature; online literature" },
+      { hanzi: "创作", pinyin: "chuàngzuò", pos: "V", meaning: "to create (literary works)" },
+      { hanzi: "传播", pinyin: "chuánbō", pos: "V", meaning: "to disseminate; to spread" },
+      { hanzi: "展示", pinyin: "zhǎnshì", pos: "V", meaning: "to display; to show" },
+      { hanzi: "作品", pinyin: "zuòpǐn", pos: "N", meaning: "(literary/artistic) work" },
+      { hanzi: "题材", pinyin: "tícái", pos: "N", meaning: "subject matter" },
+      { hanzi: "更新", pinyin: "gēngxīn", pos: "V", meaning: "to renew; to update" },
+      { hanzi: "科幻", pinyin: "kēhuàn", pos: "N", meaning: "science fiction" },
+      { hanzi: "玄幻", pinyin: "xuánhuàn", pos: "N", meaning: "fantasy" },
+      { hanzi: "武侠", pinyin: "wǔxiá", pos: "A/N", meaning: "martial arts (genre)" },
+      { hanzi: "都市", pinyin: "dūshì", pos: "A/N", meaning: "urban; city" },
+      { hanzi: "言情", pinyin: "yánqíng", pos: "N", meaning: "romance" },
+      { hanzi: "连载", pinyin: "liánzǎi", pos: "V", meaning: "to serialize" },
+      { hanzi: "影响", pinyin: "yǐngxiǎng", pos: "N/V", meaning: "influence; to influence" },
+      { hanzi: "作者", pinyin: "zuòzhě", pos: "N", meaning: "author" },
+      { hanzi: "读者", pinyin: "dúzhě", pos: "N", meaning: "reader" },
+      { hanzi: "评论", pinyin: "pínglùn", pos: "N/V", meaning: "comment; to comment" },
+      { hanzi: "点赞", pinyin: "diǎnzàn", pos: "V", meaning: "to like; to upvote" },
+      { hanzi: "特色", pinyin: "tèsè", pos: "N", meaning: "characteristic; distinctive feature" },
+      { hanzi: "网站", pinyin: "wǎngzhàn", pos: "N", meaning: "website" },
+      { hanzi: "阅读", pinyin: "yuèdú", pos: "N/V", meaning: "reading; to read" },
+      { hanzi: "才华", pinyin: "cáihuá", pos: "N", meaning: "talent" },
+      { hanzi: "舞台", pinyin: "wǔtái", pos: "N", meaning: "stage" },
+      { hanzi: "大众", pinyin: "dàzhòng", pos: "A/N", meaning: "popular; the masses" },
+      { hanzi: "组成", pinyin: "zǔchéng", pos: "V", meaning: "to form; to constitute" },
+      { hanzi: "部分", pinyin: "bùfen", pos: "N", meaning: "part" },
+      { hanzi: "庞大", pinyin: "pángdà", pos: "A", meaning: "huge; enormous" },
+      { hanzi: "群体", pinyin: "qúntǐ", pos: "N", meaning: "community; group" },
+      { hanzi: "产业链", pinyin: "chǎnyè liàn", pos: "NP", meaning: "industry chain" },
+      { hanzi: "改编", pinyin: "gǎibiān", pos: "N/V", meaning: "adaptation; to adapt" },
+      { hanzi: "电视剧", pinyin: "diànshìjù", pos: "N", meaning: "TV drama" },
+      { hanzi: "动漫", pinyin: "dòngmàn", pos: "N", meaning: "anime; animation and comics" },
+      { hanzi: "进一步", pinyin: "jìnyíbù", pos: "Adv", meaning: "further" },
+      { hanzi: "扩大", pinyin: "kuòdà", pos: "V", meaning: "to enlarge; to expand" },
+      { hanzi: "总之", pinyin: "zǒngzhī", pos: "Adv", meaning: "in short; in summary" },
+      { hanzi: "推动", pinyin: "tuīdòng", pos: "V", meaning: "to push forward; to promote" },
+      { hanzi: "创新", pinyin: "chuàngxīn", pos: "N/V", meaning: "innovation; to innovate" },
+      { hanzi: "注入", pinyin: "zhùrù", pos: "V", meaning: "to pour into; to inject" },
+      { hanzi: "起点中文网", pinyin: "Qǐdiǎn Zhōngwén Wǎng", pos: "PN", meaning: "Qidian Chinese Net" },
+      { hanzi: "晋江文学城", pinyin: "Jìnjiāng Wénxué Chéng", pos: "PN", meaning: "Jinjiang Literature City" },
+      { hanzi: "潇湘书院", pinyin: "Xiāoxiāng Shūyuàn", pos: "PN", meaning: "Xiaoxiang Academy" },
+    ],
+  },
+  {
+    id: "l7-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_7_text_2_vocab.mp3",
+    items: [
+      { hanzi: "推荐", pinyin: "tuījiàn", pos: "V", meaning: "to recommend" },
+      { hanzi: "小说", pinyin: "xiǎoshuō", pos: "N", meaning: "novel" },
+      { hanzi: "通俗易懂", pinyin: "tōngsú yìdǒng", pos: "AP", meaning: "common and easy to understand" },
+      { hanzi: "接近", pinyin: "jiējìn", pos: "V", meaning: "to approach; to get close to" },
+      { hanzi: "查找", pinyin: "cházhǎo", pos: "V", meaning: "to search; to look up" },
+      { hanzi: "理解", pinyin: "lǐjiě", pos: "N/V", meaning: "understanding; to understand" },
+      { hanzi: "有道词典", pinyin: "Yǒudào Cídiǎn", pos: "PN", meaning: "Youdao Dictionary" },
+      { hanzi: "金山词霸", pinyin: "Jīnshān Cíbà", pos: "PN", meaning: "Kingsoft PowerWord" },
+      { hanzi: "百度翻译", pinyin: "Bǎidù Fānyì", pos: "PN", meaning: "Baidu Translate" },
+    ],
+  },
+];
+
+const lesson7Tasks: Task[] = [
+  {
+    id: "l7-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "wǎng luò wén xué",
+    answer: "网络文学",
+    translation: "internet literature",
+    audio: "/audio/lesson_7_text_1_vocab.mp3",
+    hint: "wǎng luò wén xué — the central topic of this lesson.",
+  },
+  {
+    id: "l7-t2",
+    type: "battle",
+    prompt: "Pick the correct phrase for the gap",
+    sentenceBefore: "它",
+    sentenceAfter: "互联网为创作和传播平台。",
+    options: [
+      { hanzi: "以", pinyin: "yǐ", meaning: "with; using; to take" },
+      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+      { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+    ],
+    correctIndex: 0,
+    translation: "It takes the internet as its platform for creation and dissemination.",
+    hint: "Pattern: 以 X 为 Y — to take X as Y.",
+  },
+  {
+    id: "l7-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'Readers can interact with the author through comments and likes.'",
+    blocks: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
+    answer: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
+    pinyin: "Dúzhě kěyǐ tōngguò pínglùn, diǎnzàn yǔ zuòzhě jìnxíng hùdòng.",
+    translation: "Readers can interact with the author through comments and likes.",
+    hint: "Pattern: 通过 + means + 与 X + 进行 + disyllabic verb.",
+  },
+  {
+    id: "l7-t4",
+    type: "matching",
+    prompt: "Match each platform/tool to its short description",
+    pairs: [
+      { left: "📚", leftLabel: "Qidian", right: "起点中文网" },
+      { left: "🏛", leftLabel: "Jinjiang Lit. City", right: "晋江文学城" },
+      { left: "🎓", leftLabel: "Xiaoxiang Academy", right: "潇湘书院" },
+      { left: "📖", leftLabel: "Youdao Dict.", right: "有道词典" },
+      { left: "⚔️", leftLabel: "Kingsoft PowerWord", right: "金山词霸" },
+      { left: "🌐", leftLabel: "Baidu Translate", right: "百度翻译" },
+    ],
+  },
+  {
+    id: "l7-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 网络",
+    word: "网络",
+    translation: "network; internet",
+    syllables: [
+      { base: "wang", correctTone: 3 },
+      { base: "luo", correctTone: 4 },
+    ],
+  },
+  {
+    id: "l7-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'I want to improve my Chinese reading through reading books.'",
+    brokenSentence: ["提高我的中文阅读水平", "我想", "通过读书来"],
+    correctOrder: [1, 2, 0],
+    translation: "I want to improve my Chinese reading through reading books.",
+    hint: "Pattern: Subject + 通过 + means + 来 + Verb-Phrase (purpose).",
+  },
+  {
+    id: "l7-t7",
+    type: "simulation",
+    prompt: "Karen asks Wang Gang for novel recommendations. Reply naturally.",
+    npcMessage: "我更喜欢看都市言情小说，尤其是女作家写的。",
+    npcPinyin: "Wǒ gèng xǐhuān kàn dūshì yánqíng xiǎoshuō, yóuqí shì nǚ zuòjiā xiě de.",
+    npcTranslation: "I prefer urban romance novels, especially by female authors.",
+    options: [
+      { hanzi: "那你可以去晋江文学城或者潇湘书院。", pinyin: "Nà nǐ kěyǐ qù Jìnjiāng Wénxué Chéng huòzhě Xiāoxiāng Shūyuàn.", correct: true, reply: "好的，谢谢你的推荐！" },
+      { hanzi: "你应该去起点中文网看科幻小说。", pinyin: "Nǐ yīnggāi qù Qǐdiǎn Zhōngwén Wǎng kàn kēhuàn xiǎoshuō.", correct: false },
+      { hanzi: "我不喜欢小说。", pinyin: "Wǒ bù xǐhuān xiǎoshuō.", correct: false },
+    ],
+  },
+  {
+    id: "l7-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences about online novels, using each item below.",
+    required: ["网络小说", "通过…来", "以…为"],
+    minSentences: 3,
+    retroWords: ["连载", "点赞", "评论", "改编", "通俗易懂"],
+  },
+];
+
+const lesson7Recap: Recap = {
+  takeaways: [
+    "网络文学 — internet literature: serialized works (连载), comments and likes shape creation.",
+    "Pattern: 以 X 为 Y — to take X as Y. 通过 + means + 来 + V — for the purpose of.",
+    "…性 turns adj/verb into a noun (互动性, 可行性). …化 forms verbs/adjs (数字化, 现代化).",
+    "在…上 — in terms of / with regard to. 进行 + disyllabic V (进行互动, 进行讨论).",
+    "Platforms: 起点中文网 · 晋江文学城 · 潇湘书院. Tools: 有道词典 · 金山词霸 · 百度翻译.",
+  ],
+  keyWords: ["网络文学", "连载", "点赞", "改编", "起点中文网", "晋江文学城", "通俗易懂"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
