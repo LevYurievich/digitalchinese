@@ -44,13 +44,25 @@ export interface SpeedrunTask extends BaseTask {
   translation?: string;
 }
 
-export interface BattleTask extends BaseTask {
-  type: "battle";
+export interface BattleRound {
   sentenceBefore: string;
   sentenceAfter: string;
   options: { hanzi: string; pinyin: string; meaning: string }[];
   correctIndex: number;
   translation: string;
+  hint?: string;
+}
+
+export interface BattleTask extends BaseTask {
+  type: "battle";
+  // New: multi-round battle (6 sentences from lesson text/vocab).
+  rounds?: BattleRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  sentenceBefore?: string;
+  sentenceAfter?: string;
+  options?: { hanzi: string; pinyin: string; meaning: string }[];
+  correctIndex?: number;
+  translation?: string;
 }
 
 export interface ConstructorRound {
@@ -298,17 +310,81 @@ const lesson1Tasks: Task[] = [
   {
     id: "l1-t2",
     type: "battle",
-    prompt: "Pick the correct character for the gap",
-    sentenceBefore: "中文输入法的发明",
-    sentenceAfter: "一件大事。",
-    options: [
-      { hanzi: "是", pinyin: "shì", meaning: "to be" },
-      { hanzi: "事", pinyin: "shì", meaning: "matter, affair" },
-      { hanzi: "市", pinyin: "shì", meaning: "city, market" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "中文输入法的发明",
+        sentenceAfter: "一件大事。",
+        options: [
+          { hanzi: "是", pinyin: "shì", meaning: "to be" },
+          { hanzi: "事", pinyin: "shì", meaning: "matter, affair" },
+          { hanzi: "市", pinyin: "shì", meaning: "city, market" },
+        ],
+        correctIndex: 0,
+        translation: "The invention of Chinese input methods is a big deal.",
+        hint: "Three homophones — context decides.",
+      },
+      {
+        sentenceBefore: "中国人主要",
+        sentenceAfter: "毛笔写汉字。",
+        options: [
+          { hanzi: "用", pinyin: "yòng", meaning: "to use" },
+          { hanzi: "在", pinyin: "zài", meaning: "at; in" },
+          { hanzi: "对", pinyin: "duì", meaning: "toward" },
+        ],
+        correctIndex: 0,
+        translation: "Chinese people mainly used brushes to write characters.",
+        hint: "Verb 'to use (a tool)' before an instrument.",
+      },
+      {
+        sentenceBefore: "我们只需点击",
+        sentenceAfter: "，就能在电脑屏幕上输入中文。",
+        options: [
+          { hanzi: "键盘", pinyin: "jiànpán", meaning: "keyboard" },
+          { hanzi: "屏幕", pinyin: "píngmù", meaning: "screen" },
+          { hanzi: "字体", pinyin: "zìtǐ", meaning: "font" },
+        ],
+        correctIndex: 0,
+        translation: "We only need to tap the keyboard to type Chinese on screen.",
+        hint: "What do you tap when typing?",
+      },
+      {
+        sentenceBefore: "你得先",
+        sentenceAfter: "中文字体和中文输入法。",
+        options: [
+          { hanzi: "安装", pinyin: "ānzhuāng", meaning: "to install" },
+          { hanzi: "下载", pinyin: "xiàzǎi", meaning: "to download" },
+          { hanzi: "打开", pinyin: "dǎkāi", meaning: "to open" },
+        ],
+        correctIndex: 0,
+        translation: "You need to install Chinese fonts and an input method first.",
+        hint: "Setting up new software on the system.",
+      },
+      {
+        sentenceBefore: "点击它就可以",
+        sentenceAfter: "输入法。",
+        options: [
+          { hanzi: "切换", pinyin: "qiēhuàn", meaning: "to switch" },
+          { hanzi: "选择", pinyin: "xuǎnzé", meaning: "to choose" },
+          { hanzi: "添加", pinyin: "tiānjiā", meaning: "to add" },
+        ],
+        correctIndex: 0,
+        translation: "Click it to switch the input method.",
+        hint: "Toggle between two existing IMEs.",
+      },
+      {
+        sentenceBefore: "中文输入法是沟通汉字和现代生活的重要",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "工具", pinyin: "gōngjù", meaning: "tool" },
+          { hanzi: "时代", pinyin: "shídài", meaning: "era" },
+          { hanzi: "结构", pinyin: "jiégòu", meaning: "structure" },
+        ],
+        correctIndex: 0,
+        translation: "Chinese input methods are an important tool bridging hanzi and modern life.",
+        hint: "重要 + ___ — 'important ___'.",
+      },
     ],
-    correctIndex: 0,
-    translation: "The invention of Chinese input methods is a big deal.",
-    hint: "Three homophones — context decides.",
   },
   {
     id: "l1-t3",
@@ -537,17 +613,81 @@ const lesson2Tasks: Task[] = [
   {
     id: "l2-t2",
     type: "battle",
-    prompt: "Pick the correct word for the gap",
-    sentenceBefore: "中国的公司和政府机构广泛",
-    sentenceAfter: "电子邮件来处理事务。",
-    options: [
-      { hanzi: "使用", pinyin: "shǐyòng", meaning: "to use" },
-      { hanzi: "服务", pinyin: "fúwù", meaning: "to serve" },
-      { hanzi: "联系", pinyin: "liánxì", meaning: "to contact" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "中国的公司和政府机构广泛",
+        sentenceAfter: "电子邮件来处理事务。",
+        options: [
+          { hanzi: "使用", pinyin: "shǐyòng", meaning: "to use" },
+          { hanzi: "服务", pinyin: "fúwù", meaning: "to serve" },
+          { hanzi: "联系", pinyin: "liánxì", meaning: "to contact" },
+        ],
+        correctIndex: 0,
+        translation: "Chinese companies and government bodies widely use email to handle work.",
+        hint: "Which verb fits 'use email to do X'?",
+      },
+      {
+        sentenceBefore: "我想",
+        sentenceAfter: "你一些有关签证的问题。",
+        options: [
+          { hanzi: "回答", pinyin: "huídá", meaning: "to answer" },
+          { hanzi: "联系", pinyin: "liánxì", meaning: "to contact" },
+          { hanzi: "提供", pinyin: "tígōng", meaning: "to provide" },
+        ],
+        correctIndex: 1,
+        translation: "I'd like to contact you about some visa questions.",
+        hint: "'Reach out to' someone — verb + person.",
+      },
+      {
+        sentenceBefore: "Gmail在中国的使用",
+        sentenceAfter: "了一定的限制。",
+        options: [
+          { hanzi: "受到", pinyin: "shòudào", meaning: "to be subject to" },
+          { hanzi: "提供", pinyin: "tígōng", meaning: "to provide" },
+          { hanzi: "包括", pinyin: "bāokuò", meaning: "to include" },
+        ],
+        correctIndex: 0,
+        translation: "Gmail's use in China is subject to certain restrictions.",
+        hint: "Pattern: 受到 + 限制 — 'be subject to a limit'.",
+      },
+      {
+        sentenceBefore: "中国邮箱服务",
+        sentenceAfter: "网易、新浪和QQ邮箱。",
+        options: [
+          { hanzi: "包括", pinyin: "bāokuò", meaning: "to include" },
+          { hanzi: "处理", pinyin: "chǔlǐ", meaning: "to deal with" },
+          { hanzi: "验证", pinyin: "yànzhèng", meaning: "to verify" },
+        ],
+        correctIndex: 0,
+        translation: "Chinese mailbox services include NetEase, Sina, and QQ Mail.",
+        hint: "List X, Y, Z — 'include …'.",
+      },
+      {
+        sentenceBefore: "邮件的开头要用",
+        sentenceAfter: "用语。",
+        options: [
+          { hanzi: "礼貌", pinyin: "lǐmào", meaning: "polite" },
+          { hanzi: "直接", pinyin: "zhíjiē", meaning: "direct" },
+          { hanzi: "广泛", pinyin: "guǎngfàn", meaning: "widespread" },
+        ],
+        correctIndex: 0,
+        translation: "The opening of an email should use polite expressions.",
+        hint: "How should you greet a stranger in writing?",
+      },
+      {
+        sentenceBefore: "文化",
+        sentenceAfter: "可能造成误解。",
+        options: [
+          { hanzi: "差异", pinyin: "chāyì", meaning: "difference" },
+          { hanzi: "情况", pinyin: "qíngkuàng", meaning: "situation" },
+          { hanzi: "面子", pinyin: "miànzi", meaning: "face; reputation" },
+        ],
+        correctIndex: 0,
+        translation: "Cultural differences can cause misunderstandings.",
+        hint: "Why misunderstandings happen across cultures.",
+      },
     ],
-    correctIndex: 0,
-    translation: "Chinese companies and government bodies widely use email to handle work.",
-    hint: "Which verb fits 'use email to do X'?",
   },
   {
     id: "l2-t3",
@@ -818,17 +958,81 @@ const lesson3Tasks: Task[] = [
   {
     id: "l3-t2",
     type: "battle",
-    prompt: "Pick the correct word for the gap",
-    sentenceBefore: "苹果手机以功能强大、系统稳定",
-    sentenceAfter: "著称。",
-    options: [
-      { hanzi: "而", pinyin: "ér", meaning: "(connector: for / and)" },
-      { hanzi: "和", pinyin: "hé", meaning: "and" },
-      { hanzi: "也", pinyin: "yě", meaning: "also" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "苹果手机以功能强大、系统稳定",
+        sentenceAfter: "著称。",
+        options: [
+          { hanzi: "而", pinyin: "ér", meaning: "(connector: for / and)" },
+          { hanzi: "和", pinyin: "hé", meaning: "and" },
+          { hanzi: "也", pinyin: "yě", meaning: "also" },
+        ],
+        correctIndex: 0,
+        translation: "iPhones are well known for their powerful features and stable system.",
+        hint: "Pattern: 以 X 而 著称 — 'famous for X'.",
+      },
+      {
+        sentenceBefore: "智能手机的发展",
+        sentenceAfter: "于二十世纪九十年代。",
+        options: [
+          { hanzi: "始", pinyin: "shǐ", meaning: "to start" },
+          { hanzi: "由", pinyin: "yóu", meaning: "by" },
+          { hanzi: "在", pinyin: "zài", meaning: "at" },
+        ],
+        correctIndex: 0,
+        translation: "Smartphone development started in the 1990s.",
+        hint: "Pattern: 始于 + time — 'date from'.",
+      },
+      {
+        sentenceBefore: "智能手机",
+        sentenceAfter: "强大的功能和高清摄像。",
+        options: [
+          { hanzi: "拥有", pinyin: "yōngyǒu", meaning: "to possess" },
+          { hanzi: "进入", pinyin: "jìnrù", meaning: "to enter" },
+          { hanzi: "开发", pinyin: "kāifā", meaning: "to develop" },
+        ],
+        correctIndex: 0,
+        translation: "Smartphones possess powerful functions and HD cameras.",
+        hint: "'To have / own' formal verb.",
+      },
+      {
+        sentenceBefore: "智能手机已经走进了我们生活的每一个",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "角落", pinyin: "jiǎoluò", meaning: "corner" },
+          { hanzi: "市场", pinyin: "shìchǎng", meaning: "market" },
+          { hanzi: "场所", pinyin: "chángsuǒ", meaning: "place" },
+        ],
+        correctIndex: 0,
+        translation: "Smartphones have entered every corner of our lives.",
+        hint: "Idiom: 每一个 ___ — 'every corner'.",
+      },
+      {
+        sentenceBefore: "我想办一张电话卡，请帮我选一个",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "套餐", pinyin: "tàocān", meaning: "mobile plan" },
+          { hanzi: "信号", pinyin: "xìnhào", meaning: "signal" },
+          { hanzi: "护照", pinyin: "hùzhào", meaning: "passport" },
+        ],
+        correctIndex: 0,
+        translation: "I want to get a SIM card — please help me pick a plan.",
+        hint: "What you choose at a carrier shop.",
+      },
+      {
+        sentenceBefore: "请带上你的护照到营业厅",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "开户", pinyin: "kāi hù", meaning: "to open an account" },
+          { hanzi: "通话", pinyin: "tōnghuà", meaning: "to call" },
+          { hanzi: "拥有", pinyin: "yōngyǒu", meaning: "to possess" },
+        ],
+        correctIndex: 0,
+        translation: "Please bring your passport to the service hall to open an account.",
+        hint: "VO compound — 'open + account'.",
+      },
     ],
-    correctIndex: 0,
-    translation: "iPhones are well known for their powerful features and stable system.",
-    hint: "Pattern: 以 X 而 著称 — 'famous for X'.",
   },
   {
     id: "l3-t3",
@@ -1121,17 +1325,81 @@ const lesson4Tasks: Task[] = [
   {
     id: "l4-t2",
     type: "battle",
-    prompt: "Pick the correct word for the gap",
-    sentenceBefore: "微信",
-    sentenceAfter: "社交、通讯、支付等功能于一体。",
-    options: [
-      { hanzi: "集", pinyin: "jí", meaning: "to integrate" },
-      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
-      { hanzi: "用", pinyin: "yòng", meaning: "to use" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "微信",
+        sentenceAfter: "社交、通讯、支付等功能于一体。",
+        options: [
+          { hanzi: "集", pinyin: "jí", meaning: "to integrate" },
+          { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+          { hanzi: "用", pinyin: "yòng", meaning: "to use" },
+        ],
+        correctIndex: 0,
+        translation: "WeChat integrates social, messaging and payment features into one.",
+        hint: "Pattern: 集 X 于一体 — 'integrate X into one'.",
+      },
+      {
+        sentenceBefore: "社交媒体已成为人们生活中",
+        sentenceAfter: "的一部分。",
+        options: [
+          { hanzi: "必不可少", pinyin: "bì bù kě shǎo", meaning: "indispensable" },
+          { hanzi: "丰富", pinyin: "fēngfù", meaning: "rich; abundant" },
+          { hanzi: "短", pinyin: "duǎn", meaning: "short" },
+        ],
+        correctIndex: 0,
+        translation: "Social media has become an indispensable part of people's lives.",
+        hint: "Set phrase — 'cannot do without'.",
+      },
+      {
+        sentenceBefore: "用户可以",
+        sentenceAfter: "多媒体内容。",
+        options: [
+          { hanzi: "发布", pinyin: "fābù", meaning: "to publish; to post" },
+          { hanzi: "尊重", pinyin: "zūnzhòng", meaning: "to respect" },
+          { hanzi: "邀请", pinyin: "yāoqǐng", meaning: "to invite" },
+        ],
+        correctIndex: 0,
+        translation: "Users can post multimedia content.",
+        hint: "Verb — 'post / publish'.",
+      },
+      {
+        sentenceBefore: "对于喜欢短视频的人来说，抖音是他们的",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "天堂", pinyin: "tiāntáng", meaning: "paradise" },
+          { hanzi: "社区", pinyin: "shèqū", meaning: "community" },
+          { hanzi: "群", pinyin: "qún", meaning: "group" },
+        ],
+        correctIndex: 0,
+        translation: "For those who love short videos, Douyin is their paradise.",
+        hint: "Metaphor — 'heaven on earth'.",
+      },
+      {
+        sentenceBefore: "我想建一个微信群，怎么",
+        sentenceAfter: "？",
+        options: [
+          { hanzi: "发起", pinyin: "fāqǐ", meaning: "to initiate" },
+          { hanzi: "改名", pinyin: "gǎi míng", meaning: "to change name" },
+          { hanzi: "分享", pinyin: "fēnxiǎng", meaning: "to share" },
+        ],
+        correctIndex: 0,
+        translation: "I want to create a WeChat group — how do I start one?",
+        hint: "'To initiate / launch' a group.",
+      },
+      {
+        sentenceBefore: "进群之后请",
+        sentenceAfter: "群规。",
+        options: [
+          { hanzi: "遵守", pinyin: "zūnshǒu", meaning: "to abide by" },
+          { hanzi: "选择", pinyin: "xuǎnzé", meaning: "to choose" },
+          { hanzi: "安装", pinyin: "ānzhuāng", meaning: "to install" },
+        ],
+        correctIndex: 0,
+        translation: "After joining the group, please follow the group rules.",
+        hint: "Verb that pairs with 规则 / 群规 — 'follow rules'.",
+      },
     ],
-    correctIndex: 0,
-    translation: "WeChat integrates social, messaging and payment features into one.",
-    hint: "Pattern: 集 X 于一体 — 'integrate X into one'.",
   },
   {
     id: "l4-t3",
@@ -1418,17 +1686,81 @@ const lesson5Tasks: Task[] = [
   {
     id: "l5-t2",
     type: "battle",
-    prompt: "Pick the correct word for the gap",
-    sentenceBefore: "机器翻译可以",
-    sentenceAfter: "规则的翻译、基于统计的翻译和神经机器翻译三种类型。",
-    options: [
-      { hanzi: "分为基于", pinyin: "fēn wéi jīyú", meaning: "be divided into … based on" },
-      { hanzi: "属于", pinyin: "shǔyú", meaning: "to belong to" },
-      { hanzi: "组成", pinyin: "zǔchéng", meaning: "to compose" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "机器翻译可以",
+        sentenceAfter: "规则的翻译、基于统计的翻译和神经机器翻译三种类型。",
+        options: [
+          { hanzi: "分为基于", pinyin: "fēn wéi jīyú", meaning: "be divided into … based on" },
+          { hanzi: "属于", pinyin: "shǔyú", meaning: "to belong to" },
+          { hanzi: "组成", pinyin: "zǔchéng", meaning: "to compose" },
+        ],
+        correctIndex: 0,
+        translation: "MT can be divided into three types: rule-based, statistics-based, and neural MT.",
+        hint: "Pattern: 分为 X — divide into X.",
+      },
+      {
+        sentenceBefore: "机器翻译就是",
+        sentenceAfter: "电脑技术把一种语言转换成另一种语言。",
+        options: [
+          { hanzi: "利用", pinyin: "lìyòng", meaning: "to utilize" },
+          { hanzi: "考虑", pinyin: "kǎolǜ", meaning: "to consider" },
+          { hanzi: "采用", pinyin: "cǎiyòng", meaning: "to adopt" },
+        ],
+        correctIndex: 0,
+        translation: "MT means using computer technology to convert one language into another.",
+        hint: "'Make use of (a tool/technology)'.",
+      },
+      {
+        sentenceBefore: "好的翻译要考虑整个",
+        sentenceAfter: "，而不是一个词。",
+        options: [
+          { hanzi: "上下文", pinyin: "shàngxiàwén", meaning: "context" },
+          { hanzi: "原理", pinyin: "yuánlǐ", meaning: "principle" },
+          { hanzi: "材料", pinyin: "cáiliào", meaning: "material" },
+        ],
+        correctIndex: 0,
+        translation: "Good translation has to consider the whole context, not a single word.",
+        hint: "What surrounds a word in a sentence.",
+      },
+      {
+        sentenceBefore: "神经机器翻译",
+        sentenceAfter: "人脑的工作方式。",
+        options: [
+          { hanzi: "模仿", pinyin: "mófǎng", meaning: "to imitate" },
+          { hanzi: "支持", pinyin: "zhīchí", meaning: "to support" },
+          { hanzi: "满足", pinyin: "mǎnzú", meaning: "to satisfy" },
+        ],
+        correctIndex: 0,
+        translation: "Neural MT imitates how the human brain works.",
+        hint: "'To copy / mimic'.",
+      },
+      {
+        sentenceBefore: "翻译的质量",
+        sentenceAfter: "于训练数据的多少。",
+        options: [
+          { hanzi: "取决", pinyin: "qǔjué", meaning: "depend on" },
+          { hanzi: "包括", pinyin: "bāokuò", meaning: "to include" },
+          { hanzi: "分析", pinyin: "fēnxī", meaning: "to analyze" },
+        ],
+        correctIndex: 0,
+        translation: "Translation quality depends on how much training data there is.",
+        hint: "Pattern: 取决于 — 'depend on'.",
+      },
+      {
+        sentenceBefore: "评价译文时要看",
+        sentenceAfter: "和可读性。",
+        options: [
+          { hanzi: "准确性", pinyin: "zhǔnquèxìng", meaning: "accuracy" },
+          { hanzi: "网络", pinyin: "wǎngluò", meaning: "network" },
+          { hanzi: "需求", pinyin: "xūqiú", meaning: "needs" },
+        ],
+        correctIndex: 0,
+        translation: "When evaluating a translation, look at accuracy and readability.",
+        hint: "Pairs with 可读性.",
+      },
     ],
-    correctIndex: 0,
-    translation: "MT can be divided into three types: rule-based, statistics-based, and neural MT.",
-    hint: "Pattern: 分为 X — divide into X.",
   },
   {
     id: "l5-t3",
@@ -1700,17 +2032,81 @@ const lesson6Tasks: Task[] = [
   {
     id: "l6-t2",
     type: "battle",
-    prompt: "Pick the correct phrase for the gap",
-    sentenceBefore: "电子商务，",
-    sentenceAfter: "电商，是通过互联网进行的商业活动。",
-    options: [
-      { hanzi: "简称为", pinyin: "jiǎnchēng wéi", meaning: "abbreviated as" },
-      { hanzi: "称呼为", pinyin: "chēnghu wéi", meaning: "to address as" },
-      { hanzi: "翻译成", pinyin: "fānyì chéng", meaning: "translated into" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "电子商务，",
+        sentenceAfter: "电商，是通过互联网进行的商业活动。",
+        options: [
+          { hanzi: "简称为", pinyin: "jiǎnchēng wéi", meaning: "abbreviated as" },
+          { hanzi: "称呼为", pinyin: "chēnghu wéi", meaning: "to address as" },
+          { hanzi: "翻译成", pinyin: "fānyì chéng", meaning: "translated into" },
+        ],
+        correctIndex: 0,
+        translation: "E-commerce, abbreviated 电商, is commerce conducted via the internet.",
+        hint: "Pattern: X，简称为 Y — X, abbreviated as Y.",
+      },
+      {
+        sentenceBefore: "电子商务",
+        sentenceAfter: "互联网进行商业活动。",
+        options: [
+          { hanzi: "通过", pinyin: "tōngguò", meaning: "by means of; through" },
+          { hanzi: "为了", pinyin: "wèile", meaning: "in order to" },
+          { hanzi: "由于", pinyin: "yóuyú", meaning: "due to" },
+        ],
+        correctIndex: 0,
+        translation: "E-commerce conducts business via the internet.",
+        hint: "'Through / via' a channel.",
+      },
+      {
+        sentenceBefore: "电商极大地便利了我们的",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "消费", pinyin: "xiāofèi", meaning: "consumption" },
+          { hanzi: "革命", pinyin: "gémìng", meaning: "revolution" },
+          { hanzi: "交易", pinyin: "jiāoyì", meaning: "transaction" },
+        ],
+        correctIndex: 0,
+        translation: "E-commerce has greatly improved the convenience of our consumption.",
+        hint: "What consumers do — 'consume / spend'.",
+      },
+      {
+        sentenceBefore: "电商平台",
+        sentenceAfter: "种类繁多的商品。",
+        options: [
+          { hanzi: "提供", pinyin: "tígōng", meaning: "to provide" },
+          { hanzi: "促进", pinyin: "cùjìn", meaning: "to promote" },
+          { hanzi: "实现", pinyin: "shíxiàn", meaning: "to achieve" },
+        ],
+        correctIndex: 0,
+        translation: "E-commerce platforms offer a wide variety of goods.",
+        hint: "'To offer / supply'.",
+      },
+      {
+        sentenceBefore: "选购物平台时要看",
+        sentenceAfter: "好不好。",
+        options: [
+          { hanzi: "信誉", pinyin: "xìnyù", meaning: "reputation" },
+          { hanzi: "客服", pinyin: "kèfú", meaning: "customer service" },
+          { hanzi: "种类", pinyin: "zhǒnglèi", meaning: "category" },
+        ],
+        correctIndex: 0,
+        translation: "When choosing a shopping platform, check whether the reputation is good.",
+        hint: "What you trust before buying.",
+      },
+      {
+        sentenceBefore: "收到货以后请填写",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "评价", pinyin: "píngjià", meaning: "evaluation; review" },
+          { hanzi: "下单", pinyin: "xià dān", meaning: "to place an order" },
+          { hanzi: "预订", pinyin: "yùdìng", meaning: "to book" },
+        ],
+        correctIndex: 0,
+        translation: "After receiving the goods, please leave a review.",
+        hint: "What you write to rate a seller.",
+      },
     ],
-    correctIndex: 0,
-    translation: "E-commerce, abbreviated 电商, is commerce conducted via the internet.",
-    hint: "Pattern: X，简称为 Y — X, abbreviated as Y.",
   },
   {
     id: "l6-t3",
@@ -1980,17 +2376,81 @@ const lesson7Tasks: Task[] = [
   {
     id: "l7-t2",
     type: "battle",
-    prompt: "Pick the correct phrase for the gap",
-    sentenceBefore: "它",
-    sentenceAfter: "互联网为创作和传播平台。",
-    options: [
-      { hanzi: "以", pinyin: "yǐ", meaning: "with; using; to take" },
-      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
-      { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "它",
+        sentenceAfter: "互联网为创作和传播平台。",
+        options: [
+          { hanzi: "以", pinyin: "yǐ", meaning: "with; using; to take" },
+          { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+          { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+        ],
+        correctIndex: 0,
+        translation: "It takes the internet as its platform for creation and dissemination.",
+        hint: "Pattern: 以 X 为 Y — to take X as Y.",
+      },
+      {
+        sentenceBefore: "网络文学的题材非常",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "丰富", pinyin: "fēngfù", meaning: "rich; abundant" },
+          { hanzi: "庞大", pinyin: "pángdà", meaning: "huge" },
+          { hanzi: "通俗", pinyin: "tōngsú", meaning: "popular" },
+        ],
+        correctIndex: 0,
+        translation: "The subject matter of internet literature is very rich.",
+        hint: "Common adj for variety of topics.",
+      },
+      {
+        sentenceBefore: "读者可以通过评论、点赞与作者",
+        sentenceAfter: "互动。",
+        options: [
+          { hanzi: "进行", pinyin: "jìnxíng", meaning: "to carry out" },
+          { hanzi: "组成", pinyin: "zǔchéng", meaning: "to form" },
+          { hanzi: "创作", pinyin: "chuàngzuò", meaning: "to create" },
+        ],
+        correctIndex: 0,
+        translation: "Readers can interact with the author through comments and likes.",
+        hint: "Verb that pairs with 互动 — 'engage in'.",
+      },
+      {
+        sentenceBefore: "网络小说",
+        sentenceAfter: "改编成电视剧和动漫。",
+        options: [
+          { hanzi: "可以", pinyin: "kěyǐ", meaning: "can; may" },
+          { hanzi: "应该", pinyin: "yīnggāi", meaning: "should" },
+          { hanzi: "必须", pinyin: "bìxū", meaning: "must" },
+        ],
+        correctIndex: 0,
+        translation: "Internet novels can be adapted into TV dramas and anime.",
+        hint: "Modal — possibility, not obligation.",
+      },
+      {
+        sentenceBefore: "起点中文网是中国",
+        sentenceAfter: "的网络文学网站。",
+        options: [
+          { hanzi: "知名", pinyin: "zhīmíng", meaning: "well known" },
+          { hanzi: "大众", pinyin: "dàzhòng", meaning: "popular; the masses" },
+          { hanzi: "通俗", pinyin: "tōngsú", meaning: "popular; vernacular" },
+        ],
+        correctIndex: 0,
+        translation: "Qidian is a well-known Chinese internet literature site.",
+        hint: "Adj — 'famous / well-known'.",
+      },
+      {
+        sentenceBefore: "网络文学的语言",
+        sentenceAfter: "易懂，适合初学者。",
+        options: [
+          { hanzi: "通俗", pinyin: "tōngsú", meaning: "common; popular" },
+          { hanzi: "庞大", pinyin: "pángdà", meaning: "huge" },
+          { hanzi: "独特", pinyin: "dútè", meaning: "unique" },
+        ],
+        correctIndex: 0,
+        translation: "The language of internet literature is common and easy to understand.",
+        hint: "Pairs with 易懂 — 通俗易懂.",
+      },
     ],
-    correctIndex: 0,
-    translation: "It takes the internet as its platform for creation and dissemination.",
-    hint: "Pattern: 以 X 为 Y — to take X as Y.",
   },
   {
     id: "l7-t3",
@@ -2255,17 +2715,81 @@ const lesson8Tasks: Task[] = [
   {
     id: "l8-t2",
     type: "battle",
-    prompt: "Pick the correct phrase for the gap",
-    sentenceBefore: "它们各自也",
-    sentenceAfter: "其独特的互动方式而受到不同用户的喜爱。",
-    options: [
-      { hanzi: "因…而", pinyin: "yīn … ér", meaning: "because of … therefore" },
-      { hanzi: "为…而", pinyin: "wèi … ér", meaning: "for the sake of …" },
-      { hanzi: "把…而", pinyin: "bǎ … ér", meaning: "(disposal — wrong here)" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "它们各自也",
+        sentenceAfter: "其独特的互动方式而受到不同用户的喜爱。",
+        options: [
+          { hanzi: "因…而", pinyin: "yīn … ér", meaning: "because of … therefore" },
+          { hanzi: "为…而", pinyin: "wèi … ér", meaning: "for the sake of …" },
+          { hanzi: "把…而", pinyin: "bǎ … ér", meaning: "(disposal — wrong here)" },
+        ],
+        correctIndex: 0,
+        translation: "Each is loved by different users because of its unique interaction style.",
+        hint: "Pattern: 因 + reason + 而 + result.",
+      },
+      {
+        sentenceBefore: "人工智能是科学家",
+        sentenceAfter: "的产物。",
+        options: [
+          { hanzi: "打造", pinyin: "dǎzào", meaning: "to forge; to create" },
+          { hanzi: "查询", pinyin: "cháxún", meaning: "to query" },
+          { hanzi: "倾听", pinyin: "qīngtīng", meaning: "to listen" },
+        ],
+        correctIndex: 0,
+        translation: "AI is the product of what scientists have built.",
+        hint: "'To craft / build' something complex.",
+      },
+      {
+        sentenceBefore: "AI可以按照你的提示语",
+        sentenceAfter: "你需要的文本。",
+        options: [
+          { hanzi: "生成", pinyin: "shēngchéng", meaning: "to generate" },
+          { hanzi: "倾听", pinyin: "qīngtīng", meaning: "to listen" },
+          { hanzi: "预见", pinyin: "yùjiàn", meaning: "to foresee" },
+        ],
+        correctIndex: 0,
+        translation: "AI can generate the text you need based on your prompt.",
+        hint: "What models do — produce content.",
+      },
+      {
+        sentenceBefore: "ChatGPT可以",
+        sentenceAfter: "我们处理学术资料。",
+        options: [
+          { hanzi: "帮助", pinyin: "bāngzhù", meaning: "to help" },
+          { hanzi: "描述", pinyin: "miáoshù", meaning: "to describe" },
+          { hanzi: "倾听", pinyin: "qīngtīng", meaning: "to listen" },
+        ],
+        correctIndex: 0,
+        translation: "ChatGPT can help us process academic material.",
+        hint: "Common verb — 'to help'.",
+      },
+      {
+        sentenceBefore: "用AI画画时，要清楚地",
+        sentenceAfter: "你想要的风格。",
+        options: [
+          { hanzi: "描述", pinyin: "miáoshù", meaning: "to describe" },
+          { hanzi: "构思", pinyin: "gòusī", meaning: "to conceive" },
+          { hanzi: "撰写", pinyin: "zhuànxiě", meaning: "to write; to compose" },
+        ],
+        correctIndex: 0,
+        translation: "When using AI to draw, clearly describe the style you want.",
+        hint: "'To describe' in detail.",
+      },
+      {
+        sentenceBefore: "AI的发展将让生活变得更",
+        sentenceAfter: "化。",
+        options: [
+          { hanzi: "智能", pinyin: "zhìnéng", meaning: "intelligent" },
+          { hanzi: "熟悉", pinyin: "shúxī", meaning: "familiar" },
+          { hanzi: "独特", pinyin: "dútè", meaning: "unique" },
+        ],
+        correctIndex: 0,
+        translation: "The development of AI will make life more intelligent.",
+        hint: "Forms 智能化 — 'become intelligent'.",
+      },
     ],
-    correctIndex: 0,
-    translation: "Each is loved by different users because of its unique interaction style.",
-    hint: "Pattern: 因 + reason + 而 + result.",
   },
   {
     id: "l8-t3",
@@ -2536,17 +3060,81 @@ const lesson9Tasks: Task[] = [
   {
     id: "l9-t2",
     type: "battle",
-    prompt: "Pick the correct phrase for the gap",
-    sentenceBefore: "中国网络视频市场",
-    sentenceAfter: "几家大平台主导。",
-    options: [
-      { hanzi: "由", pinyin: "yóu", meaning: "by; through (agent marker)" },
-      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
-      { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "中国网络视频市场",
+        sentenceAfter: "几家大平台主导。",
+        options: [
+          { hanzi: "由", pinyin: "yóu", meaning: "by; through (agent marker)" },
+          { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+          { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+        ],
+        correctIndex: 0,
+        translation: "China's online video market is led by a few big platforms.",
+        hint: "Pattern: Subject + 由 + Agent + Verb — passive 'by'.",
+      },
+      {
+        sentenceBefore: "中国网络视频从1995年",
+        sentenceAfter: "，到现在已经普及。",
+        options: [
+          { hanzi: "起步", pinyin: "qǐbù", meaning: "to start" },
+          { hanzi: "崛起", pinyin: "juéqǐ", meaning: "to emerge" },
+          { hanzi: "盛行", pinyin: "shèngxíng", meaning: "to be in vogue" },
+        ],
+        correctIndex: 0,
+        translation: "Chinese online video started in 1995 and is now widespread.",
+        hint: "'To take its first step / start out'.",
+      },
+      {
+        sentenceBefore: "短视频应用很快",
+        sentenceAfter: "起来了。",
+        options: [
+          { hanzi: "火", pinyin: "huǒ", meaning: "hot; popular" },
+          { hanzi: "活泼", pinyin: "huópō", meaning: "lively" },
+          { hanzi: "好", pinyin: "hǎo", meaning: "good" },
+        ],
+        correctIndex: 0,
+        translation: "Short-video apps quickly became hot.",
+        hint: "Slang — '___ 起来' becomes popular.",
+      },
+      {
+        sentenceBefore: "B站尤其受到年轻人的",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "追捧", pinyin: "zhuīpěng", meaning: "to chase after; to adore" },
+          { hanzi: "投资", pinyin: "tóuzī", meaning: "investment" },
+          { hanzi: "崛起", pinyin: "juéqǐ", meaning: "emergence" },
+        ],
+        correctIndex: 0,
+        translation: "Bilibili is especially adored by young people.",
+        hint: "Pattern: 受到 + ___ — 'be received with adoration'.",
+      },
+      {
+        sentenceBefore: "网剧的台词",
+        sentenceAfter: "，很适合学日常用语。",
+        options: [
+          { hanzi: "地道", pinyin: "dìdào", meaning: "authentic" },
+          { hanzi: "古代", pinyin: "gǔdài", meaning: "ancient" },
+          { hanzi: "流利", pinyin: "liúlì", meaning: "fluent" },
+        ],
+        correctIndex: 0,
+        translation: "Web-drama dialogue is authentic — great for learning daily speech.",
+        hint: "'Authentic / native-sounding'.",
+      },
+      {
+        sentenceBefore: "注册学生账户更",
+        sentenceAfter: "，价格也便宜。",
+        options: [
+          { hanzi: "划算", pinyin: "huásuàn", meaning: "worth it; a good deal" },
+          { hanzi: "流利", pinyin: "liúlì", meaning: "fluent" },
+          { hanzi: "活泼", pinyin: "huópō", meaning: "lively" },
+        ],
+        correctIndex: 0,
+        translation: "A student account is more worth it — the price is cheaper too.",
+        hint: "When something is a good deal.",
+      },
     ],
-    correctIndex: 0,
-    translation: "China's online video market is led by a few big platforms.",
-    hint: "Pattern: Subject + 由 + Agent + Verb — passive 'by'.",
   },
   {
     id: "l9-t3",
@@ -2806,17 +3394,81 @@ const lesson10Tasks: Task[] = [
   {
     id: "l10-t2",
     type: "battle",
-    prompt: "Pick the correct word for the gap",
-    sentenceBefore: "对于青少年来说，关键",
-    sentenceAfter: "如何引导。",
-    options: [
-      { hanzi: "在于", pinyin: "zài yú", meaning: "lies in; depends on" },
-      { hanzi: "因为", pinyin: "yīnwèi", meaning: "because" },
-      { hanzi: "由于", pinyin: "yóuyú", meaning: "due to" },
+    prompt: "Выбери подходящее слово для пропуска",
+    rounds: [
+      {
+        sentenceBefore: "对于青少年来说，关键",
+        sentenceAfter: "如何引导。",
+        options: [
+          { hanzi: "在于", pinyin: "zài yú", meaning: "lies in; depends on" },
+          { hanzi: "因为", pinyin: "yīnwèi", meaning: "because" },
+          { hanzi: "由于", pinyin: "yóuyú", meaning: "due to" },
+        ],
+        correctIndex: 0,
+        translation: "For young people, the key lies in how you guide them.",
+        hint: "Pattern: 关键在于… — 'the key lies in…'. Formal/written register.",
+      },
+      {
+        sentenceBefore: "网络游戏需要玩家通过服务器",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "连线", pinyin: "liánxiàn", meaning: "to be online" },
+          { hanzi: "上瘾", pinyin: "shàngyǐn", meaning: "to become addicted" },
+          { hanzi: "扮演", pinyin: "bànyǎn", meaning: "to play a role" },
+        ],
+        correctIndex: 0,
+        translation: "Online games require players to be connected via a server.",
+        hint: "What you do via a server to play.",
+      },
+      {
+        sentenceBefore: "玩家在虚拟世界里",
+        sentenceAfter: "不同的角色。",
+        options: [
+          { hanzi: "扮演", pinyin: "bànyǎn", meaning: "to play a role" },
+          { hanzi: "推出", pinyin: "tuīchū", meaning: "to release" },
+          { hanzi: "领先", pinyin: "lǐngxiān", meaning: "to lead" },
+        ],
+        correctIndex: 0,
+        translation: "Players play different roles in the virtual world.",
+        hint: "'To play / portray' a character.",
+      },
+      {
+        sentenceBefore: "经过多年的发展，中国已成为最大的网络游戏市场",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "之一", pinyin: "zhī yī", meaning: "one of" },
+          { hanzi: "在于", pinyin: "zài yú", meaning: "lies in" },
+          { hanzi: "经过", pinyin: "jīngguò", meaning: "through" },
+        ],
+        correctIndex: 0,
+        translation: "After years of development, China has become one of the largest online game markets.",
+        hint: "Pattern: 最…___ — 'one of the most…'.",
+      },
+      {
+        sentenceBefore: "网游容易让青少年",
+        sentenceAfter: "。",
+        options: [
+          { hanzi: "上瘾", pinyin: "shàngyǐn", meaning: "to become addicted" },
+          { hanzi: "放松", pinyin: "fàngsōng", meaning: "to relax" },
+          { hanzi: "合作", pinyin: "hézuò", meaning: "to cooperate" },
+        ],
+        correctIndex: 0,
+        translation: "Online games easily make teenagers addicted.",
+        hint: "Negative outcome of too much gaming.",
+      },
+      {
+        sentenceBefore: "家长应该帮助孩子",
+        sentenceAfter: "良好的习惯。",
+        options: [
+          { hanzi: "养成", pinyin: "yǎngchéng", meaning: "to cultivate" },
+          { hanzi: "安排", pinyin: "ānpái", meaning: "to arrange" },
+          { hanzi: "防止", pinyin: "fángzhǐ", meaning: "to prevent" },
+        ],
+        correctIndex: 0,
+        translation: "Parents should help children cultivate good habits.",
+        hint: "Pairs with 习惯 — 'cultivate a habit'.",
+      },
     ],
-    correctIndex: 0,
-    translation: "For young people, the key lies in how you guide them.",
-    hint: "Pattern: 关键在于… — 'the key lies in…'. Formal/written register.",
   },
   {
     id: "l10-t3",
