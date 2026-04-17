@@ -3,45 +3,89 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, PartyPopper } from "lucide-react";
 import type { Lesson } from "@/data/lessons";
-import { ProgressBar } from "./ProgressBar";
+import { PhaseBar, type PhaseKey } from "./PhaseBar";
 import { TaskEngine } from "./TaskEngine";
+import { DialogueScreen } from "./phases/DialogueScreen";
+import { VocabDeck } from "./phases/VocabDeck";
+import { RecapScreen } from "./phases/RecapScreen";
 import { useProgress } from "@/hooks/useProgress";
 
 interface Props {
   lesson: Lesson;
 }
 
+type Stage =
+  | { phase: "listen"; dialogueIdx: number }
+  | { phase: "vocab"; vocabIdx: number }
+  | { phase: "practice"; taskIdx: number }
+  | { phase: "recap" }
+  | { phase: "done" };
+
 export function LessonView({ lesson }: Props) {
   const navigate = useNavigate();
   const { markComplete } = useProgress();
-  const tasks = lesson.tasks ?? [];
-  const [index, setIndex] = useState(0);
-  const [solved, setSolved] = useState<boolean[]>(() => tasks.map(() => false));
-  const [finished, setFinished] = useState(false);
 
-  const current = tasks[index];
+  const dialogues = lesson.dialogues ?? [];
+  const vocabSets = lesson.vocabulary ?? [];
+  const tasks = lesson.tasks ?? [];
+
+  // We use Text 1 for the Listen phase, Text 1 vocab for Vocab phase, then practice,
+  // then Recap with Text 2 as a bonus listen.
+  const initial: Stage =
+    dialogues.length > 0
+      ? { phase: "listen", dialogueIdx: 0 }
+      : vocabSets.length > 0
+        ? { phase: "vocab", vocabIdx: 0 }
+        : tasks.length > 0
+          ? { phase: "practice", taskIdx: 0 }
+          : { phase: "recap" };
+
+  const [stage, setStage] = useState<Stage>(initial);
+  const [solved, setSolved] = useState<boolean[]>(() => tasks.map(() => false));
+
   const completedCount = solved.filter(Boolean).length;
-  const isCurrentSolved = solved[index];
+  const currentPhase: PhaseKey = stage.phase === "done" ? "recap" : stage.phase;
 
   const onSolved = () => {
+    if (stage.phase !== "practice") return;
     setSolved((s) => {
-      if (s[index]) return s;
+      if (s[stage.taskIdx]) return s;
       const n = [...s];
-      n[index] = true;
+      n[stage.taskIdx] = true;
       return n;
     });
   };
 
-  const next = () => {
-    if (index < tasks.length - 1) {
-      setIndex((i) => i + 1);
-    } else {
+  const goNext = () => {
+    if (stage.phase === "listen") {
+      // Only Text 1 here; Text 2 is used as bonus in Recap.
+      if (vocabSets.length > 0) setStage({ phase: "vocab", vocabIdx: 0 });
+      else if (tasks.length > 0) setStage({ phase: "practice", taskIdx: 0 });
+      else setStage({ phase: "recap" });
+      return;
+    }
+    if (stage.phase === "vocab") {
+      // Show only the first vocab set in flow; second is reachable from recap if needed.
+      if (tasks.length > 0) setStage({ phase: "practice", taskIdx: 0 });
+      else setStage({ phase: "recap" });
+      return;
+    }
+    if (stage.phase === "practice") {
+      if (stage.taskIdx < tasks.length - 1) {
+        setStage({ phase: "practice", taskIdx: stage.taskIdx + 1 });
+      } else {
+        setStage({ phase: "recap" });
+      }
+      return;
+    }
+    if (stage.phase === "recap") {
       markComplete(lesson.id);
-      setFinished(true);
+      setStage({ phase: "done" });
     }
   };
 
-  if (!current) return null;
+  const isCurrentTaskSolved =
+    stage.phase === "practice" ? solved[stage.taskIdx] : false;
 
   return (
     <main className="min-h-screen">
@@ -56,10 +100,14 @@ export function LessonView({ lesson }: Props) {
             <ArrowLeft className="h-4 w-4" />
           </Link>
           <div className="flex-1">
-            <ProgressBar total={tasks.length} current={index} completed={completedCount} />
-          </div>
-          <div className="font-mono text-xs text-muted-foreground">
-            {index + 1}/{tasks.length}
+            <PhaseBar
+              current={currentPhase}
+              practiceProgress={
+                tasks.length > 0
+                  ? { solved: completedCount, total: tasks.length }
+                  : undefined
+              }
+            />
           </div>
         </div>
 
@@ -76,9 +124,9 @@ export function LessonView({ lesson }: Props) {
           </h1>
         </div>
 
-        {/* Task / Finished */}
+        {/* Stage content */}
         <AnimatePresence mode="wait">
-          {finished ? (
+          {stage.phase === "done" ? (
             <motion.div
               key="done"
               initial={{ opacity: 0, scale: 0.96 }}
@@ -91,7 +139,7 @@ export function LessonView({ lesson }: Props) {
                 Lesson complete
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                You finished all 8 tasks of {lesson.title}.
+                You finished {lesson.title}. {lesson.id < 10 && "Lesson " + (lesson.id + 1) + " is unlocked next."}
               </p>
               <button
                 onClick={() => navigate({ to: "/" })}
@@ -100,23 +148,84 @@ export function LessonView({ lesson }: Props) {
                 Back to dashboard <ArrowRight className="h-4 w-4" />
               </button>
             </motion.div>
-          ) : (
+          ) : stage.phase === "listen" ? (
             <motion.div
-              key={current.id}
+              key={`listen-${stage.dialogueIdx}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25 }}
               className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
             >
-              <TaskEngine task={current} onSolved={onSolved} />
+              <DialogueScreen
+                dialogue={dialogues[stage.dialogueIdx]}
+                onContinue={goNext}
+                ctaLabel="Continue to vocabulary →"
+              />
+            </motion.div>
+          ) : stage.phase === "vocab" ? (
+            <motion.div
+              key={`vocab-${stage.vocabIdx}`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
+            >
+              <VocabDeck vocab={vocabSets[stage.vocabIdx]} onContinue={goNext} />
+            </motion.div>
+          ) : stage.phase === "practice" ? (
+            <motion.div
+              key={`task-${stage.taskIdx}`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
+            >
+              <div className="mb-3 flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                  Phase 3 · Practice
+                </span>
+                <span className="font-mono text-xs text-muted-foreground">
+                  {stage.taskIdx + 1}/{tasks.length}
+                </span>
+              </div>
+              <TaskEngine task={tasks[stage.taskIdx]} onSolved={onSolved} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="recap"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
+            >
+              {lesson.recap ? (
+                <RecapScreen
+                  recap={lesson.recap}
+                  bonusDialogue={dialogues[1]}
+                  onFinish={goNext}
+                />
+              ) : (
+                <div className="text-center">
+                  <p>No recap available.</p>
+                  <button
+                    onClick={goNext}
+                    className="mt-4 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
+                  >
+                    Finish
+                  </button>
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Next */}
+        {/* Practice next button */}
         <AnimatePresence>
-          {!finished && isCurrentSolved && (
+          {stage.phase === "practice" && isCurrentTaskSolved && (
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,10 +235,10 @@ export function LessonView({ lesson }: Props) {
               <motion.button
                 whileHover={{ x: 2 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={next}
+                onClick={goNext}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110"
               >
-                {index < tasks.length - 1 ? "Next task" : "Finish lesson"}
+                {stage.taskIdx < tasks.length - 1 ? "Next task" : "To recap →"}
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
             </motion.div>
