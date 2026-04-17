@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import type { SimulationTask } from "@/data/lessons";
+import type { SimulationRound, SimulationTask } from "@/data/lessons";
 import { Feedback } from "@/components/Feedback";
 
 interface Props {
@@ -8,26 +8,59 @@ interface Props {
   onSolved: () => void;
 }
 
+function getRounds(task: SimulationTask): SimulationRound[] {
+  if (task.rounds && task.rounds.length > 0) return task.rounds;
+  return [
+    {
+      npcMessage: task.npcMessage ?? "",
+      npcPinyin: task.npcPinyin ?? "",
+      npcTranslation: task.npcTranslation ?? "",
+      options: task.options ?? [],
+    },
+  ];
+}
+
 export function SimulationCard({ task, onSolved }: Props) {
+  const rounds = useMemo(() => getRounds(task), [task]);
+  const [roundIdx, setRoundIdx] = useState(0);
+  const round = rounds[roundIdx];
+
   const [picked, setPicked] = useState<number | null>(null);
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
 
   const choose = (i: number) => {
     if (state === "correct") return;
     setPicked(i);
-    if (task.options[i].correct) {
+    if (round.options[i].correct) {
       setState("correct");
-      onSolved();
+      if (roundIdx === rounds.length - 1) onSolved();
     } else {
       setState("wrong");
     }
   };
 
-  const reply = picked !== null ? task.options[picked] : null;
+  const goNextRound = () => {
+    const next = roundIdx + 1;
+    if (next < rounds.length) {
+      setRoundIdx(next);
+      setPicked(null);
+      setState("idle");
+    }
+  };
+
+  const reply = picked !== null ? round.options[picked] : null;
+  const isLastRound = roundIdx === rounds.length - 1;
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-muted-foreground">{task.prompt}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">{task.prompt}</p>
+        {rounds.length > 1 && (
+          <span className="font-mono text-[10px] uppercase tracking-widest text-primary/70">
+            {roundIdx + 1}/{rounds.length}
+          </span>
+        )}
+      </div>
       <div className="space-y-3">
         {/* NPC */}
         <div className="flex gap-3">
@@ -35,9 +68,9 @@ export function SimulationCard({ task, onSolved }: Props) {
             王
           </div>
           <div className="max-w-[80%] rounded-2xl rounded-tl-sm border border-border bg-surface px-4 py-3">
-            <div className="font-hanzi text-base">{task.npcMessage}</div>
-            <div className="font-pinyin mt-1 text-xs text-primary">{task.npcPinyin}</div>
-            <div className="mt-1 text-xs text-muted-foreground">{task.npcTranslation}</div>
+            <div className="font-hanzi text-base">{round.npcMessage}</div>
+            <div className="font-pinyin mt-1 text-xs text-primary">{round.npcPinyin}</div>
+            <div className="mt-1 text-xs text-muted-foreground">{round.npcTranslation}</div>
           </div>
         </div>
 
@@ -82,7 +115,7 @@ export function SimulationCard({ task, onSolved }: Props) {
       </div>
 
       <div className="grid gap-2 sm:grid-cols-3">
-        {task.options.map((opt, i) => (
+        {round.options.map((opt, i) => (
           <motion.button
             key={opt.hanzi}
             whileHover={{ y: -2 }}
@@ -102,6 +135,21 @@ export function SimulationCard({ task, onSolved }: Props) {
           </motion.button>
         ))}
       </div>
+
+      {state === "correct" && !isLastRound && (
+        <div className="flex justify-end">
+          <motion.button
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={goNextRound}
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-soft)] transition hover:brightness-110"
+          >
+            Следующий диалог →
+          </motion.button>
+        </div>
+      )}
+
       <Feedback state={state} />
     </div>
   );
