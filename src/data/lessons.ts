@@ -2050,7 +2050,17 @@ export const lessons: Lesson[] = [
     tasks: lesson7Tasks,
     recap: lesson7Recap,
   },
-  { id: 8, title: "人工智能聊天机器人", titleEn: "AI Chatbot", theme: "Conversational AI", status: "locked" },
+  {
+    id: 8,
+    title: "人工智能聊天机器人",
+    titleEn: "AI Chatbot",
+    theme: "Conversational AI",
+    status: "available",
+    dialogues: lesson8Dialogues,
+    vocabulary: lesson8Vocab,
+    tasks: lesson8Tasks,
+    recap: lesson8Recap,
+  },
   { id: 9, title: "网络视频", titleEn: "Online Videos", theme: "Streaming culture", status: "locked" },
   { id: 10, title: "网络游戏", titleEn: "Online Gaming", theme: "Gaming worlds", status: "locked" },
 ];
