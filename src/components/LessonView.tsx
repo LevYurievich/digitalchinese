@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, PartyPopper, RotateCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, PartyPopper, RotateCcw } from "lucide-react";
 import type { Lesson } from "@/data/lessons";
 import { PhaseBar, type PhaseKey } from "./PhaseBar";
 import { TaskEngine } from "./TaskEngine";
@@ -216,18 +216,40 @@ export function LessonView({ lesson }: Props) {
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
                   Phase 3 · Practice
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() =>
+                      stage.taskIdx > 0 &&
+                      setStage({ phase: "practice", taskIdx: stage.taskIdx - 1 })
+                    }
+                    disabled={stage.taskIdx === 0}
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-surface text-muted-foreground transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
+                    aria-label="Предыдущее задание"
+                  >
+                    <ChevronLeft className="h-3.5 w-3.5" />
+                  </button>
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
+                    {stage.taskIdx + 1}/{tasks.length}
+                  </span>
+                  <button
+                    onClick={() =>
+                      stage.taskIdx < tasks.length - 1 &&
+                      setStage({ phase: "practice", taskIdx: stage.taskIdx + 1 })
+                    }
+                    disabled={stage.taskIdx === tasks.length - 1}
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-surface text-muted-foreground transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
+                    aria-label="Следующее задание"
+                  >
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </button>
                   <button
                     onClick={restartTask}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition hover:border-primary hover:text-primary"
+                    className="ml-2 inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition hover:border-primary hover:text-primary"
                     aria-label="Начать задание сначала"
                   >
                     <RotateCcw className="h-3 w-3" />
                     Сначала
                   </button>
-                  <span className="font-mono text-xs text-muted-foreground">
-                    {stage.taskIdx + 1}/{tasks.length}
-                  </span>
                 </div>
               </div>
               <TaskEngine
