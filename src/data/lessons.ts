@@ -878,14 +878,38 @@ const lesson3Tasks: Task[] = [
   {
     id: "l3-t7",
     type: "simulation",
-    prompt: "Karen asks for advice. Reply naturally.",
-    npcMessage: "我每天都要跟家人视频通话，需要很多流量。我应该选什么样的套餐？",
-    npcPinyin: "Wǒ měi tiān dōu yào gēn jiārén shìpín tōnghuà, xūyào hěn duō liúliàng. Wǒ yīnggāi xuǎn shénme yàng de tàocān?",
-    npcTranslation: "I video-call my family every day and need lots of data. What kind of plan should I pick?",
-    options: [
-      { hanzi: "选一个不限制流量的套餐吧。", pinyin: "Xuǎn yí gè bú xiànzhì liúliàng de tàocān ba.", correct: true, reply: "好主意，谢谢！" },
-      { hanzi: "买一个新手机就行。", pinyin: "Mǎi yí gè xīn shǒujī jiù xíng.", correct: false },
-      { hanzi: "别用智能手机了。", pinyin: "Bié yòng zhìnéng shǒujī le.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我每天都要跟家人视频通话，需要很多流量。我应该选什么样的套餐？",
+        npcPinyin: "Wǒ měi tiān dōu yào gēn jiārén shìpín tōnghuà, xūyào hěn duō liúliàng. Wǒ yīnggāi xuǎn shénme yàng de tàocān?",
+        npcTranslation: "Я каждый день созваниваюсь с семьёй по видео, нужно много трафика. Какой тариф мне выбрать?",
+        options: [
+          { hanzi: "选一个不限制流量的套餐吧。", pinyin: "Xuǎn yí gè bú xiànzhì liúliàng de tàocān ba.", correct: true, reply: "好主意，谢谢！" },
+          { hanzi: "买一个新手机就行。", pinyin: "Mǎi yí gè xīn shǒujī jiù xíng.", correct: false },
+          { hanzi: "别用智能手机了。", pinyin: "Bié yòng zhìnéng shǒujī le.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我想买一个新手机，你推荐什么品牌？",
+        npcPinyin: "Wǒ xiǎng mǎi yí ge xīn shǒujī, nǐ tuījiàn shénme pǐnpái?",
+        npcTranslation: "Хочу купить новый телефон, какой бренд посоветуешь?",
+        options: [
+          { hanzi: "苹果和华为都不错，看你喜欢哪种系统。", pinyin: "Píngguǒ hé Huáwéi dōu búcuò, kàn nǐ xǐhuan nǎ zhǒng xìtǒng.", correct: true, reply: "好，我去店里看看。" },
+          { hanzi: "别买手机了，用电脑就好。", pinyin: "Bié mǎi shǒujī le, yòng diànnǎo jiù hǎo.", correct: false },
+          { hanzi: "买最贵的就行。", pinyin: "Mǎi zuì guì de jiù xíng.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "手机信号不好，怎么办？",
+        npcPinyin: "Shǒujī xìnhào bù hǎo, zěnme bàn?",
+        npcTranslation: "У телефона плохой сигнал, что делать?",
+        options: [
+          { hanzi: "你可以换个位置，或者重启手机试试。", pinyin: "Nǐ kěyǐ huàn ge wèizhi, huòzhě chóngqǐ shǒujī shì shi.", correct: true, reply: "好的，我试试。" },
+          { hanzi: "把手机扔了。", pinyin: "Bǎ shǒujī rēng le.", correct: false },
+          { hanzi: "别打电话了。", pinyin: "Bié dǎ diànhuà le.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -1155,14 +1179,38 @@ const lesson4Tasks: Task[] = [
   {
     id: "l4-t7",
     type: "simulation",
-    prompt: "Karen wants to add you to a class WeChat group. Reply naturally.",
-    npcMessage: "我想建一个我们班的微信群。你能帮我看看怎么发起群聊吗？",
-    npcPinyin: "Wǒ xiǎng jiàn yí ge wǒmen bān de Wēixìn qún. Nǐ néng bāng wǒ kàn kàn zěnme fāqǐ qún liáo ma?",
-    npcTranslation: "I want to set up a WeChat group for our class. Can you help me figure out how to start a group chat?",
-    options: [
-      { hanzi: "点击右上角的加号，选择“发起群聊”就行。", pinyin: "Diǎnjī yòu shàng jiǎo de jiāhào, xuǎnzé “fāqǐ qún liáo” jiù xíng.", correct: true, reply: "太好了，谢谢你！" },
-      { hanzi: "你得先买一个新手机。", pinyin: "Nǐ děi xiān mǎi yí ge xīn shǒujī.", correct: false },
-      { hanzi: "微信不能建群。", pinyin: "Wēixìn bù néng jiàn qún.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我想建一个我们班的微信群。你能帮我看看怎么发起群聊吗？",
+        npcPinyin: "Wǒ xiǎng jiàn yí ge wǒmen bān de Wēixìn qún. Nǐ néng bāng wǒ kàn kàn zěnme fāqǐ qún liáo ma?",
+        npcTranslation: "Хочу создать WeChat-чат для нашей группы. Поможешь разобраться, как начать групповой чат?",
+        options: [
+          { hanzi: "点击右上角的加号，选择「发起群聊」就行。", pinyin: "Diǎnjī yòu shàng jiǎo de jiāhào, xuǎnzé \"fāqǐ qún liáo\" jiù xíng.", correct: true, reply: "太好了，谢谢你！" },
+          { hanzi: "你得先买一个新手机。", pinyin: "Nǐ děi xiān mǎi yí ge xīn shǒujī.", correct: false },
+          { hanzi: "微信不能建群。", pinyin: "Wēixìn bù néng jiàn qún.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我每天用微信几个小时，是不是太多了？",
+        npcPinyin: "Wǒ měi tiān yòng Wēixìn jǐ ge xiǎoshí, shì bu shì tài duō le?",
+        npcTranslation: "Я каждый день несколько часов сижу в WeChat, это много?",
+        options: [
+          { hanzi: "适当用一下没问题，但要注意休息眼睛。", pinyin: "Shìdàng yòng yíxià méi wèntí, dàn yào zhùyì xiūxi yǎnjing.", correct: true, reply: "对，我会注意的。" },
+          { hanzi: "卸载微信吧。", pinyin: "Xièzài Wēixìn ba.", correct: false },
+          { hanzi: "买一个新手机。", pinyin: "Mǎi yí ge xīn shǒujī.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "你平时在抖音上看什么内容？",
+        npcPinyin: "Nǐ píngshí zài Dǒuyīn shàng kàn shénme nèiróng?",
+        npcTranslation: "Что ты обычно смотришь в Douyin?",
+        options: [
+          { hanzi: "我喜欢看美食和旅游的短视频。", pinyin: "Wǒ xǐhuan kàn měishí hé lǚyóu de duǎn shìpín.", correct: true, reply: "我也是，那些视频很有意思。" },
+          { hanzi: "我从来不看抖音。", pinyin: "Wǒ cónglái bú kàn Dǒuyīn.", correct: false },
+          { hanzi: "抖音不能看视频。", pinyin: "Dǒuyīn bù néng kàn shìpín.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -1425,14 +1473,38 @@ const lesson5Tasks: Task[] = [
   {
     id: "l5-t7",
     type: "simulation",
-    prompt: "Teacher Li asks Karen about her presentation. Reply naturally.",
-    npcMessage: "下节课你要做课堂报告，谈翻译平台。你有什么具体计划吗？",
-    npcPinyin: "Xià jié kè nǐ yào zuò kètáng bàogào, tán fānyì píngtái. Nǐ yǒu shénme jùtǐ jìhuà ma?",
-    npcTranslation: "Next class you'll give a presentation about translation platforms. Do you have a concrete plan?",
-    options: [
-      { hanzi: "我想选一篇英语文章，在谷歌翻译和百度翻译上都翻译一次，再比较两个译文。", pinyin: "Wǒ xiǎng xuǎn yì piān Yīngyǔ wénzhāng, zài Gǔgē Fānyì hé Bǎidù Fānyì shàng dōu fānyì yí cì, zài bǐjiào liǎng ge yìwén.", correct: true, reply: "这个计划很好，注意准确性和可读性。" },
-      { hanzi: "我打算只用手机翻译应用，不用电脑。", pinyin: "Wǒ dǎsuàn zhǐ yòng shǒujī fānyì yìngyòng, bú yòng diànnǎo.", correct: false },
-      { hanzi: "我还没安装翻译软件呢。", pinyin: "Wǒ hái méi ānzhuāng fānyì ruǎnjiàn ne.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "下节课你要做课堂报告，谈翻译平台。你有什么具体计划吗？",
+        npcPinyin: "Xià jié kè nǐ yào zuò kètáng bàogào, tán fānyì píngtái. Nǐ yǒu shénme jùtǐ jìhuà ma?",
+        npcTranslation: "На следующем занятии у тебя доклад про переводческие платформы. Есть конкретный план?",
+        options: [
+          { hanzi: "我想选一篇英语文章，在谷歌翻译和百度翻译上都翻译一次，再比较两个译文。", pinyin: "Wǒ xiǎng xuǎn yì piān Yīngyǔ wénzhāng, zài Gǔgē Fānyì hé Bǎidù Fānyì shàng dōu fānyì yí cì, zài bǐjiào liǎng ge yìwén.", correct: true, reply: "这个计划很好，注意准确性和可读性。" },
+          { hanzi: "我打算只用手机翻译应用，不用电脑。", pinyin: "Wǒ dǎsuàn zhǐ yòng shǒujī fānyì yìngyòng, bú yòng diànnǎo.", correct: false },
+          { hanzi: "我还没安装翻译软件呢。", pinyin: "Wǒ hái méi ānzhuāng fānyì ruǎnjiàn ne.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "你觉得机器翻译可以代替人工翻译吗？",
+        npcPinyin: "Nǐ juéde jīqì fānyì kěyǐ dàitì réngōng fānyì ma?",
+        npcTranslation: "Как думаешь, может ли машинный перевод заменить ручной?",
+        options: [
+          { hanzi: "在文学翻译方面还不行，但日常翻译已经很方便了。", pinyin: "Zài wénxué fānyì fāngmiàn hái bù xíng, dàn rìcháng fānyì yǐjīng hěn fāngbiàn le.", correct: true, reply: "你说得对。" },
+          { hanzi: "可以，机器翻译完全准确。", pinyin: "Kěyǐ, jīqì fānyì wánquán zhǔnquè.", correct: false },
+          { hanzi: "不可以，机器翻译没用。", pinyin: "Bù kěyǐ, jīqì fānyì méi yòng.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我想学好中文，应该用什么翻译工具？",
+        npcPinyin: "Wǒ xiǎng xué hǎo Zhōngwén, yīnggāi yòng shénme fānyì gōngjù?",
+        npcTranslation: "Хочу хорошо выучить китайский, какой переводчик использовать?",
+        options: [
+          { hanzi: "可以试试百度翻译或者DeepL，但最好别完全依赖翻译软件。", pinyin: "Kěyǐ shì shi Bǎidù Fānyì huòzhě DeepL, dàn zuì hǎo bié wánquán yīlài fānyì ruǎnjiàn.", correct: true, reply: "明白了，谢谢建议！" },
+          { hanzi: "什么都不用，自己猜就行。", pinyin: "Shénme dōu bú yòng, zìjǐ cāi jiù xíng.", correct: false },
+          { hanzi: "翻译工具没用。", pinyin: "Fānyì gōngjù méi yòng.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -1681,14 +1753,38 @@ const lesson6Tasks: Task[] = [
   {
     id: "l6-t7",
     type: "simulation",
-    prompt: "Wang Gang asks Karen about her shopping habits. Reply naturally.",
-    npcMessage: "你选择购物平台时会考虑什么？",
-    npcPinyin: "Nǐ xuǎnzé gòuwù píngtái shí huì kǎolǜ shénme?",
-    npcTranslation: "What do you consider when choosing a shopping platform?",
-    options: [
-      { hanzi: "我会考虑平台和商家的信誉，还有商品种类和客服。", pinyin: "Wǒ huì kǎolǜ píngtái hé shāngjiā de xìnyù, hái yǒu shāngpǐn zhǒnglèi hé kèfú.", correct: true, reply: "对，选择可靠的购物平台很重要。" },
-      { hanzi: "我从来不在网上买东西。", pinyin: "Wǒ cónglái bú zài wǎngshàng mǎi dōngxi.", correct: false },
-      { hanzi: "我只看商品的颜色。", pinyin: "Wǒ zhǐ kàn shāngpǐn de yánsè.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "你选择购物平台时会考虑什么？",
+        npcPinyin: "Nǐ xuǎnzé gòuwù píngtái shí huì kǎolǜ shénme?",
+        npcTranslation: "Что ты учитываешь при выборе торговой платформы?",
+        options: [
+          { hanzi: "我会考虑平台和商家的信誉，还有商品种类和客服。", pinyin: "Wǒ huì kǎolǜ píngtái hé shāngjiā de xìnyù, hái yǒu shāngpǐn zhǒnglèi hé kèfú.", correct: true, reply: "对，选择可靠的购物平台很重要。" },
+          { hanzi: "我从来不在网上买东西。", pinyin: "Wǒ cónglái bú zài wǎngshàng mǎi dōngxi.", correct: false },
+          { hanzi: "我只看商品的颜色。", pinyin: "Wǒ zhǐ kàn shāngpǐn de yánsè.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我在淘宝买的东西不喜欢，怎么退货？",
+        npcPinyin: "Wǒ zài Táobǎo mǎi de dōngxi bù xǐhuan, zěnme tuìhuò?",
+        npcTranslation: "Купил на Taobao вещь, она не нравится — как вернуть?",
+        options: [
+          { hanzi: "在订单页面申请退货，按照客服的提示寄回去就行。", pinyin: "Zài dìngdān yèmiàn shēnqǐng tuìhuò, ànzhào kèfú de tíshì jì huíqù jiù xíng.", correct: true, reply: "好的，我去试试。" },
+          { hanzi: "不能退货，只能扔掉。", pinyin: "Bù néng tuìhuò, zhǐ néng rēng diào.", correct: false },
+          { hanzi: "再买一个就好了。", pinyin: "Zài mǎi yí ge jiù hǎo le.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "用支付宝付款安全吗？",
+        npcPinyin: "Yòng Zhīfùbǎo fùkuǎn ānquán ma?",
+        npcTranslation: "Безопасно ли платить через Alipay?",
+        options: [
+          { hanzi: "很安全，但要保管好密码，别告诉别人。", pinyin: "Hěn ānquán, dàn yào bǎoguǎn hǎo mìmǎ, bié gàosu biéren.", correct: true, reply: "明白了，我会注意的。" },
+          { hanzi: "完全不安全，别用。", pinyin: "Wánquán bù ānquán, bié yòng.", correct: false },
+          { hanzi: "支付宝不能付款。", pinyin: "Zhīfùbǎo bù néng fùkuǎn.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -1934,14 +2030,38 @@ const lesson7Tasks: Task[] = [
   {
     id: "l7-t7",
     type: "simulation",
-    prompt: "Karen asks Wang Gang for novel recommendations. Reply naturally.",
-    npcMessage: "我更喜欢看都市言情小说，尤其是女作家写的。",
-    npcPinyin: "Wǒ gèng xǐhuān kàn dūshì yánqíng xiǎoshuō, yóuqí shì nǚ zuòjiā xiě de.",
-    npcTranslation: "I prefer urban romance novels, especially by female authors.",
-    options: [
-      { hanzi: "那你可以去晋江文学城或者潇湘书院。", pinyin: "Nà nǐ kěyǐ qù Jìnjiāng Wénxué Chéng huòzhě Xiāoxiāng Shūyuàn.", correct: true, reply: "好的，谢谢你的推荐！" },
-      { hanzi: "你应该去起点中文网看科幻小说。", pinyin: "Nǐ yīnggāi qù Qǐdiǎn Zhōngwén Wǎng kàn kēhuàn xiǎoshuō.", correct: false },
-      { hanzi: "我不喜欢小说。", pinyin: "Wǒ bù xǐhuān xiǎoshuō.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我更喜欢看都市言情小说，尤其是女作家写的。",
+        npcPinyin: "Wǒ gèng xǐhuān kàn dūshì yánqíng xiǎoshuō, yóuqí shì nǚ zuòjiā xiě de.",
+        npcTranslation: "Я больше люблю городские романтические романы, особенно от женщин-авторов.",
+        options: [
+          { hanzi: "那你可以去晋江文学城或者潇湘书院。", pinyin: "Nà nǐ kěyǐ qù Jìnjiāng Wénxué Chéng huòzhě Xiāoxiāng Shūyuàn.", correct: true, reply: "好的，谢谢你的推荐！" },
+          { hanzi: "你应该去起点中文网看科幻小说。", pinyin: "Nǐ yīnggāi qù Qǐdiǎn Zhōngwén Wǎng kàn kēhuàn xiǎoshuō.", correct: false },
+          { hanzi: "我不喜欢小说。", pinyin: "Wǒ bù xǐhuān xiǎoshuō.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我想成为网络作家，应该怎么开始？",
+        npcPinyin: "Wǒ xiǎng chéngwéi wǎngluò zuòjiā, yīnggāi zěnme kāishǐ?",
+        npcTranslation: "Хочу стать сетевым писателем, с чего начать?",
+        options: [
+          { hanzi: "先在网站上注册账号，然后每天坚持写作，慢慢积累读者。", pinyin: "Xiān zài wǎngzhàn shàng zhùcè zhànghào, ránhòu měitiān jiānchí xiězuò, mànmàn jīlěi dúzhě.", correct: true, reply: "谢谢，我试试看。" },
+          { hanzi: "不用写，直接出书就行。", pinyin: "Bú yòng xiě, zhíjiē chū shū jiù xíng.", correct: false },
+          { hanzi: "网络作家不赚钱。", pinyin: "Wǎngluò zuòjiā bù zhuànqián.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "网络小说为什么这么受欢迎？",
+        npcPinyin: "Wǎngluò xiǎoshuō wèishénme zhème shòu huānyíng?",
+        npcTranslation: "Почему сетевые романы так популярны?",
+        options: [
+          { hanzi: "因为内容多样，更新快，读者还可以跟作者互动。", pinyin: "Yīnwèi nèiróng duōyàng, gēngxīn kuài, dúzhě hái kěyǐ gēn zuòzhě hùdòng.", correct: true, reply: "对，这就是网络文学的魅力。" },
+          { hanzi: "因为不要钱。", pinyin: "Yīnwèi bú yào qián.", correct: false },
+          { hanzi: "因为没有别的可看。", pinyin: "Yīnwèi méiyǒu bié de kě kàn.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -2182,14 +2302,38 @@ const lesson8Tasks: Task[] = [
   {
     id: "l8-t7",
     type: "simulation",
-    prompt: "David asks Karen for help with ChatGPT. Reply naturally.",
-    npcMessage: "凯伦，我怎么让ChatGPT帮我制作图片呢？",
-    npcPinyin: "Kǎilún, wǒ zěnme ràng ChatGPT bāng wǒ zhìzuò túpiàn ne?",
-    npcTranslation: "Karen, how do I get ChatGPT to make images for me?",
-    options: [
-      { hanzi: "你只要在提示语里描述你想要的画儿和风格，它就会按照你的提示语生成图片。", pinyin: "Nǐ zhǐyào zài tíshì yǔ lǐ miáoshù nǐ xiǎng yào de huàr hé fēnggé, tā jiù huì ànzhào nǐ de tíshì yǔ shēngchéng túpiàn.", correct: true, reply: "太棒了，我回去就试试。谢谢！" },
-      { hanzi: "你得先去注册一个账户，然后才能用。", pinyin: "Nǐ děi xiān qù zhùcè yí gè zhànghù, ránhòu cái néng yòng.", correct: false },
-      { hanzi: "ChatGPT不能制作图片。", pinyin: "ChatGPT bù néng zhìzuò túpiàn.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "凯伦，我怎么让ChatGPT帮我制作图片呢？",
+        npcPinyin: "Kǎilún, wǒ zěnme ràng ChatGPT bāng wǒ zhìzuò túpiàn ne?",
+        npcTranslation: "Карен, как заставить ChatGPT сделать мне картинки?",
+        options: [
+          { hanzi: "你只要在提示语里描述你想要的画儿和风格，它就会按照你的提示语生成图片。", pinyin: "Nǐ zhǐyào zài tíshì yǔ lǐ miáoshù nǐ xiǎng yào de huàr hé fēnggé, tā jiù huì ànzhào nǐ de tíshì yǔ shēngchéng túpiàn.", correct: true, reply: "太棒了，我回去就试试。谢谢！" },
+          { hanzi: "你得先去注册一个账户，然后才能用。", pinyin: "Nǐ děi xiān qù zhùcè yí gè zhànghù, ránhòu cái néng yòng.", correct: false },
+          { hanzi: "ChatGPT不能制作图片。", pinyin: "ChatGPT bù néng zhìzuò túpiàn.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "AI能不能完全代替老师？",
+        npcPinyin: "AI néng bù néng wánquán dàitì lǎoshī?",
+        npcTranslation: "Может ли ИИ полностью заменить учителей?",
+        options: [
+          { hanzi: "AI可以辅助教学，但老师的鼓励和情感交流是不可替代的。", pinyin: "AI kěyǐ fǔzhù jiàoxué, dàn lǎoshī de gǔlì hé qínggǎn jiāoliú shì bùkě tìdài de.", correct: true, reply: "你说得有道理。" },
+          { hanzi: "可以，老师都没用了。", pinyin: "Kěyǐ, lǎoshī dōu méi yòng le.", correct: false },
+          { hanzi: "AI什么都不会。", pinyin: "AI shénme dōu bú huì.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "用AI写作业算不算作弊？",
+        npcPinyin: "Yòng AI xiě zuòyè suàn bù suàn zuòbì?",
+        npcTranslation: "Использовать ИИ для домашки — это считается списыванием?",
+        options: [
+          { hanzi: "如果完全照抄就是作弊；可以用它启发思路，但还是要自己写。", pinyin: "Rúguǒ wánquán zhàochāo jiù shì zuòbì; kěyǐ yòng tā qǐfā sīlù, dàn háishi yào zìjǐ xiě.", correct: true, reply: "明白了，我会注意的。" },
+          { hanzi: "完全不算，AI写的就是我的。", pinyin: "Wánquán bú suàn, AI xiě de jiù shì wǒ de.", correct: false },
+          { hanzi: "用AI就一定不及格。", pinyin: "Yòng AI jiù yídìng bù jígé.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -2436,14 +2580,38 @@ const lesson9Tasks: Task[] = [
   {
     id: "l9-t7",
     type: "simulation",
-    prompt: "Karen wants to watch web dramas. Reply naturally as David.",
-    npcMessage: "我想看都市言情剧。哪儿有？要付费吗？",
-    npcPinyin: "Wǒ xiǎng kàn dūshì yánqíng jù. Nǎr yǒu? Yào fùfèi ma?",
-    npcTranslation: "I want to watch urban romance dramas. Where can I find them? Do I have to pay?",
-    options: [
-      { hanzi: "腾讯视频和爱奇艺都有。注册一个学生账户，一个月十来块钱就能看高清视频。", pinyin: "Téngxùn Shìpín hé Àiqíyì dōu yǒu. Zhùcè yí gè xuéshēng zhànghù, yí gè yuè shí lái kuài qián jiù néng kàn gāoqīng shìpín.", correct: true, reply: "哇，还真划算！" },
-      { hanzi: "你应该看武侠剧，剧情很吸引人。", pinyin: "Nǐ yīnggāi kàn wǔxiá jù, jùqíng hěn xīyǐn rén.", correct: false },
-      { hanzi: "网剧不好看，看电影吧。", pinyin: "Wǎng jù bù hǎokàn, kàn diànyǐng ba.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "我想看都市言情剧。哪儿有？要付费吗？",
+        npcPinyin: "Wǒ xiǎng kàn dūshì yánqíng jù. Nǎr yǒu? Yào fùfèi ma?",
+        npcTranslation: "Хочу смотреть городские романтические сериалы. Где их найти? Надо платить?",
+        options: [
+          { hanzi: "腾讯视频和爱奇艺都有。注册一个学生账户，一个月十来块钱就能看高清视频。", pinyin: "Téngxùn Shìpín hé Àiqíyì dōu yǒu. Zhùcè yí gè xuéshēng zhànghù, yí gè yuè shí lái kuài qián jiù néng kàn gāoqīng shìpín.", correct: true, reply: "哇，还真划算！" },
+          { hanzi: "你应该看武侠剧，剧情很吸引人。", pinyin: "Nǐ yīnggāi kàn wǔxiá jù, jùqíng hěn xīyǐn rén.", correct: false },
+          { hanzi: "网剧不好看，看电影吧。", pinyin: "Wǎng jù bù hǎokàn, kàn diànyǐng ba.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "短视频和长视频，你更喜欢哪种？",
+        npcPinyin: "Duǎn shìpín hé cháng shìpín, nǐ gèng xǐhuan nǎ zhǒng?",
+        npcTranslation: "Короткие или длинные видео — что тебе больше нравится?",
+        options: [
+          { hanzi: "我两种都看，短视频用来放松，长视频用来追剧。", pinyin: "Wǒ liǎng zhǒng dōu kàn, duǎn shìpín yòng lái fàngsōng, cháng shìpín yòng lái zhuī jù.", correct: true, reply: "我也是一样。" },
+          { hanzi: "我从来不看视频。", pinyin: "Wǒ cónglái bú kàn shìpín.", correct: false },
+          { hanzi: "视频都不好看。", pinyin: "Shìpín dōu bù hǎokàn.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我想做主播，需要什么设备？",
+        npcPinyin: "Wǒ xiǎng zuò zhǔbō, xūyào shénme shèbèi?",
+        npcTranslation: "Хочу стать стримером, какое оборудование нужно?",
+        options: [
+          { hanzi: "一个好的麦克风、稳定的网络和一个吸引人的主题就够了。", pinyin: "Yí gè hǎo de màikèfēng, wěndìng de wǎngluò hé yí gè xīyǐn rén de zhǔtí jiù gòu le.", correct: true, reply: "好的，我去准备。" },
+          { hanzi: "什么都不用，对着手机说就行。", pinyin: "Shénme dōu bú yòng, duìzhe shǒujī shuō jiù xíng.", correct: false },
+          { hanzi: "做主播不可能。", pinyin: "Zuò zhǔbō bù kěnéng.", correct: false },
+        ],
+      },
     ],
   },
   {
@@ -2679,14 +2847,38 @@ const lesson10Tasks: Task[] = [
   {
     id: "l10-t7",
     type: "simulation",
-    prompt: "Karen asks about the bad effects of gaming. Reply naturally as teacher Li.",
-    npcMessage: "那网游对青少年不好的影响是什么呢？",
-    npcPinyin: "Nà wǎng yóu duì qīngshàonián bù hǎo de yǐngxiǎng shì shénme ne?",
-    npcTranslation: "So what are the bad effects of online games on young people?",
-    options: [
-      { hanzi: "网游容易让青少年上瘾，影响他们的学习和生活。而且，有些游戏内容有暴力，对成长没有好处。", pinyin: "Wǎng yóu róngyi ràng qīngshàonián shàngyǐn, yǐngxiǎng tāmen de xuéxí hé shēnghuó. Érqiě, yǒu xiē yóuxì nèiróng yǒu bàolì, duì chéngzhǎng méiyǒu hǎochù.", correct: true, reply: "原来如此，谢谢老师！" },
-      { hanzi: "网游能提高反应能力和团队合作意识。", pinyin: "Wǎng yóu néng tígāo fǎnyìng nénglì hé tuánduì hézuò yìshi.", correct: false },
-      { hanzi: "中国是最大的网络游戏市场之一。", pinyin: "Zhōngguó shì zuì dà de wǎngluò yóuxì shìchǎng zhī yī.", correct: false },
+    prompt: "Ответь естественно в чате",
+    rounds: [
+      {
+        npcMessage: "那网游对青少年不好的影响是什么呢？",
+        npcPinyin: "Nà wǎng yóu duì qīngshàonián bù hǎo de yǐngxiǎng shì shénme ne?",
+        npcTranslation: "Какое плохое влияние онлайн-игры оказывают на подростков?",
+        options: [
+          { hanzi: "网游容易让青少年上瘾，影响他们的学习和生活。而且，有些游戏内容有暴力，对成长没有好处。", pinyin: "Wǎng yóu róngyi ràng qīngshàonián shàngyǐn, yǐngxiǎng tāmen de xuéxí hé shēnghuó. Érqiě, yǒu xiē yóuxì nèiróng yǒu bàolì, duì chéngzhǎng méiyǒu hǎochù.", correct: true, reply: "原来如此，谢谢老师！" },
+          { hanzi: "网游能提高反应能力和团队合作意识。", pinyin: "Wǎng yóu néng tígāo fǎnyìng nénglì hé tuánduì hézuò yìshi.", correct: false },
+          { hanzi: "中国是最大的网络游戏市场之一。", pinyin: "Zhōngguó shì zuì dà de wǎngluò yóuxì shìchǎng zhī yī.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "你最喜欢什么类型的网游？",
+        npcPinyin: "Nǐ zuì xǐhuan shénme lèixíng de wǎng yóu?",
+        npcTranslation: "Какие типы онлайн-игр тебе больше всего нравятся?",
+        options: [
+          { hanzi: "我喜欢角色扮演类游戏，可以体验不同的虚拟世界。", pinyin: "Wǒ xǐhuan juésè bànyǎn lèi yóuxì, kěyǐ tǐyàn bùtóng de xūnǐ shìjiè.", correct: true, reply: "听起来很有意思。" },
+          { hanzi: "我从来不玩游戏。", pinyin: "Wǒ cónglái bù wán yóuxì.", correct: false },
+          { hanzi: "游戏都一样。", pinyin: "Yóuxì dōu yíyàng.", correct: false },
+        ],
+      },
+      {
+        npcMessage: "我朋友每天玩游戏到很晚，怎么办？",
+        npcPinyin: "Wǒ péngyou měi tiān wán yóuxì dào hěn wǎn, zěnme bàn?",
+        npcTranslation: "Мой друг каждый день играет до поздней ночи, что делать?",
+        options: [
+          { hanzi: "你可以跟他聊聊，劝他控制时间，注意身体健康。", pinyin: "Nǐ kěyǐ gēn tā liáo liáo, quàn tā kòngzhì shíjiān, zhùyì shēntǐ jiànkāng.", correct: true, reply: "好的，我去试试。" },
+          { hanzi: "让他继续玩，没关系。", pinyin: "Ràng tā jìxù wán, méi guānxi.", correct: false },
+          { hanzi: "把他的电脑砸了。", pinyin: "Bǎ tā de diànnǎo zá le.", correct: false },
+        ],
+      },
     ],
   },
   {
