@@ -257,7 +257,7 @@ const lesson1Tasks: Task[] = [
   {
     id: "l1-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "shū rù fǎ",
     answer: "输入法",
@@ -446,7 +446,7 @@ const lesson2Tasks: Task[] = [
   {
     id: "l2-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "diàn zǐ yóu jiàn",
     answer: "电子邮件",
@@ -677,7 +677,7 @@ const lesson3Tasks: Task[] = [
   {
     id: "l3-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "zhì néng shǒu jī",
     answer: "智能手机",
@@ -930,7 +930,7 @@ const lesson4Tasks: Task[] = [
   {
     id: "l4-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "shè jiāo méi tǐ",
     answer: "社交媒体",
@@ -1178,7 +1178,7 @@ const lesson5Tasks: Task[] = [
   {
     id: "l5-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "jī qì fān yì",
     answer: "机器翻译",
@@ -1411,7 +1411,7 @@ const lesson6Tasks: Task[] = [
   {
     id: "l6-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "diàn zǐ shāng wù",
     answer: "电子商务",
@@ -1642,7 +1642,7 @@ const lesson7Tasks: Task[] = [
   {
     id: "l7-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "wǎng luò wén xué",
     answer: "网络文学",
@@ -1868,7 +1868,7 @@ const lesson8Tasks: Task[] = [
   {
     id: "l8-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "rén gōng zhì néng",
     answer: "人工智能",
@@ -2100,7 +2100,7 @@ const lesson9Tasks: Task[] = [
   {
     id: "l9-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "wǎng luò shì pín",
     answer: "网络视频",
@@ -2321,7 +2321,7 @@ const lesson10Tasks: Task[] = [
   {
     id: "l10-t1",
     type: "speedrun",
-    mode: "audio-to-hanzi",
+    mode: "pinyin-to-hanzi",
     prompt: "Listen and type the word you hear",
     pinyin: "wǎng luò yóu xì",
     answer: "网络游戏",
