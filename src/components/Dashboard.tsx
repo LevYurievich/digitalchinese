@@ -100,8 +100,8 @@ export function Dashboard() {
         </div>
 
         <p className="mt-12 font-mono text-xs text-muted-foreground">
-          Lessons 2–10 unlock as content is added. Tap{" "}
-          <span className="text-primary">Lesson 01 · 电脑打中文</span> to begin.
+          Lessons 3–10 unlock as content is added. Each lesson:{" "}
+          <span className="text-primary">Listen → Vocab → Practice → Recap</span>.
         </p>
       </div>
     </main>
