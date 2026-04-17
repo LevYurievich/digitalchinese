@@ -543,6 +543,237 @@ const lesson2Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// LESSON 3 — 智能手机 / Smartphones
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson3Dialogues: Dialogue[] = [
+  {
+    id: "l3-text1",
+    title: "课文一",
+    titleEn: "Text 1 — A short history of smartphones",
+    audio: "/audio/lesson_3_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "智能手机的历史始于上世纪九十年代，那时的智能手机只能打电话和发短信。",
+        pinyin: "Zhìnéng shǒujī de lìshǐ shǐ yú shàng shìjì jiǔshí niándài, nà shí de zhìnéng shǒujī zhǐ néng dǎ diànhuà hé fā duǎnxìn.",
+        translation: "The history of smartphones began in the 1990s, when they could only make calls and send texts.",
+      },
+      {
+        hanzi: "到了二十一世纪初，随着科技的快速发展，智能手机拥有了更多、更强大的功能，如触摸屏、移动上网、高清摄像等。",
+        pinyin: "Dào le èrshíyī shìjì chū, suízhe kējì de kuàisù fāzhǎn, zhìnéng shǒujī yōngyǒu le gèng duō, gèng qiángdà de gōngnéng, rú chùmō píng, yídòng shàng wǎng, gāoqīng shèxiàng děng.",
+        translation: "By the early 21st century, with the rapid advance of technology, smartphones gained more powerful features — touch screens, mobile internet, HD cameras, and so on.",
+      },
+      {
+        hanzi: "二零零七年苹果公司生产出了第一代苹果手机，使智能手机的发展进入了一个新时代。",
+        pinyin: "Èr líng líng qī nián Píngguǒ Gōngsī shēngchǎn chū le dì yī dài Píngguǒ shǒujī, shǐ zhìnéng shǒujī de fāzhǎn jìnrù le yí gè xīn shídài.",
+        translation: "In 2007 Apple produced the first iPhone, ushering smartphones into a new era.",
+      },
+      {
+        hanzi: "现在市场上的智能手机主要有两种：一种是苹果手机，使用iOS操作系统；另一种使用谷歌公司开发的安卓系统，如三星、华为和小米等品牌。",
+        pinyin: "Xiànzài shìchǎng shàng de zhìnéng shǒujī zhǔyào yǒu liǎng zhǒng: yì zhǒng shì Píngguǒ shǒujī, shǐyòng iOS cāozuò xìtǒng; lìng yì zhǒng shǐyòng Gǔgē Gōngsī kāifā de Ānzhuó xìtǒng, rú Sānxīng, Huáwéi hé Xiǎomǐ děng pǐnpái.",
+        translation: "Today's market has two main kinds: iPhones running iOS, and phones from brands like Samsung, Huawei and Xiaomi running Google's Android.",
+      },
+      {
+        hanzi: "苹果手机以功能强大、系统稳定而著称，而安卓手机则拥有灵活多样的应用。",
+        pinyin: "Píngguǒ shǒujī yǐ gōngnéng qiángdà, xìtǒng wěndìng ér zhùchēng, ér Ānzhuó shǒujī zé yōngyǒu línghuó duōyàng de yìngyòng.",
+        translation: "iPhones are known for powerful features and a stable system, while Android phones offer flexible and diverse apps.",
+      },
+      {
+        hanzi: "智能手机已经走进了我们生活的每一个角落。除了通讯以外，它还可用于社交、学习、购物、娱乐、新闻等各个方面。",
+        pinyin: "Zhìnéng shǒujī yǐjīng zǒu jìn le wǒmen shēnghuó de měi yí gè jiǎoluò. Chúle tōngxùn yǐwài, tā hái kě yòng yú shèjiāo, xuéxí, gòuwù, yúlè, xīnwén děng gège fāngmiàn.",
+        translation: "Smartphones have entered every corner of our lives. Beyond communication, they're used for socializing, study, shopping, entertainment, news and more.",
+      },
+      {
+        hanzi: "无论是在家庭、学校还是工作场所，智能手机都发挥着很重要的作用，不仅提高了我们的工作效率，也让我们的生活更方便。",
+        pinyin: "Wúlùn shì zài jiātíng, xuéxiào háishì gōngzuò chǎngsuǒ, zhìnéng shǒujī dōu fāhuī zhe hěn zhòngyào de zuòyòng, bùjǐn tígāo le wǒmen de gōngzuò xiàolǜ, yě ràng wǒmen de shēnghuó gèng fāngbiàn.",
+        translation: "Whether at home, in school or at work, smartphones play a vital role — boosting productivity and making life more convenient.",
+      },
+    ],
+  },
+  {
+    id: "l3-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen picks a mobile carrier",
+    audio: "/audio/lesson_3_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "王钢，我现在的手机信号老是不稳定，想换个运营商。", pinyin: "Wáng Gāng, wǒ xiànzài de shǒujī xìnhào lǎoshì bù wěndìng, xiǎng huàn ge yùnyíng shāng.", translation: "Wang Gang, my phone signal is always unstable — I want to switch carrier." },
+      { speaker: "王钢", hanzi: "学校附近有三家电话运营商：中国移动、中国联通和中国电信，都不错，你可以选一家。", pinyin: "Xuéxiào fùjìn yǒu sān jiā diànhuà yùnyíng shāng: Zhōngguó Yídòng, Zhōngguó Liántōng hé Zhōngguó Diànxìn, dōu bú cuò, nǐ kěyǐ xuǎn yì jiā.", translation: "There are three carriers near campus: China Mobile, China Unicom and China Telecom — all decent, pick one." },
+      { speaker: "凯伦", hanzi: "你觉得哪家最好？", pinyin: "Nǐ juéde nǎ jiā zuì hǎo?", translation: "Which one do you think is best?" },
+      { speaker: "王钢", hanzi: "对我们学校来说，联通的信号最好，而且联通对学生有优惠价。", pinyin: "Duì wǒmen xuéxiào lái shuō, Liántōng de xìnhào zuì hǎo, érqiě Liántōng duì xuéshēng yǒu yōuhuì jià.", translation: "For our campus, Unicom has the best signal, plus they have student discounts." },
+      { speaker: "凯伦", hanzi: "我每天都要上网学习，还要跟在美国的家人视频通话，所以我需要很多流量。", pinyin: "Wǒ měi tiān dōu yào shàng wǎng xuéxí, hái yào gēn zài Měiguó de jiārén shìpín tōnghuà, suǒyǐ wǒ xūyào hěn duō liúliàng.", translation: "I study online every day and video-call my family in the US, so I need lots of data." },
+      { speaker: "王钢", hanzi: "没问题，联通有各种套餐。有的套餐每个月提供很多流量，还有一些是不限制流量的。", pinyin: "Méi wèntí, Liántōng yǒu gè zhǒng tàocān. Yǒu de tàocān měi gè yuè tígōng hěn duō liúliàng, hái yǒu yì xiē shì bù xiànzhì liúliàng de.", translation: "No problem, Unicom has all sorts of plans — some give plenty of monthly data, some are unlimited." },
+      { speaker: "凯伦", hanzi: "那太好了！这样我就不用担心流量不够用了。", pinyin: "Nà tài hǎo le! Zhèyàng wǒ jiù bú yòng dānxīn liúliàng bú gòu yòng le.", translation: "Great! Then I won't worry about running out of data." },
+      { speaker: "王钢", hanzi: "你带上护照和学生证，到学校旁边的联通营业厅就可以开户了。", pinyin: "Nǐ dài shàng hùzhào hé xuésheng zhèng, dào xuéxiào pángbiān de Liántōng yíngyè tīng jiù kěyǐ kāi hù le.", translation: "Bring your passport and student ID, go to the Unicom office next to campus, and you can open an account." },
+    ],
+  },
+];
+
+const lesson3Vocab: VocabSet[] = [
+  {
+    id: "l3-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_3_text_1_vocab.mp3",
+    items: [
+      { hanzi: "智能手机", pinyin: "zhìnéng shǒujī", pos: "NP", meaning: "smartphone" },
+      { hanzi: "始于", pinyin: "shǐ yú", pos: "VP", meaning: "to start from; date from" },
+      { hanzi: "年代", pinyin: "niándài", pos: "N", meaning: "decade" },
+      { hanzi: "科技", pinyin: "kējì", pos: "N", meaning: "science and technology" },
+      { hanzi: "快速", pinyin: "kuàisù", pos: "A", meaning: "fast; rapid" },
+      { hanzi: "拥有", pinyin: "yōngyǒu", pos: "V", meaning: "to possess; to own" },
+      { hanzi: "强大", pinyin: "qiángdà", pos: "A", meaning: "strong; powerful" },
+      { hanzi: "功能", pinyin: "gōngnéng", pos: "N", meaning: "function" },
+      { hanzi: "触摸屏", pinyin: "chùmō píng", pos: "NP", meaning: "touch screen" },
+      { hanzi: "高清摄像", pinyin: "gāoqīng shèxiàng", pos: "NP", meaning: "HD camera" },
+      { hanzi: "生产", pinyin: "shēngchǎn", pos: "N/V", meaning: "production; to produce" },
+      { hanzi: "代", pinyin: "dài", pos: "N", meaning: "generation" },
+      { hanzi: "进入", pinyin: "jìnrù", pos: "V", meaning: "to enter" },
+      { hanzi: "市场", pinyin: "shìchǎng", pos: "N", meaning: "market" },
+      { hanzi: "开发", pinyin: "kāifā", pos: "V", meaning: "to develop" },
+      { hanzi: "操作", pinyin: "cāozuò", pos: "N/V", meaning: "operation; to operate" },
+      { hanzi: "知名", pinyin: "zhīmíng", pos: "A", meaning: "well known; famous" },
+      { hanzi: "品牌", pinyin: "pǐnpái", pos: "N", meaning: "brand" },
+      { hanzi: "特点", pinyin: "tèdiǎn", pos: "N", meaning: "feature; characteristic" },
+      { hanzi: "稳定", pinyin: "wěndìng", pos: "A", meaning: "stable" },
+      { hanzi: "著称", pinyin: "zhùchēng", pos: "A", meaning: "well known; famous (for)" },
+      { hanzi: "灵活多样", pinyin: "línghuó duōyàng", pos: "AP", meaning: "flexible and diverse" },
+      { hanzi: "应用", pinyin: "yìngyòng", pos: "N/V", meaning: "app; to apply" },
+      { hanzi: "增加", pinyin: "zēngjiā", pos: "V", meaning: "to increase; to add" },
+      { hanzi: "角落", pinyin: "jiǎoluò", pos: "N", meaning: "corner" },
+      { hanzi: "通讯", pinyin: "tōngxùn", pos: "N", meaning: "communication" },
+      { hanzi: "社交", pinyin: "shèjiāo", pos: "A/N", meaning: "social; social contact" },
+      { hanzi: "娱乐", pinyin: "yúlè", pos: "N", meaning: "entertainment" },
+      { hanzi: "新闻", pinyin: "xīnwén", pos: "N", meaning: "news" },
+      { hanzi: "改变", pinyin: "gǎibiàn", pos: "N/V", meaning: "change; to change" },
+      { hanzi: "场所", pinyin: "chángsuǒ", pos: "N", meaning: "place; site" },
+      { hanzi: "效率", pinyin: "xiàolǜ", pos: "N", meaning: "efficiency" },
+    ],
+  },
+  {
+    id: "l3-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_3_text_2_vocab.mp3",
+    items: [
+      { hanzi: "信号", pinyin: "xìnhào", pos: "N", meaning: "signal" },
+      { hanzi: "运营商", pinyin: "yùnyíng shāng", pos: "NP", meaning: "service provider; carrier" },
+      { hanzi: "优惠价", pinyin: "yōuhuì jià", pos: "NP", meaning: "discount price" },
+      { hanzi: "视频", pinyin: "shìpín", pos: "N", meaning: "video" },
+      { hanzi: "通话", pinyin: "tōnghuà", pos: "V", meaning: "to call; to communicate by phone" },
+      { hanzi: "流量", pinyin: "liúliàng", pos: "N", meaning: "mobile data" },
+      { hanzi: "套餐", pinyin: "tàocān", pos: "N", meaning: "mobile plan; package" },
+      { hanzi: "开户", pinyin: "kāi hù", pos: "VO", meaning: "to open an account" },
+      { hanzi: "营业厅", pinyin: "yíngyè tīng", pos: "N", meaning: "service hall; business office" },
+      { hanzi: "护照", pinyin: "hùzhào", pos: "N", meaning: "passport" },
+      { hanzi: "学生证", pinyin: "xuésheng zhèng", pos: "N", meaning: "student ID" },
+      { hanzi: "中国移动", pinyin: "Zhōngguó Yídòng", pos: "PN", meaning: "China Mobile" },
+      { hanzi: "中国联通", pinyin: "Zhōngguó Liántōng", pos: "PN", meaning: "China Unicom" },
+      { hanzi: "中国电信", pinyin: "Zhōngguó Diànxìn", pos: "PN", meaning: "China Telecom" },
+    ],
+  },
+];
+
+const lesson3Tasks: Task[] = [
+  {
+    id: "l3-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "zhì néng shǒu jī",
+    answer: "智能手机",
+    translation: "smartphone",
+    audio: "/audio/lesson_3_text_1_vocab.mp3",
+    hint: "zhì néng shǒu jī — pocket computer + phone",
+  },
+  {
+    id: "l3-t2",
+    type: "battle",
+    prompt: "Pick the correct word for the gap",
+    sentenceBefore: "苹果手机以功能强大、系统稳定",
+    sentenceAfter: "著称。",
+    options: [
+      { hanzi: "而", pinyin: "ér", meaning: "(connector: for / and)" },
+      { hanzi: "和", pinyin: "hé", meaning: "and" },
+      { hanzi: "也", pinyin: "yě", meaning: "also" },
+    ],
+    correctIndex: 0,
+    translation: "iPhones are well known for their powerful features and stable system.",
+    hint: "Pattern: 以 X 而 著称 — 'famous for X'.",
+  },
+  {
+    id: "l3-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'Our company developed a new operating system.'",
+    blocks: ["开发出", "了", "我们公司", "一种", "新的", "操作系统"],
+    answer: ["我们公司", "开发出", "了", "一种", "新的", "操作系统"],
+    pinyin: "Wǒmen gōngsī kāifā chū le yì zhǒng xīn de cāozuò xìtǒng.",
+    translation: "Our company has developed a new operating system.",
+  },
+  {
+    id: "l3-t4",
+    type: "matching",
+    prompt: "Match each carrier / brand to its Chinese name",
+    pairs: [
+      { left: "📱", leftLabel: "China Mobile", right: "中国移动" },
+      { left: "📶", leftLabel: "China Unicom", right: "中国联通" },
+      { left: "☎️", leftLabel: "China Telecom", right: "中国电信" },
+      { left: "🍎", leftLabel: "Apple Inc.", right: "苹果公司" },
+    ],
+  },
+  {
+    id: "l3-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 信号",
+    word: "信号",
+    translation: "signal",
+    syllables: [
+      { base: "xin", correctTone: 4 },
+      { base: "hao", correctTone: 4 },
+    ],
+  },
+  {
+    id: "l3-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'Smartphones have entered every corner of our lives.'",
+    brokenSentence: ["走进了", "每一个角落", "智能手机", "我们生活的"],
+    correctOrder: [2, 0, 3, 1],
+    translation: "Smartphones have entered every corner of our lives.",
+    hint: "Subject — verb — possessive — object.",
+  },
+  {
+    id: "l3-t7",
+    type: "simulation",
+    prompt: "Karen asks for advice. Reply naturally.",
+    npcMessage: "我每天都要跟家人视频通话，需要很多流量。我应该选什么样的套餐？",
+    npcPinyin: "Wǒ měi tiān dōu yào gēn jiārén shìpín tōnghuà, xūyào hěn duō liúliàng. Wǒ yīnggāi xuǎn shénme yàng de tàocān?",
+    npcTranslation: "I video-call my family every day and need lots of data. What kind of plan should I pick?",
+    options: [
+      { hanzi: "选一个不限制流量的套餐吧。", pinyin: "Xuǎn yí gè bú xiànzhì liúliàng de tàocān ba.", correct: true, reply: "好主意，谢谢！" },
+      { hanzi: "买一个新手机就行。", pinyin: "Mǎi yí gè xīn shǒujī jiù xíng.", correct: false },
+      { hanzi: "别用智能手机了。", pinyin: "Bié yòng zhìnéng shǒujī le.", correct: false },
+    ],
+  },
+  {
+    id: "l3-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences using each item below. Reuse vocabulary from earlier lessons.",
+    required: ["智能手机", "应用", "V + 出 (e.g. 开发出, 生产出)"],
+    minSentences: 3,
+    retroWords: ["输入法", "下载", "电子邮件", "联系", "据我所知"],
+  },
+];
+
+const lesson3Recap: Recap = {
+  takeaways: [
+    "智能手机始于上世纪九十年代; 2007 — 第一代 iPhone.",
+    "iOS = 苹果; 安卓 = 三星 / 华为 / 小米.",
+    "Pattern: 以 X 而 著称 — 'famous for X'. 而 … 则 — contrasts two clauses.",
+    "Carriers: 中国移动 / 中国联通 / 中国电信. 开户 needs 护照 + 学生证.",
+  ],
+  keyWords: ["智能手机", "操作系统", "应用", "套餐", "流量", "信号", "运营商"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
@@ -567,7 +798,17 @@ export const lessons: Lesson[] = [
     tasks: lesson2Tasks,
     recap: lesson2Recap,
   },
-  { id: 3, title: "智能手机", titleEn: "Smartphones", theme: "Mobile life", status: "locked" },
+  {
+    id: 3,
+    title: "智能手机",
+    titleEn: "Smartphones",
+    theme: "Mobile life",
+    status: "available",
+    dialogues: lesson3Dialogues,
+    vocabulary: lesson3Vocab,
+    tasks: lesson3Tasks,
+    recap: lesson3Recap,
+  },
   { id: 4, title: "社交媒体", titleEn: "Social Media", theme: "Networks & feeds", status: "locked" },
   { id: 5, title: "机器翻译", titleEn: "Machine Translation", theme: "MT & AI", status: "locked" },
   { id: 6, title: "电子商务", titleEn: "E-Commerce", theme: "Online shopping", status: "locked" },
