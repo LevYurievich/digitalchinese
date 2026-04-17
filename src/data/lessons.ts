@@ -44,12 +44,21 @@ export interface BattleTask extends BaseTask {
   translation: string;
 }
 
-export interface ConstructorTask extends BaseTask {
-  type: "constructor";
+export interface ConstructorRound {
   blocks: string[];
   answer: string[];
-  pinyin: string;
-  translation: string;
+  translationRu: string;
+}
+
+export interface ConstructorTask extends BaseTask {
+  type: "constructor";
+  // New: multiple rounds (5 sentences from lesson text). Russian-only hint.
+  rounds?: ConstructorRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  blocks?: string[];
+  answer?: string[];
+  pinyin?: string;
+  translation?: string;
 }
 
 export interface MatchingTask extends BaseTask {
@@ -71,12 +80,21 @@ export interface IntuitionTask extends BaseTask {
   translation: string;
 }
 
-export interface SimulationTask extends BaseTask {
-  type: "simulation";
+export interface SimulationRound {
   npcMessage: string;
   npcPinyin: string;
   npcTranslation: string;
   options: { hanzi: string; pinyin: string; correct: boolean; reply?: string }[];
+}
+
+export interface SimulationTask extends BaseTask {
+  type: "simulation";
+  rounds?: SimulationRound[];
+  // Legacy single-round fields.
+  npcMessage?: string;
+  npcPinyin?: string;
+  npcTranslation?: string;
+  options?: { hanzi: string; pinyin: string; correct: boolean; reply?: string }[];
 }
 
 export interface SynthesisTask extends BaseTask {
