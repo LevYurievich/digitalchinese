@@ -22,9 +22,9 @@ export function Dashboard() {
               数字化语境中学中文
             </h1>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-              An interactive textbook for the digital age.{" "}
-              <span className="font-mono text-primary">10 lessons</span> · 8-task adaptive engine ·
-              context-driven learning.
+              Интерактивный учебник для цифровой эпохи.{" "}
+              <span className="font-mono text-primary">10 уроков</span> · адаптивный движок из 8 заданий ·
+              обучение через контекст.
             </p>
           </div>
           <div className="hidden text-right sm:block">
@@ -100,7 +100,7 @@ export function Dashboard() {
         </div>
 
         <p className="mt-12 font-mono text-xs text-muted-foreground">
-          Lessons 3–10 unlock as content is added. Each lesson:{" "}
+          Каждый урок:{" "}
           <span className="text-primary">Listen → Vocab → Practice → Recap</span>.
         </p>
       </div>
