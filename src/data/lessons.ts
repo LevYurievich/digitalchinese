@@ -774,6 +774,261 @@ const lesson3Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// LESSON 4 — 社交媒体 / Social Media
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson4Dialogues: Dialogue[] = [
+  {
+    id: "l4-text1",
+    title: "课文一",
+    titleEn: "Text 1 — A tour of Chinese social media",
+    audio: "/audio/lesson_4_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "在今天的中国，很难想象有人从未接触过社交媒体。从看新闻、联系亲友，到购物、娱乐，人们越来越离不开社交媒体了。",
+        pinyin: "Zài jīntiān de Zhōngguó, hěn nán xiǎngxiàng yǒu rén cóng wèi jiēchù guò shèjiāo méitǐ. Cóng kàn xīnwén, liánxì qīnyǒu, dào gòuwù, yúlè, rénmen yuè lái yuè lí bù kāi shèjiāo méitǐ le.",
+        translation: "In today's China it is hard to imagine anyone who has never touched social media. From reading news and contacting friends and family, to shopping and entertainment, people rely on it more and more.",
+      },
+      {
+        hanzi: "中国的社交媒体形式多样，功能丰富。微信和微博是两大主流社交平台。",
+        pinyin: "Zhōngguó de shèjiāo méitǐ xíngshì duōyàng, gōngnéng fēngfù. Wēixìn hé Wēibó shì liǎng dà zhǔliú shèjiāo píngtái.",
+        translation: "China's social media comes in many forms with rich features. WeChat and Weibo are the two mainstream platforms.",
+      },
+      {
+        hanzi: "微信集社交、通讯、支付等功能于一体，是几乎每个中国人都必不可少的社交工具。",
+        pinyin: "Wēixìn jí shèjiāo, tōngxùn, zhīfù děng gōngnéng yú yìtǐ, shì jīhū měi ge Zhōngguó rén dōu bì bù kě shǎo de shèjiāo gōngjù.",
+        translation: "WeChat integrates social, messaging and payment features into one, and is an essential tool for almost every Chinese person.",
+      },
+      {
+        hanzi: "微博很像美国的社交平台“X”，用户可以在上面发布文字、图片、视频等多媒体内容，也可以跟其他用户互动和交流。",
+        pinyin: "Wēibó hěn xiàng Měiguó de shèjiāo píngtái “X”, yònghù kěyǐ zài shàngmian fābù wénzì, túpiàn, shìpín děng duōméitǐ nèiróng, yě kěyǐ gēn qítā yònghù hùdòng hé jiāoliú.",
+        translation: "Weibo is much like America's “X”: users can post text, images and video, and interact with other users.",
+      },
+      {
+        hanzi: "微博也是许多明星和网红集聚的地方。",
+        pinyin: "Wēibó yě shì xǔduō míngxīng hé wǎnghóng jíjù de dìfang.",
+        translation: "Weibo is also where many celebrities and influencers gather.",
+      },
+      {
+        hanzi: "对于喜欢短视频的人来说，抖音和快手是他们的天堂。",
+        pinyin: "Duìyú xǐhuan duǎn shìpín de rén lái shuō, Dǒuyīn hé Kuàishǒu shì tāmen de tiāntáng.",
+        translation: "For people who love short videos, Douyin and Kuaishou are paradise.",
+      },
+      {
+        hanzi: "小红书也很受年轻女性的欢迎，这是一个分享购物心得、美妆秘诀、旅行经验的社区。",
+        pinyin: "Xiǎohóngshū yě hěn shòu niánqīng nǚxìng de huānyíng, zhè shì yí gè fēnxiǎng gòuwù xīndé, měi zhuāng mìjué, lǚxíng jīngyàn de shèqū.",
+        translation: "Xiaohongshu is very popular with young women — a community for sharing shopping tips, beauty secrets, and travel experiences.",
+      },
+      {
+        hanzi: "还有一个不得不说的平台叫知乎，是一个分享知识的地方。不管你有什么问题，都可以在这里找到答案。",
+        pinyin: "Hái yǒu yí gè bùdébù shuō de píngtái jiào Zhīhū, shì yí gè fēnxiǎng zhīshi de dìfang. Bùguǎn nǐ yǒu shénme wèntí, dōu kěyǐ zài zhè lǐ zhǎodào dá’àn.",
+        translation: "There's also a must-mention platform called Zhihu, a place for sharing knowledge. Whatever question you have, you can find an answer here.",
+      },
+      {
+        hanzi: "它们改变了人们的生活方式，也为中国的社会和文化带来了新的活力。",
+        pinyin: "Tāmen gǎibiàn le rénmen de shēnghuó fāngshì, yě wèi Zhōngguó de shèhuì hé wénhuà dài lái le xīn de huólì.",
+        translation: "They have changed people's lifestyles and brought new vitality to Chinese society and culture.",
+      },
+    ],
+  },
+  {
+    id: "l4-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen sets up a WeChat group",
+    audio: "/audio/lesson_4_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "王钢，我有个想法，我想建一个我们班同学的微信群，这样大家交流起来会更方便。你能帮帮我吗？", pinyin: "Wáng Gāng, wǒ yǒu ge xiǎngfǎ, wǒ xiǎng jiàn yí ge wǒmen bān tóngxué de Wēixìn qún, zhèyàng dàjiā jiāoliú qǐlái huì gèng fāngbiàn. Nǐ néng bāngbang wǒ ma?", translation: "Wang Gang, I have an idea — I want to start a WeChat group for our class so it's easier for everyone to chat. Can you help me?" },
+      { speaker: "王钢", hanzi: "好啊！你得先在手机上安装微信应用。", pinyin: "Hǎo a! Nǐ děi xiān zài shǒujī shàng ānzhuāng Wēixìn yìngyòng.", translation: "Sure! First you need to install the WeChat app on your phone." },
+      { speaker: "凯伦", hanzi: "微信我已经安装了，而且也注册过了。", pinyin: "Wēixìn wǒ yǐjīng ānzhuāng le, érqiě yě zhùcè guò le.", translation: "I've already installed WeChat and registered." },
+      { speaker: "王钢", hanzi: "那你打开微信，点击右上角的加号，选择“发起群聊”，然后从通讯录里选择你要邀请的同学，点击“完成”就好了。", pinyin: "Nà nǐ dǎkāi Wēixìn, diǎnjī yòu shàng jiǎo de jiāhào, xuǎnzé “fāqǐ qún liáo”, ránhòu cóng tōngxùn lù lǐ xuǎnzé nǐ yào yāoqǐng de tóngxué, diǎnjī “wánchéng” jiù hǎo le.", translation: "Then open WeChat, tap the plus sign in the top-right, choose “Start group chat,” pick the classmates from your contacts, and tap “Done.”" },
+      { speaker: "凯伦", hanzi: "我还想给这个群起个既好听又好记的名字，要怎么做呢？", pinyin: "Wǒ hái xiǎng gěi zhè ge qún qǐ ge jì hǎotīng yòu hǎo jì de míngzi, yào zěnme zuò ne?", translation: "I also want to give the group a name that sounds nice and is easy to remember — how do I do that?" },
+      { speaker: "王钢", hanzi: "很简单，去群聊设置里就能改名。", pinyin: "Hěn jiǎndān, qù qún liáo shèzhì lǐ jiù néng gǎi míng.", translation: "Easy — just go into group chat settings and rename it." },
+      { speaker: "凯伦", hanzi: "那建好群后，还有什么要注意的吗？", pinyin: "Nà jiàn hǎo qún hòu, hái yǒu shénme yào zhùyì de ma?", translation: "Once the group is set up, anything else I should watch out for?" },
+      { speaker: "王钢", hanzi: "你作为群主，得给大家定群规，在群里告诉大家。", pinyin: "Nǐ zuòwéi qún zhǔ, děi gěi dàjiā dìng qún guī, zài qún lǐ gàosu dàjiā.", translation: "As the group owner, you need to set group rules and announce them in the group." },
+      { speaker: "凯伦", hanzi: "群规都要写什么呢？", pinyin: "Qún guī dōu yào xiě shénme ne?", translation: "What should the rules cover?" },
+      { speaker: "王钢", hanzi: "比如，不要在群里发不合适的内容，还有要尊重每个人的看法。只要大家都遵守群规，微信群就能成为我们愉快交流的好地方。", pinyin: "Bǐrú, bú yào zài qún lǐ fā bù héshì de nèiróng, hái yǒu yào zūnzhòng měi ge rén de kànfǎ. Zhǐyào dàjiā dōu zūnshǒu qún guī, Wēixìn qún jiù néng chéngwéi wǒmen yúkuài jiāoliú de hǎo dìfang.", translation: "For example: don't post inappropriate content, and respect everyone's views. As long as everyone follows the rules, the group will be a great place for friendly communication." },
+      { speaker: "凯伦", hanzi: "你说得对，这太重要了。多谢你帮忙！", pinyin: "Nǐ shuō de duì, zhè tài zhòngyào le. Duōxiè nǐ bāngmáng!", translation: "You're right, that's really important. Thanks so much for the help!" },
+    ],
+  },
+];
+
+const lesson4Vocab: VocabSet[] = [
+  {
+    id: "l4-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_4_text_1_vocab.mp3",
+    items: [
+      { hanzi: "社交媒体", pinyin: "shèjiāo méitǐ", pos: "NP", meaning: "social media" },
+      { hanzi: "想象", pinyin: "xiǎngxiàng", pos: "N/V", meaning: "imagination; to imagine" },
+      { hanzi: "从未", pinyin: "cóng wèi", pos: "Adv", meaning: "never" },
+      { hanzi: "接触", pinyin: "jiēchù", pos: "V", meaning: "to access; to get in touch with" },
+      { hanzi: "形式", pinyin: "xíngshì", pos: "N", meaning: "form; structure" },
+      { hanzi: "丰富", pinyin: "fēngfù", pos: "A", meaning: "rich; abundant" },
+      { hanzi: "主流", pinyin: "zhǔliú", pos: "A/N", meaning: "mainstream" },
+      { hanzi: "平台", pinyin: "píngtái", pos: "N", meaning: "platform" },
+      { hanzi: "集", pinyin: "jí", pos: "V", meaning: "to gather; to integrate" },
+      { hanzi: "支付", pinyin: "zhīfù", pos: "N/V", meaning: "payment; to pay" },
+      { hanzi: "于", pinyin: "yú", pos: "Prep", meaning: "in; at" },
+      { hanzi: "一体", pinyin: "yìtǐ", pos: "N", meaning: "an integral whole" },
+      { hanzi: "必不可少", pinyin: "bì bù kě shǎo", pos: "AP", meaning: "indispensable; essential" },
+      { hanzi: "发布", pinyin: "fābù", pos: "V", meaning: "to post; to publish" },
+      { hanzi: "多媒体", pinyin: "duōméitǐ", pos: "N", meaning: "multimedia" },
+      { hanzi: "内容", pinyin: "nèiróng", pos: "N", meaning: "content" },
+      { hanzi: "进行", pinyin: "jìnxíng", pos: "V", meaning: "to proceed; to carry out" },
+      { hanzi: "互动", pinyin: "hùdòng", pos: "N/V", meaning: "interaction; to interact" },
+      { hanzi: "明星", pinyin: "míngxīng", pos: "N", meaning: "star; celebrity" },
+      { hanzi: "网红", pinyin: "wǎnghóng", pos: "N", meaning: "influencer" },
+      { hanzi: "集聚", pinyin: "jíjù", pos: "V", meaning: "to gather; to assemble" },
+      { hanzi: "短", pinyin: "duǎn", pos: "A", meaning: "short" },
+      { hanzi: "天堂", pinyin: "tiāntáng", pos: "N", meaning: "paradise; heaven" },
+      { hanzi: "女性", pinyin: "nǚxìng", pos: "N", meaning: "female; woman" },
+      { hanzi: "分享", pinyin: "fēnxiǎng", pos: "N/V", meaning: "share; to share" },
+      { hanzi: "心得", pinyin: "xīndé", pos: "N", meaning: "insight" },
+      { hanzi: "美妆秘诀", pinyin: "měi zhuāng mìjué", pos: "NP", meaning: "beauty / makeup tips" },
+      { hanzi: "社区", pinyin: "shèqū", pos: "N", meaning: "community" },
+      { hanzi: "答案", pinyin: "dá’àn", pos: "N", meaning: "answer" },
+      { hanzi: "专家", pinyin: "zhuānjiā", pos: "N", meaning: "expert" },
+      { hanzi: "活力", pinyin: "huólì", pos: "N", meaning: "vitality; energy" },
+      { hanzi: "微信", pinyin: "Wēixìn", pos: "PN", meaning: "WeChat" },
+      { hanzi: "微博", pinyin: "Wēibó", pos: "PN", meaning: "Weibo" },
+      { hanzi: "抖音", pinyin: "Dǒuyīn", pos: "PN", meaning: "Douyin (TikTok CN)" },
+      { hanzi: "快手", pinyin: "Kuàishǒu", pos: "PN", meaning: "Kuaishou" },
+      { hanzi: "小红书", pinyin: "Xiǎohóngshū", pos: "PN", meaning: "Xiaohongshu (RED)" },
+      { hanzi: "知乎", pinyin: "Zhīhū", pos: "PN", meaning: "Zhihu (Quora-like)" },
+    ],
+  },
+  {
+    id: "l4-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_4_text_2_vocab.mp3",
+    items: [
+      { hanzi: "建", pinyin: "jiàn", pos: "V", meaning: "to build; to set up" },
+      { hanzi: "群", pinyin: "qún", pos: "N", meaning: "group; crowd" },
+      { hanzi: "右上角", pinyin: "yòu shàng jiǎo", pos: "NP", meaning: "upper right corner" },
+      { hanzi: "加号", pinyin: "jiāhào", pos: "N", meaning: "plus sign" },
+      { hanzi: "发起", pinyin: "fāqǐ", pos: "V", meaning: "to initiate; to launch" },
+      { hanzi: "通讯录", pinyin: "tōngxùn lù", pos: "NP", meaning: "address book; contacts" },
+      { hanzi: "邀请", pinyin: "yāoqǐng", pos: "V", meaning: "to invite" },
+      { hanzi: "改名", pinyin: "gǎi míng", pos: "VO", meaning: "to change name" },
+      { hanzi: "群主", pinyin: "qún zhǔ", pos: "NP", meaning: "group owner; admin" },
+      { hanzi: "群规", pinyin: "qún guī", pos: "NP", meaning: "group rules" },
+      { hanzi: "尊重", pinyin: "zūnzhòng", pos: "V", meaning: "to respect" },
+      { hanzi: "遵守", pinyin: "zūnshǒu", pos: "V", meaning: "to abide by; to comply with" },
+      { hanzi: "安装", pinyin: "ānzhuāng", pos: "V", meaning: "to install" },
+      { hanzi: "注册", pinyin: "zhùcè", pos: "V", meaning: "to register" },
+      { hanzi: "点击", pinyin: "diǎnjī", pos: "V", meaning: "to click; to tap" },
+      { hanzi: "选择", pinyin: "xuǎnzé", pos: "V", meaning: "to choose; to select" },
+      { hanzi: "设置", pinyin: "shèzhì", pos: "N/V", meaning: "settings; to set" },
+      { hanzi: "作为", pinyin: "zuòwéi", pos: "Prep", meaning: "as; being" },
+    ],
+  },
+];
+
+const lesson4Tasks: Task[] = [
+  {
+    id: "l4-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "shè jiāo méi tǐ",
+    answer: "社交媒体",
+    translation: "social media",
+    audio: "/audio/lesson_4_text_1_vocab.mp3",
+    hint: "shè jiāo méi tǐ — the umbrella term for WeChat, Weibo, Douyin…",
+  },
+  {
+    id: "l4-t2",
+    type: "battle",
+    prompt: "Pick the correct word for the gap",
+    sentenceBefore: "微信",
+    sentenceAfter: "社交、通讯、支付等功能于一体。",
+    options: [
+      { hanzi: "集", pinyin: "jí", meaning: "to integrate" },
+      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+      { hanzi: "用", pinyin: "yòng", meaning: "to use" },
+    ],
+    correctIndex: 0,
+    translation: "WeChat integrates social, messaging and payment features into one.",
+    hint: "Pattern: 集 X 于一体 — 'integrate X into one'.",
+  },
+  {
+    id: "l4-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'For people who love short videos, Douyin is paradise.'",
+    blocks: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
+    answer: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
+    pinyin: "Duìyú xǐhuan duǎn shìpín de rén lái shuō, Dǒuyīn shì tāmen de tiāntáng.",
+    translation: "For people who love short videos, Douyin is their paradise.",
+    hint: "Pattern: 对于 … 来说 — 'as far as … is concerned'.",
+  },
+  {
+    id: "l4-t4",
+    type: "matching",
+    prompt: "Match each Chinese platform to what it's known for",
+    pairs: [
+      { left: "💬", leftLabel: "WeChat", right: "微信" },
+      { left: "📰", leftLabel: "Weibo", right: "微博" },
+      { left: "🎵", leftLabel: "Douyin", right: "抖音" },
+      { left: "💄", leftLabel: "Xiaohongshu", right: "小红书" },
+      { left: "❓", leftLabel: "Zhihu", right: "知乎" },
+    ],
+  },
+  {
+    id: "l4-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 邀请",
+    word: "邀请",
+    translation: "to invite",
+    syllables: [
+      { base: "yao", correctTone: 1 },
+      { base: "qing", correctTone: 3 },
+    ],
+  },
+  {
+    id: "l4-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'No matter what question you have, you can find an answer here.'",
+    brokenSentence: ["不管", "找到答案", "你有什么问题", "都可以在这里"],
+    correctOrder: [0, 2, 3, 1],
+    translation: "No matter what question you have, you can find an answer here.",
+    hint: "Pattern: 不管 … 都 — 'no matter …, would'.",
+  },
+  {
+    id: "l4-t7",
+    type: "simulation",
+    prompt: "Karen wants to add you to a class WeChat group. Reply naturally.",
+    npcMessage: "我想建一个我们班的微信群。你能帮我看看怎么发起群聊吗？",
+    npcPinyin: "Wǒ xiǎng jiàn yí ge wǒmen bān de Wēixìn qún. Nǐ néng bāng wǒ kàn kàn zěnme fāqǐ qún liáo ma?",
+    npcTranslation: "I want to set up a WeChat group for our class. Can you help me figure out how to start a group chat?",
+    options: [
+      { hanzi: "点击右上角的加号，选择“发起群聊”就行。", pinyin: "Diǎnjī yòu shàng jiǎo de jiāhào, xuǎnzé “fāqǐ qún liáo” jiù xíng.", correct: true, reply: "太好了，谢谢你！" },
+      { hanzi: "你得先买一个新手机。", pinyin: "Nǐ děi xiān mǎi yí ge xīn shǒujī.", correct: false },
+      { hanzi: "微信不能建群。", pinyin: "Wēixìn bù néng jiàn qún.", correct: false },
+    ],
+  },
+  {
+    id: "l4-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences describing a Chinese social platform you'd try, using each item below.",
+    required: ["社交媒体", "对于…来说", "集…于一体"],
+    minSentences: 3,
+    retroWords: ["智能手机", "应用", "下载", "套餐", "流量"],
+  },
+];
+
+const lesson4Recap: Recap = {
+  takeaways: [
+    "微信 = 社交 + 通讯 + 支付 集于一体. 微博 ≈ X / Twitter.",
+    "抖音 / 快手 — 短视频; 小红书 — 美妆 & 购物心得; 知乎 — 知识问答.",
+    "Pattern: 对于 … 来说 — 'as far as … is concerned'. 不管 … 都 — 'no matter …, still'.",
+    "建微信群: 加号 → 发起群聊 → 通讯录 → 完成. 群主 sets 群规.",
+  ],
+  keyWords: ["社交媒体", "平台", "发布", "互动", "分享", "群", "群规"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
