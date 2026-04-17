@@ -22,9 +22,7 @@ export function Dashboard() {
               数字化语境中学中文
             </h1>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-              Интерактивный учебник для цифровой эпохи.{" "}
-              <span className="font-mono text-primary">10 уроков</span> · адаптивный движок из 8 заданий ·
-              обучение через контекст.
+              Интерактивный помощник к учебнику
             </p>
           </div>
           <div className="hidden text-right sm:block">
