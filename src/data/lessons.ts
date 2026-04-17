@@ -113,7 +113,7 @@ export const lessons: Lesson[] = [
         pinyin: "shū rù fǎ",
         answer: "输入法",
         translation: "input method",
-        audio: "/audio/l1_t1.mp3",
+        audio: "/audio/lesson_1_text_1_vocab.mp3",
         hint: "shū rù fǎ — the way you type characters",
       },
       {
