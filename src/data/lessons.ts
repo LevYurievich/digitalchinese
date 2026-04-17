@@ -1743,6 +1743,234 @@ const lesson7Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// Lesson 8 — 人工智能聊天机器人 / AI Chatbot
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson8Dialogues: Dialogue[] = [
+  {
+    id: "l8-text1",
+    title: "课文一",
+    titleEn: "Text 1 — AI chatbots in our daily lives",
+    audio: "/audio/lesson_8_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "在日常生活中，我们总是希望身边有一个随时随地可以回答我们的问题，并且能帮助我们解决问题的伙伴。而现代科技的杰作之一——人工智能聊天机器人，正是这种愿景在数字化时代的产物。",
+        pinyin: "Zài rìcháng shēnghuó zhōng, wǒmen zǒngshì xīwàng shēnbiān yǒu yí gè suíshí suídì kěyǐ huídá wǒmen de wèntí, bìngqiě néng bāngzhù wǒmen jiějué wèntí de huǒbàn. Ér xiàndài kējì de jiézuò zhīyī — réngōng zhìnéng liáotiān jīqì rén, zhèngshì zhè zhǒng yuànjǐng zài shùzìhuà shídài de chǎnwù.",
+        translation: "In daily life, we always wish for a companion at our side who can answer our questions anytime, anywhere, and help us solve them. AI chatbots — one of modern tech's masterpieces — are precisely the product of this vision in the digital era.",
+      },
+      {
+        hanzi: "近年来，人工智能技术快速发展，聊天机器人也逐渐走进我们的生活。现在网络上的聊天机器人平台可不少。大家熟悉的有OpenAI的ChatGPT，百度的文心一言，谷歌的Gemini，以及微软的Copilot等。",
+        pinyin: "Jìnnián lái, réngōng zhìnéng jìshù kuàisù fāzhǎn, liáotiān jīqì rén yě zhújiàn zǒu jìn wǒmen de shēnghuó. Xiànzài wǎngluò shàng de liáotiān jīqì rén píngtái kě bù shǎo. Dàjiā shúxī de yǒu OpenAI de ChatGPT, Bǎidù de Wénxīn Yìyán, Gǔgē de Gemini, yǐjí Wēiruǎn de Copilot děng.",
+        translation: "In recent years, AI tech has developed rapidly, and chatbots are gradually entering our lives. There are quite a few chatbot platforms online — well-known ones include OpenAI's ChatGPT, Baidu's Wenxin Yiyan (Ernie Bot), Google's Gemini, and Microsoft's Copilot.",
+      },
+      {
+        hanzi: "这些基于大型语言模型打造出来的聊天机器人，不仅拥有优秀的语言理解能力和强大的文本生成功能，还支持多种语言的交流。另外，它们各自也因其独特的互动方式和丰富的表达方式，而受到不同用户的喜爱。",
+        pinyin: "Zhèxiē jīyú dàxíng yǔyán móxíng dǎzào chūlái de liáotiān jīqì rén, bùjǐn yōngyǒu yōuxiù de yǔyán lǐjiě nénglì hé qiángdà de wénběn shēngchéng gōngnéng, hái zhīchí duō zhǒng yǔyán de jiāoliú. Lìngwài, tāmen gèzì yě yīn qí dútè de hùdòng fāngshì hé fēngfù de biǎodá fāngshì, ér shòu dào bù tóng yònghù de xǐ'ài.",
+        translation: "These chatbots — built on large language models — have excellent language understanding and powerful text generation, and support multilingual conversation. They are also each loved by different users because of their unique interaction styles and rich forms of expression.",
+      },
+      {
+        hanzi: "聊天机器人的用途广泛。它可以提供各种信息查询服务，如天气预报和查找学术资料。它也可以完成如订票、订餐这种简单任务。它还可以提供休闲娱乐服务，如玩游戏、讲故事。",
+        pinyin: "Liáotiān jīqì rén de yòngtú guǎngfàn. Tā kěyǐ tígōng gè zhǒng xìnxī cháxún fúwù, rú tiānqì yùbào hé cházhǎo xuéshù zīliào. Tā yě kěyǐ wánchéng rú dìng piào, dìng cān zhè zhǒng jiǎndān rènwù. Tā hái kěyǐ tígōng xiūxián yúlè fúwù, rú wán yóuxì, jiǎng gùshi.",
+        translation: "Chatbots have wide uses: information lookup (weather, academic materials), simple tasks (booking tickets, ordering food), and leisure services (playing games, telling stories).",
+      },
+      {
+        hanzi: "而且，它还能提供情感交流服务，如耐心倾听用户的心声，提供心理健康信息和建议。可以预见，聊天机器人将会越来越智能化、人性化，成为我们生活中的好帮手。",
+        pinyin: "Érqiě, tā hái néng tígōng qínggǎn jiāoliú fúwù, rú nàixīn qīngtīng yònghù de xīnshēng, tígōng xīnlǐ jiànkāng xìnxī hé jiànyì. Kěyǐ yùjiàn, liáotiān jīqì rén jiāng huì yuè lái yuè zhìnénghuà, rénxìnghuà, chéngwéi wǒmen shēnghuó zhōng de hǎo bāngshǒu.",
+        translation: "They can also provide emotional support — patiently listening to users' inner voices and offering mental health info and suggestions. We can foresee chatbots becoming ever more intelligent and humanized — great helpers in our lives.",
+      },
+    ],
+  },
+  {
+    id: "l8-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen teaches David how to use ChatGPT",
+    audio: "/audio/lesson_8_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "大卫", hanzi: "凯伦，听说你是使用ChatGPT的行家，能教我一下怎么用吗？", pinyin: "Kǎilún, tīngshuō nǐ shì shǐyòng ChatGPT de hángjiā, néng jiāo wǒ yíxià zěnme yòng ma?", translation: "Karen, I hear you're an expert at using ChatGPT — can you teach me how?" },
+      { speaker: "凯伦", hanzi: "当然可以。首先，你得去ChatGPT的网站注册一个账户，可以选择免费或付费账户。付费账户会有更多功能。", pinyin: "Dāngrán kěyǐ. Shǒuxiān, nǐ děi qù ChatGPT de wǎngzhàn zhùcè yí gè zhànghù, kěyǐ xuǎnzé miǎnfèi huò fùfèi zhànghù. Fùfèi zhànghù huì yǒu gèng duō gōngnéng.", translation: "Of course. First, register an account on the ChatGPT site — free or paid. Paid accounts have more features." },
+      { speaker: "大卫", hanzi: "然后呢？", pinyin: "Ránhòu ne?", translation: "And then?" },
+      { speaker: "凯伦", hanzi: "接下来，你就可以在ChatGPT的对话框里输入提示语，说出你的问题和需求。它会按照你的提示语生成你需要的文本或图片。", pinyin: "Jiē xià lái, nǐ jiù kěyǐ zài ChatGPT de duìhuà kuàng lǐ shūrù tíshì yǔ, shuō chū nǐ de wèntí hé xūqiú. Tā huì ànzhào nǐ de tíshì yǔ shēngchéng nǐ xūyào de wénběn huò túpiàn.", translation: "Next, type prompts into the ChatGPT dialog box, stating your question or need. It will generate the text or images you need according to your prompt." },
+      { speaker: "大卫", hanzi: "怎么写提示语呢？", pinyin: "Zěnme xiě tíshì yǔ ne?", translation: "How do I write a prompt?" },
+      { speaker: "凯伦", hanzi: "用简单而又准确的语言提出你的问题。比如，\"请用通俗易懂的语言解释一下机器翻译的工作原理\"。", pinyin: "Yòng jiǎndān ér yòu zhǔnquè de yǔyán tíchū nǐ de wèntí. Bǐrú, \"qǐng yòng tōngsú yìdǒng de yǔyán jiěshì yíxià jīqì fānyì de gōngzuò yuánlǐ\".", translation: "Use simple but precise language to ask your question. For example: \"Please explain how machine translation works in plain language.\"" },
+      { speaker: "大卫", hanzi: "哦，我明白了。那怎么制作图片呢？", pinyin: "Ò, wǒ míngbai le. Nà zěnme zhìzuò túpiàn ne?", translation: "Oh, I see. How about making images?" },
+      { speaker: "凯伦", hanzi: "那你就在提示语里描述你想要什么样的画儿以及风格。比如，\"请画一幅冬天里的万里长城的水彩画\"。", pinyin: "Nà nǐ jiù zài tíshì yǔ lǐ miáoshù nǐ xiǎng yào shénme yàng de huàr yǐjí fēnggé. Bǐrú, \"qǐng huà yì fú dōngtiān lǐ de Wànlǐ Chángchéng de shuǐcǎihuà\".", translation: "Describe what kind of picture and style you want in the prompt. For example: \"Please paint a watercolor of the Great Wall in winter.\"" },
+      { speaker: "大卫", hanzi: "还有，我怎么用它来帮助写作呢？", pinyin: "Hái yǒu, wǒ zěnme yòng tā lái bāngzhù xiězuò ne?", translation: "Also, how do I use it to help with writing?" },
+      { speaker: "凯伦", hanzi: "你可以告诉它你需要写什么样的文章，比如，课堂报告或邮件，并且告诉它主题，它就会帮你构思和撰写。", pinyin: "Nǐ kěyǐ gàosu tā nǐ xūyào xiě shénme yàng de wénzhāng, bǐrú, kètáng bàogào huò yóujiàn, bìngqiě gàosu tā zhǔtí, tā jiù huì bāng nǐ gòusī hé zhuànxiě.", translation: "Tell it what kind of article you need — like a class report or email — and the topic, and it will help you brainstorm and write." },
+      { speaker: "大卫", hanzi: "太棒了，我回去就试试。谢谢！", pinyin: "Tài bàng le, wǒ huíqù jiù shìshi. Xièxie!", translation: "Awesome — I'll try it when I get back. Thanks!" },
+    ],
+  },
+];
+
+const lesson8Vocab: VocabSet[] = [
+  {
+    id: "l8-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_8_text_1_vocab.mp3",
+    items: [
+      { hanzi: "人工智能", pinyin: "réngōng zhìnéng", pos: "NP", meaning: "artificial intelligence" },
+      { hanzi: "机器", pinyin: "jīqì", pos: "N", meaning: "machine" },
+      { hanzi: "伙伴", pinyin: "huǒbàn", pos: "N", meaning: "partner; companion" },
+      { hanzi: "杰作", pinyin: "jiézuò", pos: "N", meaning: "masterpiece" },
+      { hanzi: "正是", pinyin: "zhèngshì", pos: "VP", meaning: "precisely is; exactly is" },
+      { hanzi: "愿景", pinyin: "yuànjǐng", pos: "N", meaning: "vision; aspiration" },
+      { hanzi: "产物", pinyin: "chǎnwù", pos: "N", meaning: "product; outcome; result" },
+      { hanzi: "熟悉", pinyin: "shúxī", pos: "V", meaning: "to be familiar with" },
+      { hanzi: "模型", pinyin: "móxíng", pos: "N", meaning: "model" },
+      { hanzi: "打造", pinyin: "dǎzào", pos: "V", meaning: "to forge; to create; to build" },
+      { hanzi: "生成", pinyin: "shēngchéng", pos: "V", meaning: "to generate; to produce" },
+      { hanzi: "各自", pinyin: "gèzì", pos: "Adv", meaning: "each; respectively" },
+      { hanzi: "其", pinyin: "qí", pos: "Pr", meaning: "his; her; its; their" },
+      { hanzi: "独特", pinyin: "dútè", pos: "A", meaning: "unique; distinctive" },
+      { hanzi: "表达", pinyin: "biǎodá", pos: "N/V", meaning: "expression; to express" },
+      { hanzi: "用途", pinyin: "yòngtú", pos: "N", meaning: "use; application" },
+      { hanzi: "信息", pinyin: "xìnxī", pos: "N", meaning: "information" },
+      { hanzi: "查询", pinyin: "cháxún", pos: "V", meaning: "to query; to search" },
+      { hanzi: "学术", pinyin: "xuéshù", pos: "N", meaning: "academic learning" },
+      { hanzi: "资料", pinyin: "zīliào", pos: "N", meaning: "material; data; information" },
+      { hanzi: "任务", pinyin: "rènwù", pos: "N", meaning: "task; assignment" },
+      { hanzi: "休闲", pinyin: "xiūxián", pos: "N", meaning: "leisure; recreation" },
+      { hanzi: "耐心", pinyin: "nàixīn", pos: "A/N", meaning: "patient; patience" },
+      { hanzi: "倾听", pinyin: "qīngtīng", pos: "V", meaning: "to listen attentively" },
+      { hanzi: "心声", pinyin: "xīnshēng", pos: "N", meaning: "inner voice; heartfelt words" },
+      { hanzi: "心理健康", pinyin: "xīnlǐ jiànkāng", pos: "NP", meaning: "mental health" },
+      { hanzi: "预见", pinyin: "yùjiàn", pos: "V", meaning: "to foresee; to predict" },
+      { hanzi: "智能化", pinyin: "zhìnénghuà", pos: "A/V", meaning: "intelligent; to make intelligent" },
+      { hanzi: "人性化", pinyin: "rénxìnghuà", pos: "A/V", meaning: "humanized; to humanize" },
+      { hanzi: "百度", pinyin: "Bǎidù", pos: "PN", meaning: "Baidu (Chinese tech company)" },
+      { hanzi: "文心一言", pinyin: "Wénxīn Yìyán", pos: "PN", meaning: "Ernie Bot (Baidu's AI chatbot)" },
+    ],
+  },
+  {
+    id: "l8-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_8_text_2_vocab.mp3",
+    items: [
+      { hanzi: "行家", pinyin: "hángjiā", pos: "N", meaning: "expert" },
+      { hanzi: "接下来", pinyin: "jiē xià lái", pos: "AdvP", meaning: "next; following" },
+      { hanzi: "对话框", pinyin: "duìhuà kuàng", pos: "NP", meaning: "dialog box" },
+      { hanzi: "提示语", pinyin: "tíshì yǔ", pos: "NP", meaning: "prompt" },
+      { hanzi: "按照", pinyin: "ànzhào", pos: "Prep", meaning: "according to; in the light of" },
+      { hanzi: "准确", pinyin: "zhǔnquè", pos: "A", meaning: "accurate; precise" },
+      { hanzi: "制作", pinyin: "zhìzuò", pos: "V", meaning: "to make; to produce" },
+      { hanzi: "描述", pinyin: "miáoshù", pos: "V", meaning: "to describe" },
+      { hanzi: "风格", pinyin: "fēnggé", pos: "N", meaning: "style" },
+      { hanzi: "幅", pinyin: "fú", pos: "M", meaning: "measure word for paintings" },
+      { hanzi: "水彩画", pinyin: "shuǐcǎihuà", pos: "N", meaning: "watercolor painting" },
+      { hanzi: "构思", pinyin: "gòusī", pos: "V", meaning: "to conceive; to conceptualize" },
+      { hanzi: "撰写", pinyin: "zhuànxiě", pos: "V", meaning: "to write; to compose" },
+    ],
+  },
+];
+
+const lesson8Tasks: Task[] = [
+  {
+    id: "l8-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "rén gōng zhì néng",
+    answer: "人工智能",
+    translation: "artificial intelligence",
+    audio: "/audio/lesson_8_text_1_vocab.mp3",
+    hint: "rén gōng zhì néng — the central topic of this lesson.",
+  },
+  {
+    id: "l8-t2",
+    type: "battle",
+    prompt: "Pick the correct phrase for the gap",
+    sentenceBefore: "它们各自也",
+    sentenceAfter: "其独特的互动方式而受到不同用户的喜爱。",
+    options: [
+      { hanzi: "因…而", pinyin: "yīn … ér", meaning: "because of … therefore" },
+      { hanzi: "为…而", pinyin: "wèi … ér", meaning: "for the sake of …" },
+      { hanzi: "把…而", pinyin: "bǎ … ér", meaning: "(disposal — wrong here)" },
+    ],
+    correctIndex: 0,
+    translation: "Each is loved by different users because of its unique interaction style.",
+    hint: "Pattern: 因 + reason + 而 + result.",
+  },
+  {
+    id: "l8-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'It will generate the text you need according to your prompt.'",
+    blocks: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
+    answer: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
+    pinyin: "Tā huì ànzhào nǐ de tíshì yǔ shēngchéng nǐ xūyào de wénběn.",
+    translation: "It will generate the text you need according to your prompt.",
+    hint: "Pattern: Subject + 按照 + criteria + Verb + Object.",
+  },
+  {
+    id: "l8-t4",
+    type: "matching",
+    prompt: "Match each chatbot/company to its Chinese name",
+    pairs: [
+      { left: "🤖", leftLabel: "ChatGPT", right: "OpenAI" },
+      { left: "📚", leftLabel: "Ernie Bot", right: "文心一言" },
+      { left: "🔍", leftLabel: "Baidu", right: "百度" },
+      { left: "💎", leftLabel: "Gemini", right: "谷歌" },
+      { left: "🪟", leftLabel: "Copilot", right: "微软" },
+      { left: "💬", leftLabel: "dialog box", right: "对话框" },
+    ],
+  },
+  {
+    id: "l8-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 智能",
+    word: "智能",
+    translation: "intelligence; intelligent",
+    syllables: [
+      { base: "zhi", correctTone: 4 },
+      { base: "neng", correctTone: 2 },
+    ],
+  },
+  {
+    id: "l8-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'Wang Gang runs every day, and that is precisely the reason for his good health.'",
+    brokenSentence: ["他身体健康的原因", "王钢每天坚持跑步", "而这正是"],
+    correctOrder: [1, 2, 0],
+    translation: "Wang Gang runs every day, and that is precisely the reason for his good health.",
+    hint: "Pattern: Clause-1 + 而 + 这 + 正是 + Clause-2.",
+  },
+  {
+    id: "l8-t7",
+    type: "simulation",
+    prompt: "David asks Karen for help with ChatGPT. Reply naturally.",
+    npcMessage: "凯伦，我怎么让ChatGPT帮我制作图片呢？",
+    npcPinyin: "Kǎilún, wǒ zěnme ràng ChatGPT bāng wǒ zhìzuò túpiàn ne?",
+    npcTranslation: "Karen, how do I get ChatGPT to make images for me?",
+    options: [
+      { hanzi: "你只要在提示语里描述你想要的画儿和风格，它就会按照你的提示语生成图片。", pinyin: "Nǐ zhǐyào zài tíshì yǔ lǐ miáoshù nǐ xiǎng yào de huàr hé fēnggé, tā jiù huì ànzhào nǐ de tíshì yǔ shēngchéng túpiàn.", correct: true, reply: "太棒了，我回去就试试。谢谢！" },
+      { hanzi: "你得先去注册一个账户，然后才能用。", pinyin: "Nǐ děi xiān qù zhùcè yí gè zhànghù, ránhòu cái néng yòng.", correct: false },
+      { hanzi: "ChatGPT不能制作图片。", pinyin: "ChatGPT bù néng zhìzuò túpiàn.", correct: false },
+    ],
+  },
+  {
+    id: "l8-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences about AI chatbots, using each item below.",
+    required: ["人工智能", "按照", "因…而"],
+    minSentences: 3,
+    retroWords: ["对话框", "提示语", "生成", "构思", "撰写", "智能化"],
+  },
+];
+
+const lesson8Recap: Recap = {
+  takeaways: [
+    "人工智能聊天机器人 — AI chatbots: built on 大型语言模型 (large language models).",
+    "Pattern: 而…正是 — connects two clauses, 正是 emphasizes 'precisely is'.",
+    "Pattern: 因…而 — because of X, therefore Y. 因其独特 而 受到喜爱.",
+    "以及 — formal 'and' for lists with 3+ items. 各自 — each / respectively.",
+    "受到 + N — passive: to be subject to / received. 按照 + criteria — according to.",
+    "接下来 — next; following. Use to chain steps in instructions.",
+    "Platforms: ChatGPT · 文心一言 (Wénxīn Yìyán) · Gemini · Copilot.",
+  ],
+  keyWords: ["人工智能", "聊天机器人", "对话框", "提示语", "生成", "按照", "因…而", "文心一言"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
@@ -1822,7 +2050,17 @@ export const lessons: Lesson[] = [
     tasks: lesson7Tasks,
     recap: lesson7Recap,
   },
-  { id: 8, title: "人工智能聊天机器人", titleEn: "AI Chatbot", theme: "Conversational AI", status: "locked" },
+  {
+    id: 8,
+    title: "人工智能聊天机器人",
+    titleEn: "AI Chatbot",
+    theme: "Conversational AI",
+    status: "available",
+    dialogues: lesson8Dialogues,
+    vocabulary: lesson8Vocab,
+    tasks: lesson8Tasks,
+    recap: lesson8Recap,
+  },
   { id: 9, title: "网络视频", titleEn: "Online Videos", theme: "Streaming culture", status: "locked" },
   { id: 10, title: "网络游戏", titleEn: "Online Gaming", theme: "Gaming worlds", status: "locked" },
 ];
