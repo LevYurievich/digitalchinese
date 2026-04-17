@@ -1971,6 +1971,238 @@ const lesson8Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// Lesson 9 — 网络视频 / Online Videos
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson9Dialogues: Dialogue[] = [
+  {
+    id: "l9-text1",
+    title: "课文一",
+    titleEn: "Text 1 — Online video in China",
+    audio: "/audio/lesson_9_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "中国的网络视频虽然起步有点晚，但是发展很快。二零零五年左右，中国的视频网站开始出现，其中优酷和土豆最为人们所熟知，为观众带来了大量的中国和外国的视频内容。自那以后，随着智能手机的普及，短视频应用也很快火起来了。",
+        pinyin: "Zhōngguó de wǎngluò shìpín suīrán qǐbù yǒu diǎn wǎn, dànshì fāzhǎn hěn kuài. Èr líng líng wǔ nián zuǒyòu, Zhōngguó de shìpín wǎngzhàn kāishǐ chūxiàn, qízhōng Yōukù hé Tǔdòu zuì wéi rénmen suǒ shúzhī, wèi guānzhòng dài lái le dàliàng de Zhōngguó hé wàiguó de shìpín nèiróng. Zì nà yǐhòu, suízhe zhìnéng shǒujī de pǔjí, duǎn shìpín yìngyòng yě hěn kuài huǒ qǐlái le.",
+        translation: "China's online video industry started a bit late but grew fast. Around 2005, video sites began to appear — Youku and Tudou were the best known, bringing audiences large amounts of Chinese and foreign content. Since then, with the spread of smartphones, short-video apps also quickly caught fire.",
+      },
+      {
+        hanzi: "现在，中国网络视频市场由几家大平台主导，包括爱奇艺、腾讯视频和优酷，主打电影、电视剧和综艺节目；而B站、抖音、快手等中、短视频平台，则以活泼多样的内容见长，尤其受到年轻人追捧。",
+        pinyin: "Xiànzài, Zhōngguó wǎngluò shìpín shìchǎng yóu jǐ jiā dà píngtái zhǔdǎo, bāokuò Àiqíyì, Téngxùn Shìpín hé Yōukù, zhǔdǎ diànyǐng, diànshìjù hé zōngyì jiémù; ér B Zhàn, Dǒuyīn, Kuàishǒu děng zhōng, duǎn shìpín píngtái, zé yǐ huópō duōyàng de nèiróng jiàncháng, yóuqí shòu dào niánqīng rén zhuīpěng.",
+        translation: "Now China's online video market is led by a few big platforms — iQIYI, Tencent Video, and Youku — featuring films, TV dramas, and variety shows; while medium- and short-video platforms like Bilibili, Douyin, and Kuaishou are known for lively, varied content, especially loved by young people.",
+      },
+      {
+        hanzi: "网络视频已经在中国的经济和文化中占据了一席之地。它不仅吸引了大量投资，为创作者提供了一个新的赚钱渠道，还丰富了人们的娱乐生活。同时，短视频的盛行推动了许多网红的快速崛起。他们通过视频传播自己的价值观，对社会产生了一定的影响。",
+        pinyin: "Wǎngluò shìpín yǐjīng zài Zhōngguó de jīngjì hé wénhuà zhōng zhànjù le yì xí zhī dì. Tā bùjǐn xīyǐn le dàliàng tóuzī, wèi chuàngzuòzhě tígōng le yí gè xīn de zhuànqián qúdào, hái fēngfù le rénmen de yúlè shēnghuó. Tóngshí, duǎn shìpín de shèngxíng tuīdòng le xǔduō wǎnghóng de kuàisù juéqǐ. Tāmen tōngguò shìpín chuánbō zìjǐ de jiàzhí guān, duì shèhuì chǎnshēng le yídìng de yǐngxiǎng.",
+        translation: "Online video has carved out its place in China's economy and culture. It attracts huge investment, opens a new income channel for creators, and enriches people's entertainment. Meanwhile, the boom of short video has driven the rapid rise of many influencers — who spread their values through video and have had a definite impact on society.",
+      },
+      {
+        hanzi: "网络视频突破了传统媒体的限制，为大众提供了展示自我的舞台。其内容的多样化不仅满足了人们的娱乐需求，也为思想的交流提供了场所。然而，如何确保网络视频内容的健康，防止不良信息的传播，是这个行业需要面对和解决的问题。",
+        pinyin: "Wǎngluò shìpín tūpò le chuántǒng méitǐ de xiànzhì, wèi dàzhòng tígōng le zhǎnshì zìwǒ de wǔtái. Qí nèiróng de duōyànghuà bùjǐn mǎnzú le rénmen de yúlè xūqiú, yě wèi sīxiǎng de jiāoliú tígōng le chǎngsuǒ. Rán'ér, rúhé quèbǎo wǎngluò shìpín nèiróng de jiànkāng, fángzhǐ bùliáng xìnxī de chuánbō, shì zhè ge hángyè xūyào miànduì hé jiějué de wèntí.",
+        translation: "Online video has broken through the limits of traditional media, giving the public a stage for self-expression. Its diverse content satisfies entertainment needs and provides a venue for the exchange of ideas. However, ensuring healthy content and preventing the spread of harmful information is a problem this industry must face and solve.",
+      },
+    ],
+  },
+  {
+    id: "l9-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen and David talk about web dramas",
+    audio: "/audio/lesson_9_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "大卫，你的中文说得越来越流利了，怎么突然进步这么快？", pinyin: "Dàwèi, nǐ de Zhōngwén shuō de yuè lái yuè liúlì le, zěnme tūrán jìnbù zhème kuài?", translation: "David, your Chinese is getting more fluent — how did you suddenly improve so fast?" },
+      { speaker: "大卫", hanzi: "谢谢夸奖。其实我最近一直在看中文网剧，觉得对提高我的中文水平很有帮助。", pinyin: "Xièxie kuājiǎng. Qíshí wǒ zuìjìn yìzhí zài kàn Zhōngwén wǎng jù, juéde duì tígāo wǒ de Zhōngwén shuǐpíng hěn yǒu bāngzhù.", translation: "Thanks for the compliment. Actually I've been watching Chinese web dramas — they really help improve my Chinese." },
+      { speaker: "凯伦", hanzi: "真的吗？你都看些什么网剧？", pinyin: "Zhēn de ma? Nǐ dōu kàn xiē shénme wǎng jù?", translation: "Really? What kind of web dramas do you watch?" },
+      { speaker: "大卫", hanzi: "我喜欢武侠剧，剧情很吸引人，而且有很多武打场面，特别好看。另外，剧中的台词也很地道，可以学到很多日常用语。", pinyin: "Wǒ xǐhuān wǔxiá jù, jùqíng hěn xīyǐn rén, érqiě yǒu hěn duō wǔdǎ chǎngmiàn, tèbié hǎokàn. Lìngwài, jù zhōng de táicí yě hěn dìdào, kěyǐ xué dào hěn duō rìcháng yòngyǔ.", translation: "I love martial arts dramas — the plots are gripping with lots of fight scenes. The lines are authentic too, so you learn lots of everyday speech." },
+      { speaker: "凯伦", hanzi: "我也想试试看。你有没有什么好推荐的？", pinyin: "Wǒ yě xiǎng shìshi kàn. Nǐ yǒu méi yǒu shénme hǎo tuījiàn de?", translation: "I'd like to try too. Any recommendations?" },
+      { speaker: "大卫", hanzi: "你喜欢看哪一类的？现代的还是古代的？", pinyin: "Nǐ xǐhuān kàn nǎ yí lèi de? Xiàndài de háishi gǔdài de?", translation: "What genre do you like — modern or historical?" },
+      { speaker: "凯伦", hanzi: "我想看都市言情剧。哪儿有？", pinyin: "Wǒ xiǎng kàn dūshì yánqíng jù. Nǎr yǒu?", translation: "I want urban romance dramas. Where can I find them?" },
+      { speaker: "大卫", hanzi: "腾讯视频和爱奇艺都有。不过我更推荐腾讯。它的网剧更新快，画面质量也很好。", pinyin: "Téngxùn Shìpín hé Àiqíyì dōu yǒu. Búguò wǒ gèng tuījiàn Téngxùn. Tā de wǎng jù gēngxīn kuài, huàmiàn zhìliàng yě hěn hǎo.", translation: "Tencent Video and iQIYI both have them. I'd recommend Tencent — fast updates and great picture quality." },
+      { speaker: "凯伦", hanzi: "那要付费吗？", pinyin: "Nà yào fùfèi ma?", translation: "Do I have to pay?" },
+      { speaker: "大卫", hanzi: "你可以注册一个学生账户，一个月只要十来块钱，就能看到没有广告的高清视频了。", pinyin: "Nǐ kěyǐ zhùcè yí gè xuéshēng zhànghù, yí gè yuè zhǐ yào shí lái kuài qián, jiù néng kàn dào méi yǒu guǎnggào de gāoqīng shìpín le.", translation: "You can register a student account — only about ten kuai a month, and you get HD video with no ads." },
+      { speaker: "凯伦", hanzi: "哇，还真划算！可以在手机上看吗？", pinyin: "Wā, hái zhēn huásuàn! Kěyǐ zài shǒujī shàng kàn ma?", translation: "Wow, that's a great deal! Can I watch on my phone?" },
+      { speaker: "大卫", hanzi: "当然可以，只要下载了腾讯视频的手机应用，就可以随时随地看网剧了。", pinyin: "Dāngrán kěyǐ, zhǐyào xiàzài le Téngxùn Shìpín de shǒujī yìngyòng, jiù kěyǐ suíshí suídì kàn wǎng jù le.", translation: "Of course — just download the Tencent Video app and you can watch anytime, anywhere." },
+    ],
+  },
+];
+
+const lesson9Vocab: VocabSet[] = [
+  {
+    id: "l9-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_9_text_1_vocab.mp3",
+    items: [
+      { hanzi: "起步", pinyin: "qǐbù", pos: "V", meaning: "to start" },
+      { hanzi: "左右", pinyin: "zuǒyòu", pos: "Adv", meaning: "about; more or less" },
+      { hanzi: "熟知", pinyin: "shúzhī", pos: "V", meaning: "to know well; to be familiar with" },
+      { hanzi: "观众", pinyin: "guānzhòng", pos: "N", meaning: "audience" },
+      { hanzi: "普及", pinyin: "pǔjí", pos: "N/V", meaning: "widespread adoption; to popularize" },
+      { hanzi: "火", pinyin: "huǒ", pos: "A/N", meaning: "hot; popular; fire" },
+      { hanzi: "由", pinyin: "yóu", pos: "Prep", meaning: "by; through" },
+      { hanzi: "主导", pinyin: "zhǔdǎo", pos: "V", meaning: "to lead; to dominate" },
+      { hanzi: "主打", pinyin: "zhǔdǎ", pos: "V", meaning: "to feature; to specialize in" },
+      { hanzi: "综艺节目", pinyin: "zōngyì jiémù", pos: "NP", meaning: "variety show" },
+      { hanzi: "活泼", pinyin: "huópō", pos: "A", meaning: "lively; active" },
+      { hanzi: "见长", pinyin: "jiàncháng", pos: "V", meaning: "to be good at; to be known for" },
+      { hanzi: "尤其", pinyin: "yóuqí", pos: "Adv", meaning: "especially; particularly" },
+      { hanzi: "追捧", pinyin: "zhuīpěng", pos: "V", meaning: "to chase after; to adore" },
+      { hanzi: "占据", pinyin: "zhànjù", pos: "V", meaning: "to occupy" },
+      { hanzi: "一席之地", pinyin: "yì xí zhī dì", pos: "IE", meaning: "a place; a niche" },
+      { hanzi: "吸引", pinyin: "xīyǐn", pos: "V", meaning: "to attract" },
+      { hanzi: "渠道", pinyin: "qúdào", pos: "N", meaning: "channel; means" },
+      { hanzi: "投资", pinyin: "tóuzī", pos: "N/V", meaning: "investment; to invest" },
+      { hanzi: "盛行", pinyin: "shèngxíng", pos: "V", meaning: "to be in vogue; to be prevalent" },
+      { hanzi: "崛起", pinyin: "juéqǐ", pos: "N/V", meaning: "emergence; to emerge" },
+      { hanzi: "价值观", pinyin: "jiàzhí guān", pos: "N", meaning: "values" },
+      { hanzi: "产生", pinyin: "chǎnshēng", pos: "V", meaning: "to produce; to engender" },
+      { hanzi: "传统", pinyin: "chuántǒng", pos: "A/N", meaning: "traditional; tradition" },
+      { hanzi: "自我", pinyin: "zìwǒ", pos: "Pr", meaning: "self; selfhood" },
+      { hanzi: "思想", pinyin: "sīxiǎng", pos: "N", meaning: "thought; ideology" },
+      { hanzi: "然而", pinyin: "rán'ér", pos: "Conj", meaning: "however; nevertheless" },
+      { hanzi: "如何", pinyin: "rúhé", pos: "QPr", meaning: "how; what" },
+      { hanzi: "确保", pinyin: "quèbǎo", pos: "V", meaning: "to ensure; to guarantee" },
+      { hanzi: "防止", pinyin: "fángzhǐ", pos: "V", meaning: "to prevent; to guard against" },
+      { hanzi: "不良", pinyin: "bùliáng", pos: "A", meaning: "bad; harmful; unhealthy" },
+      { hanzi: "面对", pinyin: "miànduì", pos: "V", meaning: "to face; to confront" },
+      { hanzi: "优酷", pinyin: "Yōukù", pos: "PN", meaning: "Youku" },
+      { hanzi: "土豆", pinyin: "Tǔdòu", pos: "PN", meaning: "Tudou" },
+      { hanzi: "爱奇艺", pinyin: "Àiqíyì", pos: "PN", meaning: "iQIYI" },
+      { hanzi: "腾讯视频", pinyin: "Téngxùn Shìpín", pos: "PN", meaning: "Tencent Video" },
+      { hanzi: "B站", pinyin: "B Zhàn", pos: "PN", meaning: "Bilibili" },
+    ],
+  },
+  {
+    id: "l9-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_9_text_2_vocab.mp3",
+    items: [
+      { hanzi: "流利", pinyin: "liúlì", pos: "A", meaning: "fluent" },
+      { hanzi: "进步", pinyin: "jìnbù", pos: "V", meaning: "to improve; to progress" },
+      { hanzi: "夸奖", pinyin: "kuājiǎng", pos: "V", meaning: "to praise" },
+      { hanzi: "网剧", pinyin: "wǎng jù", pos: "NP", meaning: "web drama" },
+      { hanzi: "剧情", pinyin: "jùqíng", pos: "N", meaning: "plot; storyline" },
+      { hanzi: "武打", pinyin: "wǔdǎ", pos: "N", meaning: "martial arts action" },
+      { hanzi: "场面", pinyin: "chǎngmiàn", pos: "N", meaning: "scene" },
+      { hanzi: "台词", pinyin: "táicí", pos: "N", meaning: "actor's lines" },
+      { hanzi: "地道", pinyin: "dìdào", pos: "A", meaning: "authentic" },
+      { hanzi: "日常用语", pinyin: "rìcháng yòngyǔ", pos: "NP", meaning: "daily language; everyday speech" },
+      { hanzi: "古代", pinyin: "gǔdài", pos: "N", meaning: "ancient times" },
+      { hanzi: "画面", pinyin: "huàmiàn", pos: "N", meaning: "picture; image" },
+      { hanzi: "广告", pinyin: "guǎnggào", pos: "N", meaning: "advertisement" },
+      { hanzi: "高清视频", pinyin: "gāoqīng shìpín", pos: "NP", meaning: "HD video" },
+      { hanzi: "划算", pinyin: "huásuàn", pos: "A", meaning: "worth it; a good deal" },
+    ],
+  },
+];
+
+const lesson9Tasks: Task[] = [
+  {
+    id: "l9-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "wǎng luò shì pín",
+    answer: "网络视频",
+    translation: "online video",
+    audio: "/audio/lesson_9_text_1_vocab.mp3",
+    hint: "wǎng luò shì pín — the central topic of this lesson.",
+  },
+  {
+    id: "l9-t2",
+    type: "battle",
+    prompt: "Pick the correct phrase for the gap",
+    sentenceBefore: "中国网络视频市场",
+    sentenceAfter: "几家大平台主导。",
+    options: [
+      { hanzi: "由", pinyin: "yóu", meaning: "by; through (agent marker)" },
+      { hanzi: "把", pinyin: "bǎ", meaning: "(disposal marker)" },
+      { hanzi: "对", pinyin: "duì", meaning: "toward; to" },
+    ],
+    correctIndex: 0,
+    translation: "China's online video market is led by a few big platforms.",
+    hint: "Pattern: Subject + 由 + Agent + Verb — passive 'by'.",
+  },
+  {
+    id: "l9-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'Short-video apps also quickly caught fire.'",
+    blocks: ["短视频应用", "也", "很快", "火", "起来了"],
+    answer: ["短视频应用", "也", "很快", "火", "起来了"],
+    pinyin: "Duǎn shìpín yìngyòng yě hěn kuài huǒ qǐlái le.",
+    translation: "Short-video apps also quickly caught fire.",
+    hint: "Pattern: A + 起来 — initiation of a state. 火起来 = to become popular.",
+  },
+  {
+    id: "l9-t4",
+    type: "matching",
+    prompt: "Match each platform to its English name",
+    pairs: [
+      { left: "🎬", leftLabel: "iQIYI", right: "爱奇艺" },
+      { left: "📺", leftLabel: "Tencent Video", right: "腾讯视频" },
+      { left: "🥔", leftLabel: "Tudou", right: "土豆" },
+      { left: "🎭", leftLabel: "Youku", right: "优酷" },
+      { left: "🅱️", leftLabel: "Bilibili", right: "B站" },
+      { left: "📱", leftLabel: "Douyin", right: "抖音" },
+    ],
+  },
+  {
+    id: "l9-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 视频",
+    word: "视频",
+    translation: "video",
+    syllables: [
+      { base: "shi", correctTone: 4 },
+      { base: "pin", correctTone: 2 },
+    ],
+  },
+  {
+    id: "l9-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'I like singing, especially pop songs.'",
+    brokenSentence: ["爱唱流行歌曲", "我喜欢唱歌", "尤其"],
+    correctOrder: [1, 2, 0],
+    translation: "I like singing, especially pop songs.",
+    hint: "Pattern: General statement + 尤其 + specific case.",
+  },
+  {
+    id: "l9-t7",
+    type: "simulation",
+    prompt: "Karen wants to watch web dramas. Reply naturally as David.",
+    npcMessage: "我想看都市言情剧。哪儿有？要付费吗？",
+    npcPinyin: "Wǒ xiǎng kàn dūshì yánqíng jù. Nǎr yǒu? Yào fùfèi ma?",
+    npcTranslation: "I want to watch urban romance dramas. Where can I find them? Do I have to pay?",
+    options: [
+      { hanzi: "腾讯视频和爱奇艺都有。注册一个学生账户，一个月十来块钱就能看高清视频。", pinyin: "Téngxùn Shìpín hé Àiqíyì dōu yǒu. Zhùcè yí gè xuéshēng zhànghù, yí gè yuè shí lái kuài qián jiù néng kàn gāoqīng shìpín.", correct: true, reply: "哇，还真划算！" },
+      { hanzi: "你应该看武侠剧，剧情很吸引人。", pinyin: "Nǐ yīnggāi kàn wǔxiá jù, jùqíng hěn xīyǐn rén.", correct: false },
+      { hanzi: "网剧不好看，看电影吧。", pinyin: "Wǎng jù bù hǎokàn, kàn diànyǐng ba.", correct: false },
+    ],
+  },
+  {
+    id: "l9-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences about online video, using each item below.",
+    required: ["网络视频", "由…主导", "尤其"],
+    minSentences: 3,
+    retroWords: ["短视频", "网剧", "追捧", "划算", "高清视频", "然而"],
+  },
+];
+
+const lesson9Recap: Recap = {
+  takeaways: [
+    "网络视频 — online video: market 由 big platforms 主导 (led by).",
+    "Pattern: 左右 — after a number = 'about; more or less'. 二零零五年左右.",
+    "Pattern: A + 起来 — initiation of a state. 火起来 (to catch fire / become popular).",
+    "Pattern: 由 + Agent + V — passive marker 'by'. 由几家大平台主导.",
+    "尤其 — especially; singles out a case within a broader statement.",
+    "对…产生影响 — to have an impact on. 然而 — however (formal contrast). 其实 — actually.",
+    "Platforms: 爱奇艺 · 腾讯视频 · 优酷 · B站 · 抖音 · 快手.",
+  ],
+  keyWords: ["网络视频", "短视频", "网剧", "追捧", "由…主导", "起来", "尤其", "腾讯视频"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
@@ -2061,6 +2293,16 @@ export const lessons: Lesson[] = [
     tasks: lesson8Tasks,
     recap: lesson8Recap,
   },
-  { id: 9, title: "网络视频", titleEn: "Online Videos", theme: "Streaming culture", status: "locked" },
+  {
+    id: 9,
+    title: "网络视频",
+    titleEn: "Online Videos",
+    theme: "Streaming culture",
+    status: "available",
+    dialogues: lesson9Dialogues,
+    vocabulary: lesson9Vocab,
+    tasks: lesson9Tasks,
+    recap: lesson9Recap,
+  },
   { id: 10, title: "网络游戏", titleEn: "Online Gaming", theme: "Gaming worlds", status: "locked" },
 ];
