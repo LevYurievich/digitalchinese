@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import type { ConstructorTask } from "@/data/lessons";
+import type { ConstructorRound, ConstructorTask } from "@/data/lessons";
 import { Feedback } from "@/components/Feedback";
 
 interface Props {
@@ -17,11 +17,33 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+function getRounds(task: ConstructorTask): ConstructorRound[] {
+  if (task.rounds && task.rounds.length > 0) return task.rounds;
+  // Legacy single-round fallback.
+  return [
+    {
+      blocks: task.blocks ?? [],
+      answer: task.answer ?? [],
+      translationRu: task.translation ?? "",
+    },
+  ];
+}
+
 export function ConstructorCard({ task, onSolved }: Props) {
-  const initial = useMemo(() => shuffle(task.blocks), [task.blocks]);
+  const rounds = useMemo(() => getRounds(task), [task]);
+  const [roundIdx, setRoundIdx] = useState(0);
+  const round = rounds[roundIdx];
+
+  const initial = useMemo(() => shuffle(round.blocks), [round]);
   const [pool, setPool] = useState<string[]>(initial);
   const [slot, setSlot] = useState<string[]>([]);
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
+
+  const resetRound = (newRound: ConstructorRound) => {
+    setPool(shuffle(newRound.blocks));
+    setSlot([]);
+    setState("idle");
+  };
 
   const move = (token: string, idx: number, from: "pool" | "slot") => {
     if (state === "correct") return;
@@ -36,17 +58,34 @@ export function ConstructorCard({ task, onSolved }: Props) {
   };
 
   const check = () => {
-    const ok = slot.join("|") === task.answer.join("|");
+    const ok = slot.join("|") === round.answer.join("|");
     setState(ok ? "correct" : "wrong");
-    if (ok) onSolved();
+    if (ok && roundIdx === rounds.length - 1) onSolved();
   };
+
+  const goNextRound = () => {
+    const next = roundIdx + 1;
+    if (next < rounds.length) {
+      setRoundIdx(next);
+      resetRound(rounds[next]);
+    }
+  };
+
+  const isLastRound = roundIdx === rounds.length - 1;
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-muted-foreground">{task.prompt}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">{task.prompt}</p>
+        {rounds.length > 1 && (
+          <span className="font-mono text-[10px] uppercase tracking-widest text-primary/70">
+            {roundIdx + 1}/{rounds.length}
+          </span>
+        )}
+      </div>
+
       <div className="rounded-xl border border-border bg-surface px-5 py-4">
-        <div className="font-pinyin text-sm text-primary">{task.pinyin}</div>
-        <div className="mt-1 text-xs text-muted-foreground">{task.translation}</div>
+        <div className="text-sm text-foreground/85">{round.translationRu}</div>
       </div>
 
       <div
@@ -102,23 +141,31 @@ export function ConstructorCard({ task, onSolved }: Props) {
       </div>
 
       <div className="flex items-center gap-3">
-        <motion.button
-          whileTap={{ scale: 0.97 }}
-          onClick={check}
-          disabled={pool.length > 0 || state === "correct"}
-          className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-soft)] transition hover:brightness-110 disabled:opacity-40"
-        >
-          Check
-        </motion.button>
+        {state === "correct" && !isLastRound ? (
+          <motion.button
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={goNextRound}
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-soft)] transition hover:brightness-110"
+          >
+            Следующее предложение →
+          </motion.button>
+        ) : (
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={check}
+            disabled={pool.length > 0 || state === "correct"}
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-soft)] transition hover:brightness-110 disabled:opacity-40"
+          >
+            Проверить
+          </motion.button>
+        )}
         <button
-          onClick={() => {
-            setPool(shuffle(task.blocks));
-            setSlot([]);
-            setState("idle");
-          }}
+          onClick={() => resetRound(round)}
           className="text-xs text-muted-foreground underline-offset-4 hover:underline"
         >
-          reset
+          сбросить
         </button>
       </div>
       <Feedback state={state} />
