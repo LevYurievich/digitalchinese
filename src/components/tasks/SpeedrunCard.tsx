@@ -52,11 +52,8 @@ export function SpeedrunCard({ task, onSolved }: Props) {
             disabled={!value || state === "correct"}
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow-soft)] transition hover:brightness-110 disabled:opacity-40"
           >
-            Check
+            Проверить
           </motion.button>
-          {task.hint && (
-            <span className="font-mono text-xs text-muted-foreground">hint · {task.hint}</span>
-          )}
         </div>
         <Feedback
           state={state}
