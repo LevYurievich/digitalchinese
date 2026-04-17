@@ -36,6 +36,13 @@ export const Route = createRootRoute({
           "Interactive Chinese textbook for the digital age. 10 themed lessons, 8-task adaptive engine.",
       },
       { name: "author", content: "Digital Chinese" },
+      { property: "og:title", content: "Digital Chinese · 数字化语境中学中文" },
+      { name: "twitter:title", content: "Digital Chinese · 数字化语境中学中文" },
+      { name: "description", content: "An interactive platform for learning Chinese, featuring 10 lessons and an 8-task adaptive engine." },
+      { property: "og:description", content: "An interactive platform for learning Chinese, featuring 10 lessons and an 8-task adaptive engine." },
+      { name: "twitter:description", content: "An interactive platform for learning Chinese, featuring 10 lessons and an 8-task adaptive engine." },
+      { name: "twitter:card", content: "summary" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
