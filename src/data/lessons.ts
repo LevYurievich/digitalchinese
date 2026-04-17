@@ -1029,6 +1029,254 @@ const lesson4Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// LESSON 5 — 机器翻译 / Machine Translation
+// ───────────────────────────────────────────────────────────────────────────
+
+const lesson5Dialogues: Dialogue[] = [
+  {
+    id: "l5-text1",
+    title: "课文一",
+    titleEn: "Text 1 — A primer on machine translation",
+    audio: "/audio/lesson_5_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "机器翻译就是利用电脑技术把一种语言转换成另一种语言。早在上世纪五十年代，科学家们就已经开始研发机器翻译了。",
+        pinyin: "Jīqì fānyì jiù shì lìyòng diànnǎo jìshù bǎ yì zhǒng yǔyán zhuǎnhuàn chéng lìng yì zhǒng yǔyán. Zǎo zài shàng shìjì wǔshí niándài, kēxuéjiā men jiù yǐjīng kāishǐ yánfā jīqì fānyì le.",
+        translation: "Machine translation uses computer technology to convert one language into another. As early as the 1950s, scientists had already started researching it.",
+      },
+      {
+        hanzi: "自从那时以来，机器翻译已从最初的词对词翻译，发展到考虑整个句子的结构和上下文意义的翻译。",
+        pinyin: "Zìcóng nà shí yǐlái, jīqì fānyì yǐ cóng zuìchū de cí duì cí fānyì, fāzhǎn dào kǎolǜ zhěnggè jùzi de jiégòu hé shàngxiàwén yìyì de fānyì.",
+        translation: "Since then, MT has evolved from initial word-for-word translation to translation that considers full sentence structure and contextual meaning.",
+      },
+      {
+        hanzi: "根据不同的方法和原理，机器翻译可以大致分为三种类型。第一种是基于规则的翻译，通过使用语言学的规则来进行翻译。",
+        pinyin: "Gēnjù bù tóng de fāngfǎ hé yuánlǐ, jīqì fānyì kěyǐ dàzhì fēn wéi sān zhǒng lèixíng. Dì yī zhǒng shì jīyú guīzé de fānyì, tōngguò shǐyòng yǔyán xué de guīzé lái jìnxíng fānyì.",
+        translation: "Based on different methods and principles, MT can be roughly divided into three types. The first is rule-based translation, which works by applying linguistic rules.",
+      },
+      {
+        hanzi: "第二种是基于统计的翻译，通过分析大量的语言数据进行翻译。",
+        pinyin: "Dì èr zhǒng shì jīyú tǒngjì de fānyì, tōngguò fēnxī dàliàng de yǔyán shùjù jìnxíng fānyì.",
+        translation: "The second is statistics-based translation, which translates by analysing large amounts of language data.",
+      },
+      {
+        hanzi: "第三种被称为神经机器翻译，它让电脑软件模仿人脑的神经网络，通过学习大量的语言材料来进行翻译。神经机器翻译是现在最新的翻译技术，已被各大机器翻译平台所采用。",
+        pinyin: "Dì sān zhǒng bèi chēng wéi shénjīng jīqì fānyì, tā ràng diànnǎo ruǎnjiàn mófǎng rén nǎo de shénjīng wǎngluò, tōngguò xuéxí dàliàng de yǔyán cáiliào lái jìnxíng fānyì. Shénjīng jīqì fānyì shì xiànzài zuì xīn de fānyì jìshù, yǐ bèi gè dà jīqì fānyì píngtái suǒ cǎiyòng.",
+        translation: "The third is called neural machine translation: software imitates the brain's neural network and learns from huge volumes of language material. NMT is the newest technology, adopted by all major MT platforms.",
+      },
+      {
+        hanzi: "谈到平台，大家可能会想到谷歌翻译、微软翻译和 DeepL。其实，在中文互联网上也有不少非常优秀的翻译平台，如百度翻译、有道翻译、以及搜狗翻译等。",
+        pinyin: "Tán dào píngtái, dàjiā kěnéng huì xiǎng dào Gǔgē Fānyì, Wēiruǎn Fānyì hé DeepL. Qíshí, zài Zhōngwén hùliánwǎng shàng yě yǒu bù shǎo fēicháng yōuxiù de fānyì píngtái, rú Bǎidù Fānyì, Yǒudào Fānyì, yǐjí Sōugǒu Fānyì děng.",
+        translation: "Speaking of platforms, people may think of Google Translate, Microsoft Translator and DeepL. Actually, the Chinese internet has many excellent platforms too — Baidu, Youdao and Sogou Translate.",
+      },
+      {
+        hanzi: "以上这些平台都支持多种语言的文本翻译，同时也提供语音和图片翻译。",
+        pinyin: "Yǐshàng zhèxiē píngtái dōu zhīchí duō zhǒng yǔyán de wénběn fānyì, tóngshí yě tígōng yǔyīn hé túpiàn fānyì.",
+        translation: "All these platforms support text translation in many languages, and also offer voice and image translation.",
+      },
+      {
+        hanzi: "值得注意的是，这些平台都开发了用于手机的翻译应用，以便更好地满足人们对翻译的日常需求。",
+        pinyin: "Zhídé zhùyì de shì, zhèxiē píngtái dōu kāifā le yòng yú shǒujī de fānyì yìngyòng, yǐbiàn gèng hǎo de mǎnzú rénmen duì fānyì de rìcháng xūqiú.",
+        translation: "It is worth noting that all of them have developed mobile translation apps to better meet people's everyday translation needs.",
+      },
+    ],
+  },
+  {
+    id: "l5-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen plans her translation report",
+    audio: "/audio/lesson_5_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "李老师，您今天的课太有意思了，我学到不少新东西。", pinyin: "Lǐ lǎoshī, nín jīntiān de kè tài yǒu yìsi le, wǒ xué dào bù shǎo xīn dōngxi.", translation: "Teacher Li, today's class was so interesting — I learned a lot of new things." },
+      { speaker: "李老师", hanzi: "是吗，学到了什么新东西？", pinyin: "Shì ma, xué dào le shénme xīn dōngxi?", translation: "Really? What did you learn?" },
+      { speaker: "凯伦", hanzi: "您说的有些翻译平台，我原来都不知道！这些平台对我学中文非常有用。", pinyin: "Nín shuō de yǒu xiē fānyì píngtái, wǒ yuánlái dōu bù zhīdào! Zhèxiē píngtái duì wǒ xué Zhōngwén fēicháng yǒu yòng.", translation: "Some of the translation platforms you mentioned — I had no idea they existed! They're very useful for my Chinese studies." },
+      { speaker: "李老师", hanzi: "对了，下节课你们要做课堂报告，就是谈翻译平台。你想谈什么呢？", pinyin: "Duì le, xià jié kè nǐmen yào zuò kètáng bàogào, jiù shì tán fānyì píngtái. Nǐ xiǎng tán shénme ne?", translation: "By the way, next class you'll give a presentation about translation platforms. What do you want to talk about?" },
+      { speaker: "凯伦", hanzi: "我对谷歌翻译和百度翻译都有兴趣，想谈谈这两个平台。", pinyin: "Wǒ duì Gǔgē Fānyì hé Bǎidù Fānyì dōu yǒu xìngqù, xiǎng tán tan zhè liǎng ge píngtái.", translation: "I'm interested in both Google Translate and Baidu Translate — I'd like to discuss these two." },
+      { speaker: "李老师", hanzi: "你有什么具体计划吗？", pinyin: "Nǐ yǒu shénme jùtǐ jìhuà ma?", translation: "Do you have a concrete plan?" },
+      { speaker: "凯伦", hanzi: "还没想好。想听听老师您的建议。", pinyin: "Hái méi xiǎng hǎo. Xiǎng tīng ting lǎoshī nín de jiànyì.", translation: "Not yet — I'd like to hear your suggestions." },
+      { speaker: "李老师", hanzi: "我觉得你可以选一篇英语文章，在这两个平台翻译成中文，然后比较两个译文，看看它们有哪些相同和不相同的地方。", pinyin: "Wǒ juéde nǐ kěyǐ xuǎn yì piān Yīngyǔ wénzhāng, zài zhè liǎng ge píngtái fānyì chéng Zhōngwén, ránhòu bǐjiào liǎng ge yìwén, kàn kan tāmen yǒu nǎxiē xiāngtóng hé bù xiāngtóng de dìfang.", translation: "I think you could pick an English article, translate it into Chinese on both platforms, then compare the two translations and see what is similar and what is different." },
+      { speaker: "凯伦", hanzi: "嗯，这听起来很不错。老师，我需要特别注意什么？", pinyin: "Èn, zhè tīng qǐlái hěn bú cuò. Lǎoshī, wǒ xūyào tèbié zhùyì shénme?", translation: "Mm, that sounds great. Teacher, what should I pay special attention to?" },
+      { speaker: "李老师", hanzi: "在比较两个译文的时候，有两个关键方面需要注意，一个是译文的准确性，另一个是译文的可读性。", pinyin: "Zài bǐjiào liǎng ge yìwén de shíhou, yǒu liǎng ge guānjiàn fāngmiàn xūyào zhùyì, yí ge shì yìwén de zhǔnquèxìng, lìng yí ge shì yìwén de kědúxìng.", translation: "When comparing the two translations, there are two key aspects to watch: accuracy and readability." },
+      { speaker: "凯伦", hanzi: "好的，谢谢老师的建议，我会好好准备的。", pinyin: "Hǎo de, xièxie lǎoshī de jiànyì, wǒ huì hǎohao zhǔnbèi de.", translation: "Got it — thank you for your advice, I'll prepare carefully." },
+    ],
+  },
+];
+
+const lesson5Vocab: VocabSet[] = [
+  {
+    id: "l5-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_5_text_1_vocab.mp3",
+    items: [
+      { hanzi: "机器翻译", pinyin: "jīqì fānyì", pos: "NP", meaning: "machine translation" },
+      { hanzi: "利用", pinyin: "lìyòng", pos: "V", meaning: "to utilize; to make use of" },
+      { hanzi: "技术", pinyin: "jìshù", pos: "N", meaning: "technology; technique" },
+      { hanzi: "转换", pinyin: "zhuǎnhuàn", pos: "V", meaning: "to change; to transform" },
+      { hanzi: "科学家", pinyin: "kēxuéjiā", pos: "N", meaning: "scientist" },
+      { hanzi: "研发", pinyin: "yánfā", pos: "V", meaning: "to research and develop" },
+      { hanzi: "词对词", pinyin: "cí duì cí", pos: "NP", meaning: "word for word" },
+      { hanzi: "考虑", pinyin: "kǎolǜ", pos: "N/V", meaning: "consideration; to consider" },
+      { hanzi: "整个", pinyin: "zhěnggè", pos: "A", meaning: "entire; whole" },
+      { hanzi: "上下文", pinyin: "shàngxiàwén", pos: "N", meaning: "context" },
+      { hanzi: "方法", pinyin: "fāngfǎ", pos: "N", meaning: "method" },
+      { hanzi: "原理", pinyin: "yuánlǐ", pos: "N", meaning: "principle; theory" },
+      { hanzi: "大致", pinyin: "dàzhì", pos: "Adv", meaning: "approximately; roughly" },
+      { hanzi: "分为", pinyin: "fēn wéi", pos: "VP", meaning: "to divide into" },
+      { hanzi: "类型", pinyin: "lèixíng", pos: "N", meaning: "type; form" },
+      { hanzi: "基于", pinyin: "jīyú", pos: "Prep", meaning: "on the basis of" },
+      { hanzi: "规则", pinyin: "guīzé", pos: "N", meaning: "rule; regulation" },
+      { hanzi: "统计", pinyin: "tǒngjì", pos: "N/V", meaning: "statistics; to count" },
+      { hanzi: "分析", pinyin: "fēnxī", pos: "N/V", meaning: "analysis; to analyze" },
+      { hanzi: "大量", pinyin: "dàliàng", pos: "A", meaning: "large amount of" },
+      { hanzi: "数据", pinyin: "shùjù", pos: "N", meaning: "data" },
+      { hanzi: "神经", pinyin: "shénjīng", pos: "N", meaning: "nerve; neural" },
+      { hanzi: "网络", pinyin: "wǎngluò", pos: "N", meaning: "network; internet" },
+      { hanzi: "模仿", pinyin: "mófǎng", pos: "N/V", meaning: "imitation; to imitate" },
+      { hanzi: "人脑", pinyin: "rén nǎo", pos: "NP", meaning: "human brain" },
+      { hanzi: "材料", pinyin: "cáiliào", pos: "N", meaning: "material" },
+      { hanzi: "采用", pinyin: "cǎiyòng", pos: "V", meaning: "to adopt; to use" },
+      { hanzi: "优秀", pinyin: "yōuxiù", pos: "A", meaning: "outstanding; excellent" },
+      { hanzi: "互联网", pinyin: "hùliánwǎng", pos: "N", meaning: "internet" },
+      { hanzi: "支持", pinyin: "zhīchí", pos: "N/V", meaning: "support; to support" },
+      { hanzi: "文本", pinyin: "wénběn", pos: "N", meaning: "text" },
+      { hanzi: "图片", pinyin: "túpiàn", pos: "N", meaning: "picture; image" },
+      { hanzi: "值得", pinyin: "zhídé", pos: "V", meaning: "to deserve; to be worth" },
+      { hanzi: "注意", pinyin: "zhùyì", pos: "N/V", meaning: "attention; to pay attention" },
+      { hanzi: "以便", pinyin: "yǐbiàn", pos: "Conj", meaning: "so that; in order to" },
+      { hanzi: "满足", pinyin: "mǎnzú", pos: "V", meaning: "to satisfy" },
+      { hanzi: "需求", pinyin: "xūqiú", pos: "N", meaning: "needs; demand" },
+      { hanzi: "谷歌翻译", pinyin: "Gǔgē Fānyì", pos: "PN", meaning: "Google Translate" },
+      { hanzi: "微软翻译", pinyin: "Wēiruǎn Fānyì", pos: "PN", meaning: "Microsoft Translator" },
+      { hanzi: "百度翻译", pinyin: "Bǎidù Fānyì", pos: "PN", meaning: "Baidu Translate" },
+      { hanzi: "有道翻译", pinyin: "Yǒudào Fānyì", pos: "PN", meaning: "Youdao Translate" },
+      { hanzi: "搜狗翻译", pinyin: "Sōugǒu Fānyì", pos: "PN", meaning: "Sogou Translate" },
+    ],
+  },
+  {
+    id: "l5-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_5_text_2_vocab.mp3",
+    items: [
+      { hanzi: "课堂报告", pinyin: "kètáng bàogào", pos: "NP", meaning: "class presentation" },
+      { hanzi: "具体", pinyin: "jùtǐ", pos: "A", meaning: "concrete; specific" },
+      { hanzi: "译文", pinyin: "yìwén", pos: "N", meaning: "translated text; translation" },
+      { hanzi: "相同", pinyin: "xiāngtóng", pos: "A", meaning: "same; identical" },
+      { hanzi: "关键", pinyin: "guānjiàn", pos: "A/N", meaning: "crucial; key point" },
+      { hanzi: "准确性", pinyin: "zhǔnquèxìng", pos: "N", meaning: "accuracy; correctness" },
+      { hanzi: "可读性", pinyin: "kědúxìng", pos: "N", meaning: "readability" },
+      { hanzi: "建议", pinyin: "jiànyì", pos: "N/V", meaning: "suggestion; to suggest" },
+      { hanzi: "比较", pinyin: "bǐjiào", pos: "V/Adv", meaning: "to compare; relatively" },
+      { hanzi: "方面", pinyin: "fāngmiàn", pos: "N", meaning: "aspect; side" },
+      { hanzi: "李老师", pinyin: "Lǐ lǎoshī", pos: "PN", meaning: "Teacher Li" },
+    ],
+  },
+];
+
+const lesson5Tasks: Task[] = [
+  {
+    id: "l5-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "jī qì fān yì",
+    answer: "机器翻译",
+    translation: "machine translation",
+    audio: "/audio/lesson_5_text_1_vocab.mp3",
+    hint: "jī qì fān yì — the central topic of this lesson.",
+  },
+  {
+    id: "l5-t2",
+    type: "battle",
+    prompt: "Pick the correct word for the gap",
+    sentenceBefore: "机器翻译可以",
+    sentenceAfter: "规则的翻译、基于统计的翻译和神经机器翻译三种类型。",
+    options: [
+      { hanzi: "分为基于", pinyin: "fēn wéi jīyú", meaning: "be divided into … based on" },
+      { hanzi: "属于", pinyin: "shǔyú", meaning: "to belong to" },
+      { hanzi: "组成", pinyin: "zǔchéng", meaning: "to compose" },
+    ],
+    correctIndex: 0,
+    translation: "MT can be divided into three types: rule-based, statistics-based, and neural MT.",
+    hint: "Pattern: 分为 X — divide into X.",
+  },
+  {
+    id: "l5-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'Machine translation uses computer technology to convert one language into another.'",
+    blocks: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
+    answer: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
+    pinyin: "Jīqì fānyì jiù shì lìyòng diànnǎo jìshù bǎ yì zhǒng yǔyán zhuǎnhuàn chéng lìng yì zhǒng yǔyán.",
+    translation: "Machine translation uses computer technology to convert one language into another.",
+    hint: "Pattern: 把 X 转换成 Y.",
+  },
+  {
+    id: "l5-t4",
+    type: "matching",
+    prompt: "Match each translation platform to its origin",
+    pairs: [
+      { left: "🇺🇸", leftLabel: "Google Translate", right: "谷歌翻译" },
+      { left: "🪟", leftLabel: "Microsoft Translator", right: "微软翻译" },
+      { left: "🐻", leftLabel: "Baidu Translate", right: "百度翻译" },
+      { left: "📚", leftLabel: "Youdao Translate", right: "有道翻译" },
+      { left: "🔎", leftLabel: "Sogou Translate", right: "搜狗翻译" },
+    ],
+  },
+  {
+    id: "l5-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 翻译",
+    word: "翻译",
+    translation: "to translate; translation",
+    syllables: [
+      { base: "fan", correctTone: 1 },
+      { base: "yi", correctTone: 4 },
+    ],
+  },
+  {
+    id: "l5-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'Since then, MT has evolved to translation that considers full sentence structure.'",
+    brokenSentence: ["机器翻译", "自从那时以来", "考虑整个句子结构的翻译", "已发展到"],
+    correctOrder: [1, 0, 3, 2],
+    translation: "Since then, machine translation has evolved into translation that considers the full sentence structure.",
+    hint: "Pattern: 自从 … 以来, Subject 已 V 到 …",
+  },
+  {
+    id: "l5-t7",
+    type: "simulation",
+    prompt: "Teacher Li asks Karen about her presentation. Reply naturally.",
+    npcMessage: "下节课你要做课堂报告，谈翻译平台。你有什么具体计划吗？",
+    npcPinyin: "Xià jié kè nǐ yào zuò kètáng bàogào, tán fānyì píngtái. Nǐ yǒu shénme jùtǐ jìhuà ma?",
+    npcTranslation: "Next class you'll give a presentation about translation platforms. Do you have a concrete plan?",
+    options: [
+      { hanzi: "我想选一篇英语文章，在谷歌翻译和百度翻译上都翻译一次，再比较两个译文。", pinyin: "Wǒ xiǎng xuǎn yì piān Yīngyǔ wénzhāng, zài Gǔgē Fānyì hé Bǎidù Fānyì shàng dōu fānyì yí cì, zài bǐjiào liǎng ge yìwén.", correct: true, reply: "这个计划很好，注意准确性和可读性。" },
+      { hanzi: "我打算只用手机翻译应用，不用电脑。", pinyin: "Wǒ dǎsuàn zhǐ yòng shǒujī fānyì yìngyòng, bú yòng diànnǎo.", correct: false },
+      { hanzi: "我还没安装翻译软件呢。", pinyin: "Wǒ hái méi ānzhuāng fānyì ruǎnjiàn ne.", correct: false },
+    ],
+  },
+  {
+    id: "l5-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences about machine translation, using each item below.",
+    required: ["机器翻译", "基于", "值得注意的是"],
+    minSentences: 3,
+    retroWords: ["社交媒体", "应用", "平台", "对于…来说", "下载"],
+  },
+];
+
+const lesson5Recap: Recap = {
+  takeaways: [
+    "机器翻译 = 利用电脑技术 把 X 转换成 Y. 三种类型: 基于规则 / 基于统计 / 神经机器翻译.",
+    "Pattern: 自从 … 以来 — since; 基于 — based on; 谈到 — speaking of.",
+    "值得注意的是 … — worth noting that … 以便 + clause — so that …",
+    "中文翻译平台: 百度翻译 · 有道翻译 · 搜狗翻译. 国际: 谷歌 · 微软 · DeepL.",
+  ],
+  keyWords: ["机器翻译", "转换", "基于", "神经网络", "译文", "准确性", "可读性"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
@@ -1075,7 +1323,17 @@ export const lessons: Lesson[] = [
     tasks: lesson4Tasks,
     recap: lesson4Recap,
   },
-  { id: 5, title: "机器翻译", titleEn: "Machine Translation", theme: "MT & AI", status: "locked" },
+  {
+    id: 5,
+    title: "机器翻译",
+    titleEn: "Machine Translation",
+    theme: "MT & AI",
+    status: "available",
+    dialogues: lesson5Dialogues,
+    vocabulary: lesson5Vocab,
+    tasks: lesson5Tasks,
+    recap: lesson5Recap,
+  },
   { id: 6, title: "电子商务", titleEn: "E-Commerce", theme: "Online shopping", status: "locked" },
   { id: 7, title: "网络文学", titleEn: "Internet Literature", theme: "Online fiction", status: "locked" },
   { id: 8, title: "人工智能聊天机器人", titleEn: "AI Chatbot", theme: "Conversational AI", status: "locked" },
