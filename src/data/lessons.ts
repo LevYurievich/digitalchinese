@@ -2293,6 +2293,16 @@ export const lessons: Lesson[] = [
     tasks: lesson8Tasks,
     recap: lesson8Recap,
   },
-  { id: 9, title: "网络视频", titleEn: "Online Videos", theme: "Streaming culture", status: "locked" },
+  {
+    id: 9,
+    title: "网络视频",
+    titleEn: "Online Videos",
+    theme: "Streaming culture",
+    status: "available",
+    dialogues: lesson9Dialogues,
+    vocabulary: lesson9Vocab,
+    tasks: lesson9Tasks,
+    recap: lesson9Recap,
+  },
   { id: 10, title: "网络游戏", titleEn: "Online Gaming", theme: "Gaming worlds", status: "locked" },
 ];
