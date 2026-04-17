@@ -2203,6 +2203,228 @@ const lesson9Recap: Recap = {
 };
 
 // ───────────────────────────────────────────────────────────────────────────
+// Lesson 10 — 网络游戏 / Online Gaming
+
+const lesson10Dialogues: Dialogue[] = [
+  {
+    id: "l10-text1",
+    title: "课文一",
+    titleEn: "Text 1 — Online gaming in China",
+    audio: "/audio/lesson_10_text_1.mp3",
+    kind: "narrative",
+    lines: [
+      {
+        hanzi: "网络游戏，也叫\"在线游戏\"或\"网游\"，是通过网络把游戏公司的服务器和我们自己的电脑或手机连接起来玩的电子游戏。网络游戏让许多爱玩游戏的人同时连线进行游戏、娱乐、交流，并在虚拟世界中获得成就感，是一种休闲娱乐活动。",
+        pinyin: "Wǎngluò yóuxì, yě jiào \"zàixiàn yóuxì\" huò \"wǎng yóu\", shì tōngguò wǎngluò bǎ yóuxì gōngsī de fúwùqì hé wǒmen zìjǐ de diànnǎo huò shǒujī liánjiē qǐlái wán de diànzǐ yóuxì. Wǎngluò yóuxì ràng xǔduō ài wán yóuxì de rén tóngshí liánxiàn jìnxíng yóuxì, yúlè, jiāoliú, bìng zài xūnǐ shìjiè zhōng huòdé chéngjiù gǎn, shì yì zhǒng xiūxián yúlè huódòng.",
+        translation: "Online games — also called 'online gaming' or 'net games' — are electronic games played by connecting our own computer or phone to a game company's server through the internet. They let many gaming fans connect at the same time to play, relax, and chat, and gain a sense of achievement in a virtual world — a form of leisure entertainment.",
+      },
+      {
+        hanzi: "网络游戏在中国始于上世纪九十年代。经过多年的发展，中国现在已成为全世界最大的网络游戏市场之一。中国拥有快速发展的游戏产业，其中腾讯游戏、网易游戏、完美世界和盛趣游戏等，都是全国领先的游戏开发和运营企业。它们分别推出的《王者荣耀》、《和平精英》、《梦幻西游》和《诛仙》等产品，都已成为人们爱不释手的经典游戏。",
+        pinyin: "Wǎngluò yóuxì zài Zhōngguó shǐ yú shàng shìjì jiǔshí niándài. Jīngguò duō nián de fāzhǎn, Zhōngguó xiànzài yǐ chéngwéi quán shìjiè zuì dà de wǎngluò yóuxì shìchǎng zhī yī. Zhōngguó yōngyǒu kuàisù fāzhǎn de yóuxì chǎnyè, qízhōng Téngxùn Yóuxì, Wǎngyì Yóuxì, Wánměi Shìjiè hé Shèngqù Yóuxì děng, dōu shì quánguó lǐngxiān de yóuxì kāifā hé yùnyíng qǐyè. Tāmen fēnbié tuīchū de 《Wángzhě Róngyào》、《Hépíng Jīngyīng》、《Mènghuàn Xīyóu》 hé 《Zhūxiān》 děng chǎnpǐn, dōu yǐ chéngwéi rénmen ài bú shì shǒu de jīngdiǎn yóuxì.",
+        translation: "Online gaming in China began in the 1990s. After many years of development, China is now one of the largest online gaming markets in the world. China has a fast-growing gaming industry — Tencent Games, NetEase Games, Perfect World, and Shengqu Games are all leading game development and operation companies. The titles they have released — Honor of Kings, Game for Peace, Fantasy Westward Journey, and Jade Dynasty — have all become beloved classics.",
+      },
+      {
+        hanzi: "中国网游的类型非常丰富，包括角色扮演游戏、动作游戏、策略游戏、体育游戏、休闲游戏、以及团队竞技游戏等。这些游戏类型各有各的特色和玩法，不仅深受中国玩家喜爱，也吸引了不少外国玩家。另外，随着智能手机的普及，移动端游戏在中国得到快速发展，扩大了网络游戏市场，同时也成为中国数字经济发展的新动力。",
+        pinyin: "Zhōngguó wǎng yóu de lèixíng fēicháng fēngfù, bāokuò juésè bànyǎn yóuxì, dòngzuò yóuxì, cèlüè yóuxì, tǐyù yóuxì, xiūxián yóuxì, yǐjí tuánduì jìngjì yóuxì děng. Zhèxiē yóuxì lèixíng gè yǒu gè de tèsè hé wánfǎ, bùjǐn shēn shòu Zhōngguó wánjiā xǐ'ài, yě xīyǐn le bù shǎo wàiguó wánjiā. Lìngwài, suízhe zhìnéng shǒujī de pǔjí, yídòng duān yóuxì zài Zhōngguó dédào kuàisù fāzhǎn, kuòdà le wǎngluò yóuxì shìchǎng, tóngshí yě chéngwéi Zhōngguó shùzì jīngjì fāzhǎn de xīn dònglì.",
+        translation: "Chinese online games come in many types — role-playing, action, strategy, sports, casual, and team competitive games. Each type has its own features and gameplay; they are loved not only by Chinese players but also attract many foreign players. In addition, as smartphones spread, mobile games have developed rapidly in China, expanding the online gaming market and becoming a new driver of China's digital economy.",
+      },
+    ],
+  },
+  {
+    id: "l10-text2",
+    title: "课文二",
+    titleEn: "Text 2 — Karen and teacher Li discuss gaming and youth",
+    audio: "/audio/lesson_10_text_2.mp3",
+    kind: "dialogue",
+    lines: [
+      { speaker: "凯伦", hanzi: "李老师，昨天我们上课的内容是中国的网游。我想听听您对网游的看法。", pinyin: "Lǐ lǎoshī, zuótiān wǒmen shàng kè de nèiróng shì Zhōngguó de wǎng yóu. Wǒ xiǎng tīng ting nín duì wǎng yóu de kànfǎ.", translation: "Teacher Li, yesterday's lesson was about Chinese online games. I'd love to hear your view on them." },
+      { speaker: "李老师", hanzi: "嗯，你这个话题有点儿大。能具体点儿吗？", pinyin: "Èn, nǐ zhè ge huàtí yǒu diǎnr dà. Néng jùtǐ diǎnr ma?", translation: "Hmm, that topic is a bit broad. Can you be more specific?" },
+      { speaker: "凯伦", hanzi: "哦，我感兴趣的是网游对青少年的影响。", pinyin: "Ò, wǒ gǎn xìngqu de shì wǎng yóu duì qīngshàonián de yǐngxiǎng.", translation: "Oh, I'm interested in the influence of online games on youth." },
+      { speaker: "李老师", hanzi: "对于青少年来说，网络游戏既有好的影响也有不好的影响，关键在于如何引导。", pinyin: "Duìyú qīngshàonián láishuō, wǎngluò yóuxì jì yǒu hǎo de yǐngxiǎng yě yǒu bù hǎo de yǐngxiǎng, guānjiàn zài yú rúhé yǐndǎo.", translation: "For young people, online games have both good and bad effects. The key lies in how you guide them." },
+      { speaker: "凯伦", hanzi: "什么是好的影响呢？", pinyin: "Shénme shì hǎo de yǐngxiǎng ne?", translation: "What are the good effects?" },
+      { speaker: "李老师", hanzi: "比如说，网游能提供娱乐，帮助青少年放松，甚至还能提高他们的反应能力和团队合作意识。", pinyin: "Bǐrú shuō, wǎng yóu néng tígōng yúlè, bāngzhù qīngshàonián fàngsōng, shènzhì hái néng tígāo tāmen de fǎnyìng nénglì hé tuánduì hézuò yìshi.", translation: "For example, they offer entertainment, help young people relax, and can even improve their reaction ability and team cooperation awareness." },
+      { speaker: "凯伦", hanzi: "那不好的影响呢？", pinyin: "Nà bù hǎo de yǐngxiǎng ne?", translation: "And the bad effects?" },
+      { speaker: "李老师", hanzi: "网游容易让青少年上瘾，影响他们的学习和生活。而且，有些游戏内容可能不适合青少年。", pinyin: "Wǎng yóu róngyi ràng qīngshàonián shàngyǐn, yǐngxiǎng tāmen de xuéxí hé shēnghuó. Érqiě, yǒu xiē yóuxì nèiróng kěnéng bú shìhé qīngshàonián.", translation: "Online games easily make young people addicted, affecting their study and life. And some game content may be unsuitable for them." },
+      { speaker: "凯伦", hanzi: "什么样的内容？", pinyin: "Shénme yàng de nèiróng?", translation: "What kind of content?" },
+      { speaker: "李老师", hanzi: "比如暴力，这对他们的成长是没有好处的。", pinyin: "Bǐrú bàolì, zhè duì tāmen de chéngzhǎng shì méiyǒu hǎochù de.", translation: "Violence, for instance — that's no good for their growth." },
+      { speaker: "凯伦", hanzi: "那老师和家长应该怎么做呢？", pinyin: "Nà lǎoshī hé jiāzhǎng yīnggāi zěnme zuò ne?", translation: "Then what should teachers and parents do?" },
+      { speaker: "李老师", hanzi: "老师和家长应该注意孩子的游戏行为，引导他们合理安排游戏时间，选择健康的游戏内容，帮助他们养成良好的网络使用习惯。", pinyin: "Lǎoshī hé jiāzhǎng yīnggāi zhùyì háizi de yóuxì xíngwéi, yǐndǎo tāmen hélǐ ānpái yóuxì shíjiān, xuǎnzé jiànkāng de yóuxì nèiróng, bāngzhù tāmen yǎngchéng liánghǎo de wǎngluò shǐyòng xíguàn.", translation: "They should pay attention to children's gaming behavior, guide them to arrange gaming time reasonably, choose healthy content, and help them develop good internet habits." },
+      { speaker: "凯伦", hanzi: "说得太好了。谢谢老师！", pinyin: "Shuō dé tài hǎo le. Xièxie lǎoshī!", translation: "Wonderfully said. Thank you, teacher!" },
+    ],
+  },
+];
+
+const lesson10Vocab: VocabSet[] = [
+  {
+    id: "l10-vocab1",
+    title: "Text 1 vocabulary",
+    audio: "/audio/lesson_10_text_1_vocab.mp3",
+    items: [
+      { hanzi: "在线", pinyin: "zàixiàn", pos: "A", meaning: "online" },
+      { hanzi: "服务器", pinyin: "fúwùqì", pos: "NP", meaning: "server" },
+      { hanzi: "连接", pinyin: "liánjiē", pos: "V", meaning: "to connect" },
+      { hanzi: "连线", pinyin: "liánxiàn", pos: "V", meaning: "to be online; to connect" },
+      { hanzi: "虚拟", pinyin: "xūnǐ", pos: "A", meaning: "virtual" },
+      { hanzi: "获得", pinyin: "huòdé", pos: "V", meaning: "to acquire; to obtain" },
+      { hanzi: "成就感", pinyin: "chéngjiù gǎn", pos: "NP", meaning: "sense of achievement" },
+      { hanzi: "经过", pinyin: "jīngguò", pos: "Prep/V", meaning: "through; to go through" },
+      { hanzi: "之一", pinyin: "zhī yī", pos: "NP", meaning: "one of" },
+      { hanzi: "领先", pinyin: "lǐngxiān", pos: "V", meaning: "to lead" },
+      { hanzi: "推出", pinyin: "tuīchū", pos: "V", meaning: "to release; to launch" },
+      { hanzi: "产品", pinyin: "chǎnpǐn", pos: "N", meaning: "product" },
+      { hanzi: "爱不释手", pinyin: "ài bú shì shǒu", pos: "IE", meaning: "to love too much to part with it" },
+      { hanzi: "经典", pinyin: "jīngdiǎn", pos: "A/N", meaning: "classic; classics" },
+      { hanzi: "角色", pinyin: "juésè", pos: "N", meaning: "role; character" },
+      { hanzi: "扮演", pinyin: "bànyǎn", pos: "V", meaning: "to play the role of; to portray" },
+      { hanzi: "动作", pinyin: "dòngzuò", pos: "N", meaning: "action; movement" },
+      { hanzi: "策略", pinyin: "cèlüè", pos: "N", meaning: "strategy" },
+      { hanzi: "体育", pinyin: "tǐyù", pos: "N", meaning: "sports; physical education" },
+      { hanzi: "团队", pinyin: "tuánduì", pos: "N", meaning: "team" },
+      { hanzi: "竞技", pinyin: "jìngjì", pos: "N", meaning: "competition; athletic contest" },
+      { hanzi: "玩家", pinyin: "wánjiā", pos: "N", meaning: "player (of video games)" },
+      { hanzi: "移动端", pinyin: "yídòng duān", pos: "NP", meaning: "mobile terminal; mobile end" },
+      { hanzi: "动力", pinyin: "dònglì", pos: "N", meaning: "power; dynamics" },
+      { hanzi: "腾讯游戏", pinyin: "Téngxùn Yóuxì", pos: "PN", meaning: "Tencent Games" },
+      { hanzi: "网易游戏", pinyin: "Wǎngyì Yóuxì", pos: "PN", meaning: "NetEase Games" },
+      { hanzi: "完美世界", pinyin: "Wánměi Shìjiè", pos: "PN", meaning: "Perfect World" },
+      { hanzi: "王者荣耀", pinyin: "Wángzhě Róngyào", pos: "PN", meaning: "Honor of Kings" },
+      { hanzi: "和平精英", pinyin: "Hépíng Jīngyīng", pos: "PN", meaning: "Game for Peace" },
+    ],
+  },
+  {
+    id: "l10-vocab2",
+    title: "Text 2 vocabulary",
+    audio: "/audio/lesson_10_text_2_vocab.mp3",
+    items: [
+      { hanzi: "话题", pinyin: "huàtí", pos: "N", meaning: "(conversation) topic" },
+      { hanzi: "青少年", pinyin: "qīngshàonián", pos: "N", meaning: "youth; teenager" },
+      { hanzi: "在于", pinyin: "zài yú", pos: "VP", meaning: "to lie in; to depend on" },
+      { hanzi: "引导", pinyin: "yǐndǎo", pos: "N/V", meaning: "guidance; to guide; to lead" },
+      { hanzi: "放松", pinyin: "fàngsōng", pos: "V", meaning: "to relax" },
+      { hanzi: "甚至", pinyin: "shènzhì", pos: "Adv", meaning: "even; to the extent that" },
+      { hanzi: "反应", pinyin: "fǎnyìng", pos: "N/V", meaning: "reaction; to react" },
+      { hanzi: "合作", pinyin: "hézuò", pos: "N/V", meaning: "cooperation; to cooperate" },
+      { hanzi: "意识", pinyin: "yìshi", pos: "N", meaning: "consciousness; awareness" },
+      { hanzi: "上瘾", pinyin: "shàngyǐn", pos: "V", meaning: "to become addicted" },
+      { hanzi: "暴力", pinyin: "bàolì", pos: "A/N", meaning: "violent; violence" },
+      { hanzi: "成长", pinyin: "chéngzhǎng", pos: "N/V", meaning: "growth; to grow" },
+      { hanzi: "行为", pinyin: "xíngwéi", pos: "N", meaning: "behavior" },
+      { hanzi: "合理", pinyin: "hélǐ", pos: "A", meaning: "reasonable" },
+      { hanzi: "安排", pinyin: "ānpái", pos: "N/V", meaning: "arrangement; to arrange" },
+      { hanzi: "养成", pinyin: "yǎngchéng", pos: "V", meaning: "to cultivate" },
+      { hanzi: "良好", pinyin: "liánghǎo", pos: "A", meaning: "good; fine" },
+    ],
+  },
+];
+
+const lesson10Tasks: Task[] = [
+  {
+    id: "l10-t1",
+    type: "speedrun",
+    mode: "audio-to-hanzi",
+    prompt: "Listen and type the word you hear",
+    pinyin: "wǎng luò yóu xì",
+    answer: "网络游戏",
+    translation: "online games",
+    audio: "/audio/lesson_10_text_1_vocab.mp3",
+    hint: "wǎng luò yóu xì — the central topic of this lesson.",
+  },
+  {
+    id: "l10-t2",
+    type: "battle",
+    prompt: "Pick the correct word for the gap",
+    sentenceBefore: "对于青少年来说，关键",
+    sentenceAfter: "如何引导。",
+    options: [
+      { hanzi: "在于", pinyin: "zài yú", meaning: "lies in; depends on" },
+      { hanzi: "因为", pinyin: "yīnwèi", meaning: "because" },
+      { hanzi: "由于", pinyin: "yóuyú", meaning: "due to" },
+    ],
+    correctIndex: 0,
+    translation: "For young people, the key lies in how you guide them.",
+    hint: "Pattern: 关键在于… — 'the key lies in…'. Formal/written register.",
+  },
+  {
+    id: "l10-t3",
+    type: "constructor",
+    prompt: "Drag the blocks — 'After many years of development, China has become one of the largest online gaming markets.'",
+    blocks: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
+    answer: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
+    pinyin: "Jīngguò duō nián de fāzhǎn, Zhōngguó yǐ chéngwéi zuì dà de wǎngluò yóuxì shìchǎng zhī yī.",
+    translation: "After many years of development, China has become one of the largest online gaming markets.",
+    hint: "Pattern: 经过 + duration + 的 + N — 'after a process of…'. 之一 = 'one of'.",
+  },
+  {
+    id: "l10-t4",
+    type: "matching",
+    prompt: "Match each game/company to its English name",
+    pairs: [
+      { left: "👑", leftLabel: "Honor of Kings", right: "王者荣耀" },
+      { left: "🪖", leftLabel: "Game for Peace", right: "和平精英" },
+      { left: "🐉", leftLabel: "Jade Dynasty", right: "诛仙" },
+      { left: "🎮", leftLabel: "Tencent Games", right: "腾讯游戏" },
+      { left: "🕸️", leftLabel: "NetEase Games", right: "网易游戏" },
+      { left: "🌏", leftLabel: "Perfect World", right: "完美世界" },
+    ],
+  },
+  {
+    id: "l10-t5",
+    type: "tone",
+    prompt: "Tap the correct tone for each syllable of 虚拟",
+    word: "虚拟",
+    translation: "virtual",
+    syllables: [
+      { base: "xu", correctTone: 1 },
+      { base: "ni", correctTone: 3 },
+    ],
+  },
+  {
+    id: "l10-t6",
+    type: "intuition",
+    prompt: "Fix the word order — 'These game types each have their own features.'",
+    brokenSentence: ["各有各的特色", "这些游戏类型", "和玩法"],
+    correctOrder: [1, 0, 2],
+    translation: "These game types each have their own features and gameplay.",
+    hint: "Pattern: Subject + 各有各的 + N — 'each has its own…'.",
+  },
+  {
+    id: "l10-t7",
+    type: "simulation",
+    prompt: "Karen asks about the bad effects of gaming. Reply naturally as teacher Li.",
+    npcMessage: "那网游对青少年不好的影响是什么呢？",
+    npcPinyin: "Nà wǎng yóu duì qīngshàonián bù hǎo de yǐngxiǎng shì shénme ne?",
+    npcTranslation: "So what are the bad effects of online games on young people?",
+    options: [
+      { hanzi: "网游容易让青少年上瘾，影响他们的学习和生活。而且，有些游戏内容有暴力，对成长没有好处。", pinyin: "Wǎng yóu róngyi ràng qīngshàonián shàngyǐn, yǐngxiǎng tāmen de xuéxí hé shēnghuó. Érqiě, yǒu xiē yóuxì nèiróng yǒu bàolì, duì chéngzhǎng méiyǒu hǎochù.", correct: true, reply: "原来如此，谢谢老师！" },
+      { hanzi: "网游能提高反应能力和团队合作意识。", pinyin: "Wǎng yóu néng tígāo fǎnyìng nénglì hé tuánduì hézuò yìshi.", correct: false },
+      { hanzi: "中国是最大的网络游戏市场之一。", pinyin: "Zhōngguó shì zuì dà de wǎngluò yóuxì shìchǎng zhī yī.", correct: false },
+    ],
+  },
+  {
+    id: "l10-t8",
+    type: "synthesis",
+    prompt: "Write 3+ sentences about online gaming, using each item below.",
+    required: ["网络游戏", "关键在于", "经过…的发展"],
+    minSentences: 3,
+    retroWords: ["虚拟世界", "玩家", "上瘾", "团队合作", "引导", "甚至"],
+  },
+];
+
+const lesson10Recap: Recap = {
+  takeaways: [
+    "网络游戏 — online games: connect 服务器 (server) via 网络, play in 虚拟世界 with 成就感.",
+    "Pattern: 经过 + duration/process + 的 + N — 'after / through…'. 经过多年的发展.",
+    "Pattern: …之一 — 'one of…'. 最大的市场之一.",
+    "Pattern: 各有各的 + N — 'each has its own…'. 各有各的特色和玩法.",
+    "Pattern: 关键在于… — formal 'the key lies in…'. 关键在于如何引导.",
+    "甚至 — even; to the extent that. Used after a stronger case in a series.",
+    "另外 — in addition (paired with 也/还). 以及 — as well as (formal list connector).",
+    "Companies & games: 腾讯游戏 · 网易游戏 · 完美世界 · 王者荣耀 · 和平精英 · 诛仙.",
+  ],
+  keyWords: ["网络游戏", "虚拟世界", "玩家", "经过…的发展", "之一", "关键在于", "各有各的", "甚至"],
+};
+
+// ───────────────────────────────────────────────────────────────────────────
 
 export const lessons: Lesson[] = [
   {
