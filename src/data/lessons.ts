@@ -815,11 +815,34 @@ const lesson3Tasks: Task[] = [
   {
     id: "l3-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'Our company developed a new operating system.'",
-    blocks: ["开发出", "了", "我们公司", "一种", "新的", "操作系统"],
-    answer: ["我们公司", "开发出", "了", "一种", "新的", "操作系统"],
-    pinyin: "Wǒmen gōngsī kāifā chū le yì zhǒng xīn de cāozuò xìtǒng.",
-    translation: "Our company has developed a new operating system.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["开发出", "了", "我们公司", "一种", "新的", "操作系统"],
+        answer: ["我们公司", "开发出", "了", "一种", "新的", "操作系统"],
+        translationRu: "Наша компания разработала новую операционную систему.",
+      },
+      {
+        blocks: ["苹果手机", "以", "功能强大", "而", "著称"],
+        answer: ["苹果手机", "以", "功能强大", "而", "著称"],
+        translationRu: "iPhone известен своими мощными функциями.",
+      },
+      {
+        blocks: ["智能手机", "已经", "走进了", "我们生活的", "每一个角落"],
+        answer: ["智能手机", "已经", "走进了", "我们生活的", "每一个角落"],
+        translationRu: "Смартфоны вошли в каждый уголок нашей жизни.",
+      },
+      {
+        blocks: ["他", "用", "手机", "跟", "家人", "视频通话"],
+        answer: ["他", "用", "手机", "跟", "家人", "视频通话"],
+        translationRu: "Он созванивается с семьёй по видеосвязи через телефон.",
+      },
+      {
+        blocks: ["这种", "套餐", "包括", "通话", "和", "流量"],
+        answer: ["这种", "套餐", "包括", "通话", "和", "流量"],
+        translationRu: "Этот тариф включает звонки и интернет-трафик.",
+      },
+    ],
   },
   {
     id: "l3-t4",
@@ -1068,12 +1091,34 @@ const lesson4Tasks: Task[] = [
   {
     id: "l4-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'For people who love short videos, Douyin is paradise.'",
-    blocks: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
-    answer: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
-    pinyin: "Duìyú xǐhuan duǎn shìpín de rén lái shuō, Dǒuyīn shì tāmen de tiāntáng.",
-    translation: "For people who love short videos, Douyin is their paradise.",
-    hint: "Pattern: 对于 … 来说 — 'as far as … is concerned'.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
+        answer: ["对于", "喜欢短视频的人", "来说", "抖音", "是", "他们的天堂"],
+        translationRu: "Для тех, кто любит короткие видео, Douyin — это рай.",
+      },
+      {
+        blocks: ["微信", "集", "社交、通讯、支付", "于", "一体"],
+        answer: ["微信", "集", "社交、通讯、支付", "于", "一体"],
+        translationRu: "WeChat объединяет в себе соцсеть, общение и платежи.",
+      },
+      {
+        blocks: ["我", "通过", "微信", "跟", "朋友", "联系"],
+        answer: ["我", "通过", "微信", "跟", "朋友", "联系"],
+        translationRu: "Я общаюсь с друзьями через WeChat.",
+      },
+      {
+        blocks: ["不管", "你有什么问题", "都可以", "在这里", "找到答案"],
+        answer: ["不管", "你有什么问题", "都可以", "在这里", "找到答案"],
+        translationRu: "Какой бы вопрос у тебя ни был, здесь можно найти ответ.",
+      },
+      {
+        blocks: ["他", "邀请", "我", "加入", "他的", "微信群"],
+        answer: ["他", "邀请", "我", "加入", "他的", "微信群"],
+        translationRu: "Он пригласил меня в свой WeChat-чат.",
+      },
+    ],
   },
   {
     id: "l4-t4",
@@ -1316,12 +1361,34 @@ const lesson5Tasks: Task[] = [
   {
     id: "l5-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'Machine translation uses computer technology to convert one language into another.'",
-    blocks: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
-    answer: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
-    pinyin: "Jīqì fānyì jiù shì lìyòng diànnǎo jìshù bǎ yì zhǒng yǔyán zhuǎnhuàn chéng lìng yì zhǒng yǔyán.",
-    translation: "Machine translation uses computer technology to convert one language into another.",
-    hint: "Pattern: 把 X 转换成 Y.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
+        answer: ["机器翻译", "就是", "利用电脑技术", "把", "一种语言", "转换成", "另一种语言"],
+        translationRu: "Машинный перевод — это использование компьютерных технологий для перевода с одного языка на другой.",
+      },
+      {
+        blocks: ["机器翻译", "可以", "分为", "三种", "类型"],
+        answer: ["机器翻译", "可以", "分为", "三种", "类型"],
+        translationRu: "Машинный перевод можно разделить на три типа.",
+      },
+      {
+        blocks: ["神经机器翻译", "比", "传统翻译", "更", "准确"],
+        answer: ["神经机器翻译", "比", "传统翻译", "更", "准确"],
+        translationRu: "Нейронный машинный перевод точнее традиционного.",
+      },
+      {
+        blocks: ["我", "经常", "用", "翻译软件", "看", "英语文章"],
+        answer: ["我", "经常", "用", "翻译软件", "看", "英语文章"],
+        translationRu: "Я часто читаю английские статьи с помощью переводчика.",
+      },
+      {
+        blocks: ["翻译", "的", "可读性", "和", "准确性", "都", "很重要"],
+        answer: ["翻译", "的", "可读性", "和", "准确性", "都", "很重要"],
+        translationRu: "В переводе важны и удобочитаемость, и точность.",
+      },
+    ],
   },
   {
     id: "l5-t4",
@@ -1549,12 +1616,34 @@ const lesson6Tasks: Task[] = [
   {
     id: "l6-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'You can buy all kinds of goods on e-commerce platforms via phone or computer.'",
-    blocks: ["人们", "可以", "通过手机或电脑", "在电商平台上", "购买", "各种商品"],
-    answer: ["人们", "可以", "通过手机或电脑", "在电商平台上", "购买", "各种商品"],
-    pinyin: "Rénmen kěyǐ tōngguò shǒujī huò diànnǎo zài diànshāng píngtái shàng gòumǎi gè zhǒng shāngpǐn.",
-    translation: "People can buy all kinds of goods on e-commerce platforms via phone or computer.",
-    hint: "Pattern: 通过 + tool + 在 + place + V + object.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["人们", "可以", "通过手机或电脑", "在电商平台上", "购买", "各种商品"],
+        answer: ["人们", "可以", "通过手机或电脑", "在电商平台上", "购买", "各种商品"],
+        translationRu: "Люди могут покупать всевозможные товары на платформах электронной коммерции через телефон или компьютер.",
+      },
+      {
+        blocks: ["电子商务", "简称为", "电商"],
+        answer: ["电子商务", "简称为", "电商"],
+        translationRu: "Электронная коммерция сокращённо называется «дяньшан».",
+      },
+      {
+        blocks: ["支付宝", "和", "微信支付", "既", "方便", "又", "安全"],
+        answer: ["支付宝", "和", "微信支付", "既", "方便", "又", "安全"],
+        translationRu: "Alipay и WeChat Pay — и удобные, и безопасные.",
+      },
+      {
+        blocks: ["我", "在", "淘宝上", "买了", "一双", "新鞋"],
+        answer: ["我", "在", "淘宝上", "买了", "一双", "新鞋"],
+        translationRu: "Я купил пару новых ботинок на Taobao.",
+      },
+      {
+        blocks: ["选择", "购物平台", "时", "要", "考虑", "信誉"],
+        answer: ["选择", "购物平台", "时", "要", "考虑", "信誉"],
+        translationRu: "Выбирая торговую платформу, нужно учитывать репутацию.",
+      },
+    ],
   },
   {
     id: "l6-t4",
@@ -1780,12 +1869,34 @@ const lesson7Tasks: Task[] = [
   {
     id: "l7-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'Readers can interact with the author through comments and likes.'",
-    blocks: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
-    answer: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
-    pinyin: "Dúzhě kěyǐ tōngguò pínglùn, diǎnzàn yǔ zuòzhě jìnxíng hùdòng.",
-    translation: "Readers can interact with the author through comments and likes.",
-    hint: "Pattern: 通过 + means + 与 X + 进行 + disyllabic verb.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
+        answer: ["读者", "可以", "通过评论、点赞", "与作者", "进行", "互动"],
+        translationRu: "Читатели могут взаимодействовать с автором через комментарии и лайки.",
+      },
+      {
+        blocks: ["它", "以", "互联网", "为", "创作和传播平台"],
+        answer: ["它", "以", "互联网", "为", "创作和传播平台"],
+        translationRu: "Это берёт интернет в качестве платформы для творчества и распространения.",
+      },
+      {
+        blocks: ["我", "想", "通过读书来", "提高", "我的中文阅读水平"],
+        answer: ["我", "想", "通过读书来", "提高", "我的中文阅读水平"],
+        translationRu: "Я хочу повысить свой уровень чтения на китайском через чтение книг.",
+      },
+      {
+        blocks: ["网络文学", "已经", "成为", "一种", "新的", "文化现象"],
+        answer: ["网络文学", "已经", "成为", "一种", "新的", "文化现象"],
+        translationRu: "Сетевая литература стала новым культурным явлением.",
+      },
+      {
+        blocks: ["许多", "网络作家", "通过", "写小说", "赚钱"],
+        answer: ["许多", "网络作家", "通过", "写小说", "赚钱"],
+        translationRu: "Многие сетевые писатели зарабатывают, написанием романов.",
+      },
+    ],
   },
   {
     id: "l7-t4",
@@ -2006,12 +2117,34 @@ const lesson8Tasks: Task[] = [
   {
     id: "l8-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'It will generate the text you need according to your prompt.'",
-    blocks: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
-    answer: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
-    pinyin: "Tā huì ànzhào nǐ de tíshì yǔ shēngchéng nǐ xūyào de wénběn.",
-    translation: "It will generate the text you need according to your prompt.",
-    hint: "Pattern: Subject + 按照 + criteria + Verb + Object.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
+        answer: ["它", "会", "按照你的提示语", "生成", "你需要的文本"],
+        translationRu: "Он сгенерирует нужный тебе текст в соответствии с твоим запросом.",
+      },
+      {
+        blocks: ["它们", "因", "其独特的互动方式", "而", "受到", "用户的喜爱"],
+        answer: ["它们", "因", "其独特的互动方式", "而", "受到", "用户的喜爱"],
+        translationRu: "Они любимы пользователями благодаря своему уникальному способу взаимодействия.",
+      },
+      {
+        blocks: ["人工智能", "可以", "帮助", "我们", "处理", "很多事情"],
+        answer: ["人工智能", "可以", "帮助", "我们", "处理", "很多事情"],
+        translationRu: "Искусственный интеллект может помочь нам со многими делами.",
+      },
+      {
+        blocks: ["我", "用", "ChatGPT", "写", "了", "一篇文章"],
+        answer: ["我", "用", "ChatGPT", "写", "了", "一篇文章"],
+        translationRu: "Я написал статью с помощью ChatGPT.",
+      },
+      {
+        blocks: ["AI", "的", "发展", "越来越", "快"],
+        answer: ["AI", "的", "发展", "越来越", "快"],
+        translationRu: "Развитие ИИ становится всё быстрее.",
+      },
+    ],
   },
   {
     id: "l8-t4",
@@ -2238,12 +2371,34 @@ const lesson9Tasks: Task[] = [
   {
     id: "l9-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'Short-video apps also quickly caught fire.'",
-    blocks: ["短视频应用", "也", "很快", "火", "起来了"],
-    answer: ["短视频应用", "也", "很快", "火", "起来了"],
-    pinyin: "Duǎn shìpín yìngyòng yě hěn kuài huǒ qǐlái le.",
-    translation: "Short-video apps also quickly caught fire.",
-    hint: "Pattern: A + 起来 — initiation of a state. 火起来 = to become popular.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["短视频应用", "也", "很快", "火", "起来了"],
+        answer: ["短视频应用", "也", "很快", "火", "起来了"],
+        translationRu: "Приложения коротких видео тоже быстро стали популярными.",
+      },
+      {
+        blocks: ["中国网络视频市场", "由", "几家大平台", "主导"],
+        answer: ["中国网络视频市场", "由", "几家大平台", "主导"],
+        translationRu: "Рынок онлайн-видео в Китае контролируется несколькими крупными платформами.",
+      },
+      {
+        blocks: ["我", "喜欢", "唱歌", "尤其", "爱唱", "流行歌曲"],
+        answer: ["我", "喜欢", "唱歌", "尤其", "爱唱", "流行歌曲"],
+        translationRu: "Я люблю петь, особенно популярные песни.",
+      },
+      {
+        blocks: ["注册", "一个", "学生账户", "就", "可以", "看高清视频"],
+        answer: ["注册", "一个", "学生账户", "就", "可以", "看高清视频"],
+        translationRu: "Зарегистрировав студенческий аккаунт, можно смотреть видео в высоком качестве.",
+      },
+      {
+        blocks: ["这部", "网剧", "的", "剧情", "非常", "吸引人"],
+        answer: ["这部", "网剧", "的", "剧情", "非常", "吸引人"],
+        translationRu: "Сюжет этого онлайн-сериала очень увлекательный.",
+      },
+    ],
   },
   {
     id: "l9-t4",
@@ -2459,12 +2614,34 @@ const lesson10Tasks: Task[] = [
   {
     id: "l10-t3",
     type: "constructor",
-    prompt: "Drag the blocks — 'After many years of development, China has become one of the largest online gaming markets.'",
-    blocks: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
-    answer: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
-    pinyin: "Jīngguò duō nián de fāzhǎn, Zhōngguó yǐ chéngwéi zuì dà de wǎngluò yóuxì shìchǎng zhī yī.",
-    translation: "After many years of development, China has become one of the largest online gaming markets.",
-    hint: "Pattern: 经过 + duration + 的 + N — 'after a process of…'. 之一 = 'one of'.",
+    prompt: "Собери предложение из блоков",
+    rounds: [
+      {
+        blocks: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
+        answer: ["经过", "多年的发展", "中国", "已成为", "最大的网络游戏市场之一"],
+        translationRu: "После многих лет развития Китай стал одним из крупнейших рынков онлайн-игр.",
+      },
+      {
+        blocks: ["对于青少年来说", "关键", "在于", "如何引导"],
+        answer: ["对于青少年来说", "关键", "在于", "如何引导"],
+        translationRu: "Для подростков ключ в том, как их направлять.",
+      },
+      {
+        blocks: ["这些", "游戏类型", "各有各的", "特色", "和", "玩法"],
+        answer: ["这些", "游戏类型", "各有各的", "特色", "和", "玩法"],
+        translationRu: "У этих типов игр свои особенности и геймплей.",
+      },
+      {
+        blocks: ["网游", "容易", "让", "青少年", "上瘾"],
+        answer: ["网游", "容易", "让", "青少年", "上瘾"],
+        translationRu: "Онлайн-игры легко вызывают зависимость у подростков.",
+      },
+      {
+        blocks: ["他", "每天", "在", "网上", "玩", "几个小时", "游戏"],
+        answer: ["他", "每天", "在", "网上", "玩", "几个小时", "游戏"],
+        translationRu: "Он каждый день играет онлайн по несколько часов.",
+      },
+    ],
   },
   {
     id: "l10-t4",
