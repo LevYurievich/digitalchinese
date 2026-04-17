@@ -27,12 +27,21 @@ export interface BaseTask {
   audio?: string;
 }
 
+export interface SpeedrunRound {
+  pinyin: string;
+  answer: string;
+  translation: string;
+}
+
 export interface SpeedrunTask extends BaseTask {
   type: "speedrun";
   mode: "pinyin-to-hanzi" | "audio-to-hanzi";
+  // New: multi-round speedrun (6 words from lesson vocab).
+  rounds?: SpeedrunRound[];
+  // Legacy single-round fields (kept for backward compatibility).
   pinyin?: string;
-  answer: string;
-  translation: string;
+  answer?: string;
+  translation?: string;
 }
 
 export interface BattleTask extends BaseTask {
@@ -276,12 +285,15 @@ const lesson1Tasks: Task[] = [
     id: "l1-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "shū rù fǎ",
-    answer: "输入法",
-    translation: "input method",
-    audio: "/audio/lesson_1_text_1_vocab.mp3",
-    hint: "shū rù fǎ — the way you type characters",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "shū rù fǎ", answer: "输入法", translation: "input method" },
+      { pinyin: "jiàn pán", answer: "键盘", translation: "keyboard" },
+      { pinyin: "píng mù", answer: "屏幕", translation: "screen" },
+      { pinyin: "diǎn jī", answer: "点击", translation: "to click; to tap" },
+      { pinyin: "shí dài", answer: "时代", translation: "era; epoch" },
+      { pinyin: "ān zhuāng", answer: "安装", translation: "to install" },
+    ],
   },
   {
     id: "l1-t2",
@@ -512,12 +524,15 @@ const lesson2Tasks: Task[] = [
     id: "l2-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "diàn zǐ yóu jiàn",
-    answer: "电子邮件",
-    translation: "email",
-    audio: "/audio/lesson_2_text_1_vocab.mp3",
-    hint: "diàn zǐ yóu jiàn — modern way to write a letter",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "diàn zǐ yóu jiàn", answer: "电子邮件", translation: "email" },
+      { pinyin: "lián xì", answer: "联系", translation: "to contact" },
+      { pinyin: "zhèng fǔ", answer: "政府", translation: "government" },
+      { pinyin: "chǔ lǐ", answer: "处理", translation: "to deal with" },
+      { pinyin: "lǐ mào", answer: "礼貌", translation: "polite" },
+      { pinyin: "jiāo liú", answer: "交流", translation: "to exchange; communicate" },
+    ],
   },
   {
     id: "l2-t2",
@@ -790,12 +805,15 @@ const lesson3Tasks: Task[] = [
     id: "l3-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "zhì néng shǒu jī",
-    answer: "智能手机",
-    translation: "smartphone",
-    audio: "/audio/lesson_3_text_1_vocab.mp3",
-    hint: "zhì néng shǒu jī — pocket computer + phone",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "zhì néng shǒu jī", answer: "智能手机", translation: "smartphone" },
+      { pinyin: "gōng néng", answer: "功能", translation: "function" },
+      { pinyin: "pǐn pái", answer: "品牌", translation: "brand" },
+      { pinyin: "shì chǎng", answer: "市场", translation: "market" },
+      { pinyin: "liú liàng", answer: "流量", translation: "mobile data" },
+      { pinyin: "tào cān", answer: "套餐", translation: "mobile plan; package" },
+    ],
   },
   {
     id: "l3-t2",
@@ -1090,12 +1108,15 @@ const lesson4Tasks: Task[] = [
     id: "l4-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "shè jiāo méi tǐ",
-    answer: "社交媒体",
-    translation: "social media",
-    audio: "/audio/lesson_4_text_1_vocab.mp3",
-    hint: "shè jiāo méi tǐ — the umbrella term for WeChat, Weibo, Douyin…",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "shè jiāo méi tǐ", answer: "社交媒体", translation: "social media" },
+      { pinyin: "píng tái", answer: "平台", translation: "platform" },
+      { pinyin: "zhī fù", answer: "支付", translation: "payment; to pay" },
+      { pinyin: "fā bù", answer: "发布", translation: "to post; to publish" },
+      { pinyin: "fēn xiǎng", answer: "分享", translation: "share; to share" },
+      { pinyin: "yāo qǐng", answer: "邀请", translation: "to invite" },
+    ],
   },
   {
     id: "l4-t2",
@@ -1384,12 +1405,15 @@ const lesson5Tasks: Task[] = [
     id: "l5-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "jī qì fān yì",
-    answer: "机器翻译",
-    translation: "machine translation",
-    audio: "/audio/lesson_5_text_1_vocab.mp3",
-    hint: "jī qì fān yì — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "jī qì fān yì", answer: "机器翻译", translation: "machine translation" },
+      { pinyin: "jì shù", answer: "技术", translation: "technology" },
+      { pinyin: "shàng xià wén", answer: "上下文", translation: "context" },
+      { pinyin: "shù jù", answer: "数据", translation: "data" },
+      { pinyin: "fēn xī", answer: "分析", translation: "analysis; to analyze" },
+      { pinyin: "zhǔn què xìng", answer: "准确性", translation: "accuracy" },
+    ],
   },
   {
     id: "l5-t2",
@@ -1663,12 +1687,15 @@ const lesson6Tasks: Task[] = [
     id: "l6-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "diàn zǐ shāng wù",
-    answer: "电子商务",
-    translation: "e-commerce",
-    audio: "/audio/lesson_6_text_1_vocab.mp3",
-    hint: "diàn zǐ shāng wù — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "diàn zǐ shāng wù", answer: "电子商务", translation: "e-commerce" },
+      { pinyin: "qǐ yè", answer: "企业", translation: "enterprise" },
+      { pinyin: "jiāo yì", answer: "交易", translation: "transaction" },
+      { pinyin: "xiāo fèi zhě", answer: "消费者", translation: "consumer" },
+      { pinyin: "wù liú", answer: "物流", translation: "logistics" },
+      { pinyin: "píng jià", answer: "评价", translation: "evaluation; to evaluate" },
+    ],
   },
   {
     id: "l6-t2",
@@ -1940,12 +1967,15 @@ const lesson7Tasks: Task[] = [
     id: "l7-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "wǎng luò wén xué",
-    answer: "网络文学",
-    translation: "internet literature",
-    audio: "/audio/lesson_7_text_1_vocab.mp3",
-    hint: "wǎng luò wén xué — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "wǎng luò wén xué", answer: "网络文学", translation: "internet literature" },
+      { pinyin: "chuàng zuò", answer: "创作", translation: "to create" },
+      { pinyin: "zuò pǐn", answer: "作品", translation: "(literary) work" },
+      { pinyin: "dú zhě", answer: "读者", translation: "reader" },
+      { pinyin: "píng lùn", answer: "评论", translation: "comment; to comment" },
+      { pinyin: "gǎi biān", answer: "改编", translation: "adaptation; to adapt" },
+    ],
   },
   {
     id: "l7-t2",
@@ -2212,12 +2242,15 @@ const lesson8Tasks: Task[] = [
     id: "l8-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "rén gōng zhì néng",
-    answer: "人工智能",
-    translation: "artificial intelligence",
-    audio: "/audio/lesson_8_text_1_vocab.mp3",
-    hint: "rén gōng zhì néng — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "rén gōng zhì néng", answer: "人工智能", translation: "artificial intelligence" },
+      { pinyin: "mó xíng", answer: "模型", translation: "model" },
+      { pinyin: "shēng chéng", answer: "生成", translation: "to generate" },
+      { pinyin: "xìn xī", answer: "信息", translation: "information" },
+      { pinyin: "rèn wù", answer: "任务", translation: "task" },
+      { pinyin: "miáo shù", answer: "描述", translation: "to describe" },
+    ],
   },
   {
     id: "l8-t2",
@@ -2490,12 +2523,15 @@ const lesson9Tasks: Task[] = [
     id: "l9-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "wǎng luò shì pín",
-    answer: "网络视频",
-    translation: "online video",
-    audio: "/audio/lesson_9_text_1_vocab.mp3",
-    hint: "wǎng luò shì pín — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "wǎng luò shì pín", answer: "网络视频", translation: "online video" },
+      { pinyin: "guān zhòng", answer: "观众", translation: "audience" },
+      { pinyin: "pǔ jí", answer: "普及", translation: "to popularize" },
+      { pinyin: "zōng yì jié mù", answer: "综艺节目", translation: "variety show" },
+      { pinyin: "wǎng jù", answer: "网剧", translation: "web drama" },
+      { pinyin: "guǎng gào", answer: "广告", translation: "advertisement" },
+    ],
   },
   {
     id: "l9-t2",
@@ -2757,12 +2793,15 @@ const lesson10Tasks: Task[] = [
     id: "l10-t1",
     type: "speedrun",
     mode: "pinyin-to-hanzi",
-    prompt: "Listen and type the word you hear",
-    pinyin: "wǎng luò yóu xì",
-    answer: "网络游戏",
-    translation: "online games",
-    audio: "/audio/lesson_10_text_1_vocab.mp3",
-    hint: "wǎng luò yóu xì — the central topic of this lesson.",
+    prompt: "Прочитай пиньинь и впиши слово иероглифами",
+    rounds: [
+      { pinyin: "wǎng luò yóu xì", answer: "网络游戏", translation: "online games" },
+      { pinyin: "fú wù qì", answer: "服务器", translation: "server" },
+      { pinyin: "xū nǐ", answer: "虚拟", translation: "virtual" },
+      { pinyin: "wán jiā", answer: "玩家", translation: "player" },
+      { pinyin: "qīng shào nián", answer: "青少年", translation: "youth; teenager" },
+      { pinyin: "shàng yǐn", answer: "上瘾", translation: "to become addicted" },
+    ],
   },
   {
     id: "l10-t2",
