@@ -44,13 +44,25 @@ export interface SpeedrunTask extends BaseTask {
   translation?: string;
 }
 
-export interface BattleTask extends BaseTask {
-  type: "battle";
+export interface BattleRound {
   sentenceBefore: string;
   sentenceAfter: string;
   options: { hanzi: string; pinyin: string; meaning: string }[];
   correctIndex: number;
   translation: string;
+  hint?: string;
+}
+
+export interface BattleTask extends BaseTask {
+  type: "battle";
+  // New: multi-round battle (6 sentences from lesson text/vocab).
+  rounds?: BattleRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  sentenceBefore?: string;
+  sentenceAfter?: string;
+  options?: { hanzi: string; pinyin: string; meaning: string }[];
+  correctIndex?: number;
+  translation?: string;
 }
 
 export interface ConstructorRound {
