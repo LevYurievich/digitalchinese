@@ -2229,10 +2229,10 @@ const lesson6Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["既方便", "支付宝和微信支付", "又安全"], correctOrder: [1, 0, 2], translation: "Alipay and WeChat Pay are both convenient and secure." },
-      { brokenSentence: ["平台", "我", "用淘宝", "购物"], correctOrder: [1, 2, 3, 0], translation: "I shop on the Taobao platform." },
-      { brokenSentence: ["支付", "我", "用微信", "经常"], correctOrder: [1, 3, 2, 0], translation: "I often pay with WeChat." },
-      { brokenSentence: ["快递", "京东", "很快", "的"], correctOrder: [1, 3, 0, 2], translation: "JD.com's delivery is very fast." },
+      { brokenSentence: ["既方便", "支付宝和微信支付", "又安全", "对用户", "来说", "非常"], correctOrder: [1, 3, 4, 5, 0, 2], translation: "For users, Alipay and WeChat Pay are very convenient and secure." },
+      { brokenSentence: ["平台", "我", "用淘宝", "购物", "经常", "在网上"], correctOrder: [1, 4, 5, 2, 0, 3], translation: "I often shop on the Taobao platform online." },
+      { brokenSentence: ["支付", "我", "用微信", "经常", "扫码", "在商店"], correctOrder: [1, 3, 5, 2, 4, 0], translation: "I often scan QR codes to pay with WeChat in stores." },
+      { brokenSentence: ["快递", "京东", "很快", "的", "送到家", "可以"], correctOrder: [1, 3, 0, 5, 2, 4], translation: "JD.com's delivery is very fast and can be sent to your home." },
     ],
   },
   {
@@ -2579,9 +2579,9 @@ const lesson7Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["提高我的中文阅读水平", "我想", "通过读书来"], correctOrder: [1, 2, 0], translation: "I want to improve my Chinese reading through reading books." },
-      { brokenSentence: ["小说", "我", "看", "网络"], correctOrder: [1, 2, 3, 0], translation: "I read online novels." },
-      { brokenSentence: ["翻译", "查", "用", "词典"], correctOrder: [2, 3, 1, 0], translation: "Use a dictionary to look up translations." },
+      { brokenSentence: ["提高", "我的", "中文阅读水平", "我想", "通过读书来", "更快"], correctOrder: [3, 4, 0, 5, 1, 2], translation: "I want to improve my Chinese reading level faster through reading books." },
+      { brokenSentence: ["小说", "我", "看", "网络", "在手机上", "经常"], correctOrder: [1, 5, 4, 2, 3, 0], translation: "I often read online novels on my phone." },
+      { brokenSentence: ["翻译", "查", "用", "词典", "生词", "的"], correctOrder: [2, 3, 5, 4, 1, 0], translation: "Use a dictionary to look up the translation of new words." },
       { brokenSentence: ["平台", "上", "文学", "丰富", "的内容", "在"], correctOrder: [5, 0, 1, 2, 4, 3], translation: "There is rich literary content on the platform." },
     ],
   },
@@ -2924,10 +2924,10 @@ const lesson8Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["他身体健康的原因", "王钢每天坚持跑步", "而这正是"], correctOrder: [1, 2, 0], translation: "Wang Gang runs every day, and that is precisely the reason for his good health." },
-      { brokenSentence: ["智能", "人工", "我们", "用"], correctOrder: [2, 3, 1, 0], translation: "We use artificial intelligence." },
-      { brokenSentence: ["图片", "生成", "可以", "AI"], correctOrder: [3, 2, 1, 0], translation: "AI can generate images." },
-      { brokenSentence: ["问题", "回答", "我的", "请"], correctOrder: [3, 1, 2, 0], translation: "Please answer my question." },
+      { brokenSentence: ["他身体健康", "的原因", "王钢每天", "坚持跑步", "而这正是", "在公园"], correctOrder: [2, 5, 3, 4, 0, 1], translation: "Wang Gang runs every day in the park, and that is precisely the reason for his good health." },
+      { brokenSentence: ["智能", "人工", "我们", "用", "工作中", "在"], correctOrder: [2, 5, 4, 3, 1, 0], translation: "We use artificial intelligence in our work." },
+      { brokenSentence: ["图片", "生成", "可以", "AI", "根据提示", "很快"], correctOrder: [3, 4, 2, 5, 1, 0], translation: "AI can quickly generate images based on prompts." },
+      { brokenSentence: ["问题", "回答", "我的", "请", "详细地", "你"], correctOrder: [3, 5, 4, 1, 2, 0], translation: "Please answer my question in detail." },
     ],
   },
   {
@@ -3275,10 +3275,10 @@ const lesson9Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["爱唱流行歌曲", "我喜欢唱歌", "尤其"], correctOrder: [1, 2, 0], translation: "I like singing, especially pop songs." },
-      { brokenSentence: ["视频", "看", "在线", "我"], correctOrder: [3, 2, 1, 0], translation: "I watch videos online." },
-      { brokenSentence: ["电视剧", "都市", "看", "言情"], correctOrder: [2, 1, 3, 0], translation: "Watch urban romance dramas." },
-      { brokenSentence: ["付费", "需要", "这个平台"], correctOrder: [2, 1, 0], translation: "This platform requires payment." },
+      { brokenSentence: ["爱唱", "流行歌曲", "我喜欢唱歌", "尤其", "和朋友一起", "在家"], correctOrder: [2, 5, 4, 3, 0, 1], translation: "I like singing at home with friends, especially pop songs." },
+      { brokenSentence: ["视频", "看", "在线", "我", "音乐", "的"], correctOrder: [3, 2, 1, 4, 5, 0], translation: "I watch music videos online." },
+      { brokenSentence: ["电视剧", "都市", "看", "言情", "我喜欢", "中国的"], correctOrder: [4, 2, 5, 1, 3, 0], translation: "I like watching Chinese urban romance dramas." },
+      { brokenSentence: ["付费", "需要", "这个平台", "用户", "每月", "的"], correctOrder: [2, 1, 3, 4, 0, 5], translation: "This platform requires monthly user payment." },
     ],
   },
   {
@@ -3615,10 +3615,10 @@ const lesson10Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["各有各的特色", "这些游戏类型", "和玩法"], correctOrder: [1, 0, 2], translation: "These game types each have their own features and gameplay." },
-      { brokenSentence: ["游戏", "玩", "我", "网络"], correctOrder: [2, 1, 3, 0], translation: "I play online games." },
-      { brokenSentence: ["影响", "网游", "对青少年", "有"], correctOrder: [1, 2, 3, 0], translation: "Online games have an influence on teenagers." },
-      { brokenSentence: ["世界", "虚拟", "进入", "玩家"], correctOrder: [3, 2, 1, 0], translation: "Players enter virtual worlds." },
+      { brokenSentence: ["各有", "各的特色", "这些游戏类型", "和玩法", "都", "非常"], correctOrder: [2, 3, 4, 0, 5, 1], translation: "These game types and gameplay all have their own very unique features." },
+      { brokenSentence: ["游戏", "玩", "我", "网络", "和朋友", "一起"], correctOrder: [2, 4, 5, 1, 3, 0], translation: "I play online games together with friends." },
+      { brokenSentence: ["影响", "网游", "对青少年", "有", "很大的", "成长"], correctOrder: [1, 2, 5, 3, 4, 0], translation: "Online games have a big influence on teenagers' growth." },
+      { brokenSentence: ["世界", "虚拟", "进入", "玩家", "通过游戏", "可以"], correctOrder: [3, 4, 5, 2, 1, 0], translation: "Players can enter virtual worlds through games." },
     ],
   },
   {
