@@ -43,8 +43,8 @@ export function MatchingCard({ task, onSolved }: Props) {
 
   return (
     <div className="space-y-5">
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-2">
+      <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-3">
           {task.pairs.map((p) => {
             const done = matched[p.left];
             const active = selectedLeft === p.left;
@@ -54,7 +54,7 @@ export function MatchingCard({ task, onSolved }: Props) {
                 whileTap={{ scale: 0.98 }}
                 disabled={!!done}
                 onClick={() => setSelectedLeft(p.left)}
-                className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition ${
+                className={`flex h-14 w-full items-center justify-center rounded-xl border-2 px-3 text-center text-base transition ${
                   done
                     ? "border-success/40 bg-success/10 opacity-70"
                     : active
@@ -62,15 +62,12 @@ export function MatchingCard({ task, onSolved }: Props) {
                       : "border-border bg-surface hover:border-primary/60"
                 }`}
               >
-                <span className="text-2xl">{p.left}</span>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  {p.leftLabel}
-                </span>
+                {p.left}
               </motion.button>
             );
           })}
         </div>
-        <div className="space-y-2">
+        <div className="space-y-3">
           {rights.map((r) => {
             const isMatched = Object.values(matched).includes(r);
             const isWrong = wrong === r;
@@ -80,7 +77,7 @@ export function MatchingCard({ task, onSolved }: Props) {
                 whileTap={{ scale: 0.98 }}
                 disabled={isMatched || !selectedLeft}
                 onClick={() => tryMatch(r)}
-                className={`font-hanzi w-full rounded-xl border-2 px-4 py-3 text-lg transition ${
+                className={`font-hanzi flex h-14 w-full items-center justify-center rounded-xl border-2 px-3 text-center text-base transition ${
                   isMatched
                     ? "border-success/40 bg-success/10 opacity-70"
                     : isWrong
