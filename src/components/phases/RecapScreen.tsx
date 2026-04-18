@@ -16,10 +16,7 @@ export function RecapScreen({ recap, bonusDialogue, onFinish }: Props) {
         <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
           <Sparkles className="h-3 w-3" /> Phase 4 · Recap
         </div>
-        <h2 className="font-hanzi mt-1 text-2xl font-semibold">你已经学会了</h2>
-        <p className="font-pinyin text-sm text-muted-foreground">
-          Nǐ yǐjīng xuéhuì le — what you now own
-        </p>
+      <h2 className="font-hanzi mt-1 text-2xl font-semibold">你已经学会了</h2>
       </div>
 
       {/* takeaways */}
