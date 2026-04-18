@@ -1867,7 +1867,7 @@ const lesson5Tasks: Task[] = [
     rounds: [
       { word: "翻译", translation: "to translate", syllables: [{ base: "fan", correctTone: 1 }, { base: "yi", correctTone: 4 }] },
       { word: "结构", translation: "structure", syllables: [{ base: "jie", correctTone: 2 }, { base: "gou", correctTone: 4 }] },
-      { word: "句子", translation: "sentence", syllables: [{ base: "ju", correctTone: 4 }, { base: "zi", correctTone: 5 as 1 }] },
+      { word: "报告", translation: "report", syllables: [{ base: "bao", correctTone: 4 }, { base: "gao", correctTone: 4 }] },
       { word: "考虑", translation: "to consider", syllables: [{ base: "kao", correctTone: 3 }, { base: "lü", correctTone: 4 }] },
     ],
   },
