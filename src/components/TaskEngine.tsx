@@ -18,7 +18,7 @@ const TYPE_LABELS: Record<Task["type"], string> = {
   speedrun: "Speedrun",
   battle: "Battle",
   constructor: "Constructor",
-  matching: "UI · Matching",
+  matching: "Matching",
   tone: "Tone Dictation",
   intuition: "Intuition Test",
   simulation: "Simulation",

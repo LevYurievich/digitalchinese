@@ -46,8 +46,6 @@ export function SynthesisCard({ task, onSolved }: Props) {
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-muted-foreground">{task.prompt}</p>
-
       <div className="rounded-xl border border-border bg-surface px-5 py-4">
         <div className="text-xs uppercase tracking-widest text-muted-foreground">
           Required ({task.minSentences}+ sentences)

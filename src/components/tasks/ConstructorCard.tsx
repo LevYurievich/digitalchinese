@@ -75,14 +75,13 @@ export function ConstructorCard({ task, onSolved }: Props) {
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">{task.prompt}</p>
-        {rounds.length > 1 && (
+      {rounds.length > 1 && (
+        <div className="flex justify-end">
           <span className="font-mono text-[10px] uppercase tracking-widest text-primary/70">
             {roundIdx + 1}/{rounds.length}
           </span>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="rounded-xl border border-border bg-surface px-5 py-4">
         <div className="text-sm text-foreground/85">{round.translationRu}</div>

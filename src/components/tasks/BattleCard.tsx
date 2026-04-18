@@ -54,14 +54,13 @@ export function BattleCard({ task, onSolved }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">{task.prompt}</p>
-        {rounds.length > 1 && (
+      {rounds.length > 1 && (
+        <div className="flex justify-end">
           <span className="font-mono text-[10px] uppercase tracking-widest text-primary/70">
             {roundIdx + 1}/{rounds.length}
           </span>
-        )}
-      </div>
+        </div>
+      )}
       <div className="rounded-xl border border-border bg-surface px-6 py-6">
         <p className="font-hanzi text-2xl leading-relaxed">
           {round.sentenceBefore}
