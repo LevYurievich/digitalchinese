@@ -121,6 +121,7 @@
 
   html {
     color-scheme: dark;
+    font-size: 18px;
   }
 
   body {
@@ -145,9 +146,11 @@
   .font-pinyin {
     font-family: var(--font-mono);
     letter-spacing: 0.02em;
+    font-size: 1.05rem;
   }
   .font-hanzi {
     font-family: var(--font-hanzi);
+    font-size: 1.15rem;
   }
 }
 
