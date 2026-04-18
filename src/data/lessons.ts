@@ -87,18 +87,36 @@ export interface MatchingTask extends BaseTask {
   pairs: { left: string; right: string; leftLabel?: string }[];
 }
 
+export interface ToneRound {
+  word: string;
+  translation: string;
+  syllables: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+}
+
 export interface ToneTask extends BaseTask {
   type: "tone";
-  word: string;
-  syllables: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+  // New: multiple rounds (4 words from lesson vocab).
+  rounds?: ToneRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  word?: string;
+  syllables?: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+  translation?: string;
+}
+
+export interface IntuitionRound {
+  brokenSentence: string[];
+  correctOrder: number[];
   translation: string;
 }
 
 export interface IntuitionTask extends BaseTask {
   type: "intuition";
-  brokenSentence: string[];
-  correctOrder: number[];
-  translation: string;
+  // New: multiple rounds (4 sentences from lesson text/vocab).
+  rounds?: IntuitionRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  brokenSentence?: string[];
+  correctOrder?: number[];
+  translation?: string;
 }
 
 export interface SimulationRound {
