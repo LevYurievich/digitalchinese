@@ -469,10 +469,10 @@ const lesson1Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["电脑", "用", "我", "输入"], correctOrder: [2, 1, 0, 3], translation: "I use a computer to type." },
-      { brokenSentence: ["键盘", "点击", "我们", "屏幕上"], correctOrder: [2, 1, 0, 3], translation: "We tap the keyboard on the screen." },
-      { brokenSentence: ["中文", "安装", "你", "字体", "得先"], correctOrder: [2, 4, 1, 0, 3], translation: "You need to install Chinese fonts first." },
-      { brokenSentence: ["输入法", "切换", "可以", "点击它"], correctOrder: [3, 2, 1, 0], translation: "Click it to switch the input method." },
+      { brokenSentence: ["电脑", "用", "我", "中文", "输入", "在"], correctOrder: [2, 1, 0, 5, 3, 4], translation: "I use the computer to type Chinese." },
+      { brokenSentence: ["键盘", "点击", "我们", "上的", "字母", "屏幕"], correctOrder: [2, 1, 5, 3, 0, 4], translation: "We tap the keyboard letters on the screen." },
+      { brokenSentence: ["中文", "安装", "你", "字体", "得先", "在电脑上"], correctOrder: [2, 4, 5, 1, 0, 3], translation: "You need to install Chinese fonts on the computer first." },
+      { brokenSentence: ["输入法", "切换", "可以", "点击它", "来", "中文"], correctOrder: [3, 4, 2, 1, 5, 0], translation: "Click it to switch to the Chinese input method." },
     ],
   },
   {
@@ -780,10 +780,10 @@ const lesson2Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["用语", "开头", "礼貌", "要用"], correctOrder: [1, 3, 2, 0], translation: "The opening should use polite expressions." },
-      { brokenSentence: ["邮箱", "我", "注册了", "一个新"], correctOrder: [1, 2, 3, 0], translation: "I registered a new mailbox." },
-      { brokenSentence: ["误解", "文化差异", "造成", "可能"], correctOrder: [1, 3, 2, 0], translation: "Cultural differences may cause misunderstandings." },
-      { brokenSentence: ["验证", "需要", "邮件", "你"], correctOrder: [3, 1, 0, 2], translation: "You need to verify the email." },
+      { brokenSentence: ["用语", "开头", "礼貌", "要用", "邮件的", "正式的"], correctOrder: [4, 1, 3, 5, 2, 0], translation: "The opening of the email should use formal polite expressions." },
+      { brokenSentence: ["邮箱", "我", "注册了", "一个新", "在网上", "今天"], correctOrder: [5, 4, 1, 2, 3, 0], translation: "Today I registered a new mailbox online." },
+      { brokenSentence: ["误解", "文化差异", "造成", "可能", "之间的", "国家"], correctOrder: [5, 4, 1, 3, 2, 0], translation: "Cultural differences between countries may cause misunderstandings." },
+      { brokenSentence: ["验证", "需要", "邮件", "你", "通过", "身份"], correctOrder: [3, 1, 4, 2, 0, 5], translation: "You need to verify your identity through email." },
     ],
   },
   {
@@ -1133,10 +1133,10 @@ const lesson3Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["走进了", "每一个角落", "智能手机", "我们生活的"], correctOrder: [2, 0, 3, 1], translation: "Smartphones have entered every corner of our lives." },
-      { brokenSentence: ["信号", "这里", "很好", "的"], correctOrder: [1, 3, 0, 2], translation: "The signal here is very good." },
-      { brokenSentence: ["套餐", "我", "选了", "一个新"], correctOrder: [1, 2, 3, 0], translation: "I chose a new mobile plan." },
-      { brokenSentence: ["护照", "需要", "开户", "你"], correctOrder: [3, 1, 0, 2], translation: "You need a passport to open an account." },
+      { brokenSentence: ["走进了", "每一个角落", "智能手机", "我们生活的", "已经", "现在"], correctOrder: [5, 2, 4, 0, 3, 1], translation: "Now smartphones have already entered every corner of our lives." },
+      { brokenSentence: ["信号", "这里", "很好", "的", "手机", "都"], correctOrder: [1, 3, 4, 0, 5, 2], translation: "The mobile signal here is very good." },
+      { brokenSentence: ["套餐", "我", "选了", "一个新", "上个月", "的"], correctOrder: [4, 1, 2, 3, 0, 5], translation: "Last month I chose a new mobile plan." },
+      { brokenSentence: ["护照", "需要", "开户", "你", "用", "在银行"], correctOrder: [3, 1, 4, 0, 5, 2], translation: "You need to use a passport to open a bank account." },
     ],
   },
   {
@@ -1508,10 +1508,10 @@ const lesson4Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["不管", "找到答案", "你有什么问题", "都可以在这里"], correctOrder: [0, 2, 3, 1], translation: "No matter what question you have, you can find an answer here." },
-      { brokenSentence: ["平台", "社交媒体", "丰富", "形式"], correctOrder: [1, 0, 3, 2], translation: "Social media platforms have rich forms." },
-      { brokenSentence: ["内容", "网红", "发布", "新的"], correctOrder: [1, 2, 3, 0], translation: "Influencers post new content." },
-      { brokenSentence: ["互动", "我", "粉丝", "和", "进行"], correctOrder: [1, 3, 2, 4, 0], translation: "I interact with fans." },
+      { brokenSentence: ["不管", "找到答案", "你有什么问题", "都可以", "在网上", "很快"], correctOrder: [0, 2, 3, 4, 5, 1], translation: "No matter what question you have, you can quickly find an answer online." },
+      { brokenSentence: ["平台", "社交媒体", "丰富", "形式", "的", "非常"], correctOrder: [1, 0, 3, 4, 5, 2], translation: "Social media platforms have very rich forms." },
+      { brokenSentence: ["内容", "网红", "发布", "新的", "每天", "都"], correctOrder: [1, 4, 5, 2, 3, 0], translation: "Influencers post new content every day." },
+      { brokenSentence: ["互动", "我", "粉丝", "和", "进行", "经常"], correctOrder: [1, 5, 3, 2, 4, 0], translation: "I often interact with fans." },
     ],
   },
   {
@@ -1876,10 +1876,10 @@ const lesson5Tasks: Task[] = [
     type: "intuition",
     prompt: "",
     rounds: [
-      { brokenSentence: ["机器翻译", "自从那时以来", "考虑整个句子结构的翻译", "已发展到"], correctOrder: [1, 0, 3, 2], translation: "Since then, machine translation has evolved into translation that considers the full sentence structure." },
-      { brokenSentence: ["平台", "翻译", "我", "用"], correctOrder: [2, 3, 1, 0], translation: "I use a translation platform." },
-      { brokenSentence: ["报告", "课堂", "做", "我要"], correctOrder: [3, 2, 1, 0], translation: "I will give a class report." },
-      { brokenSentence: ["结构", "考虑", "翻译", "的", "句子"], correctOrder: [2, 1, 4, 3, 0], translation: "Translation considers sentence structure." },
+      { brokenSentence: ["机器翻译", "自从那时以来", "整个句子", "已发展到", "考虑", "结构的翻译"], correctOrder: [1, 0, 3, 4, 2, 5], translation: "Since then, machine translation has evolved to consider full sentence structure." },
+      { brokenSentence: ["平台", "翻译", "我", "用", "在线", "的"], correctOrder: [2, 3, 4, 5, 1, 0], translation: "I use an online translation platform." },
+      { brokenSentence: ["报告", "课堂", "做", "我要", "下周", "上"], correctOrder: [4, 3, 1, 5, 2, 0], translation: "Next week I will give a report in class." },
+      { brokenSentence: ["结构", "考虑", "翻译", "的", "句子", "整个"], correctOrder: [2, 1, 5, 4, 3, 0], translation: "Translation considers the structure of the entire sentence." },
     ],
   },
   {
