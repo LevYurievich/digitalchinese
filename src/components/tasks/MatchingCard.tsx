@@ -43,7 +43,6 @@ export function MatchingCard({ task, onSolved }: Props) {
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-muted-foreground">{task.prompt}</p>
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
           {task.pairs.map((p) => {

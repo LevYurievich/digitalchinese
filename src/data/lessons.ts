@@ -87,18 +87,36 @@ export interface MatchingTask extends BaseTask {
   pairs: { left: string; right: string; leftLabel?: string }[];
 }
 
+export interface ToneRound {
+  word: string;
+  translation: string;
+  syllables: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+}
+
 export interface ToneTask extends BaseTask {
   type: "tone";
-  word: string;
-  syllables: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+  // New: multiple rounds (4 words from lesson vocab).
+  rounds?: ToneRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  word?: string;
+  syllables?: { base: string; correctTone: 1 | 2 | 3 | 4 }[];
+  translation?: string;
+}
+
+export interface IntuitionRound {
+  brokenSentence: string[];
+  correctOrder: number[];
   translation: string;
 }
 
 export interface IntuitionTask extends BaseTask {
   type: "intuition";
-  brokenSentence: string[];
-  correctOrder: number[];
-  translation: string;
+  // New: multiple rounds (4 sentences from lesson text/vocab).
+  rounds?: IntuitionRound[];
+  // Legacy single-round fields (kept for backward compatibility).
+  brokenSentence?: string[];
+  correctOrder?: number[];
+  translation?: string;
 }
 
 export interface SimulationRound {
@@ -421,33 +439,41 @@ const lesson1Tasks: Task[] = [
   {
     id: "l1-t4",
     type: "matching",
-    prompt: "Match each interface element to its Chinese term",
+    prompt: "",
     pairs: [
-      { left: "⚙️", leftLabel: "Settings", right: "设置" },
-      { left: "⌨️", leftLabel: "Keyboard", right: "键盘" },
-      { left: "🔤", leftLabel: "Input method", right: "输入法" },
-      { left: "🖥️", leftLabel: "Screen", right: "屏幕" },
+      { left: "input method", right: "输入法" },
+      { left: "keyboard", right: "键盘" },
+      { left: "screen", right: "屏幕" },
+      { left: "to click", right: "点击" },
+      { left: "era", right: "时代" },
+      { left: "to install", right: "安装" },
+      { left: "to choose", right: "选择" },
+      { left: "settings", right: "设置" },
+      { left: "to switch", right: "切换" },
+      { left: "to download", right: "下载" },
     ],
   },
   {
     id: "l1-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable",
-    word: "键盘",
-    translation: "keyboard",
-    syllables: [
-      { base: "jian", correctTone: 4 },
-      { base: "pan", correctTone: 2 },
+    prompt: "",
+    rounds: [
+      { word: "键盘", translation: "keyboard", syllables: [{ base: "jian", correctTone: 4 }, { base: "pan", correctTone: 2 }] },
+      { word: "屏幕", translation: "screen", syllables: [{ base: "ping", correctTone: 2 }, { base: "mu", correctTone: 4 }] },
+      { word: "安装", translation: "to install", syllables: [{ base: "an", correctTone: 1 }, { base: "zhuang", correctTone: 1 }] },
+      { word: "切换", translation: "to switch", syllables: [{ base: "qie", correctTone: 1 }, { base: "huan", correctTone: 4 }] },
     ],
   },
   {
     id: "l1-t6",
     type: "intuition",
-    prompt: "Fix the word order",
-    brokenSentence: ["电脑", "用", "我", "输入"],
-    correctOrder: [2, 1, 0, 3],
-    translation: "I use a computer to type.",
-    hint: "Subject — instrument — verb.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["电脑", "用", "我", "输入"], correctOrder: [2, 1, 0, 3], translation: "I use a computer to type." },
+      { brokenSentence: ["键盘", "点击", "我们", "屏幕上"], correctOrder: [2, 1, 0, 3], translation: "We tap the keyboard on the screen." },
+      { brokenSentence: ["中文", "安装", "你", "字体", "得先"], correctOrder: [2, 4, 1, 0, 3], translation: "You need to install Chinese fonts first." },
+      { brokenSentence: ["输入法", "切换", "可以", "点击它"], correctOrder: [3, 2, 1, 0], translation: "Click it to switch the input method." },
+    ],
   },
   {
     id: "l1-t7",
@@ -724,33 +750,41 @@ const lesson2Tasks: Task[] = [
   {
     id: "l2-t4",
     type: "matching",
-    prompt: "Match each Chinese email provider to what it is",
+    prompt: "",
     pairs: [
-      { left: "📧", leftLabel: "163 Mail", right: "网易" },
-      { left: "💬", leftLabel: "QQ Mail", right: "QQ邮箱" },
-      { left: "🔍", leftLabel: "Sina", right: "新浪" },
-      { left: "🦊", leftLabel: "Sohu", right: "搜狐" },
+      { left: "email", right: "电子邮件" },
+      { left: "mailbox", right: "邮箱" },
+      { left: "polite", right: "礼貌" },
+      { left: "expression", right: "用语" },
+      { left: "to register", right: "注册" },
+      { left: "to verify", right: "验证" },
+      { left: "to remind", right: "提醒" },
+      { left: "misunderstanding", right: "误解" },
+      { left: "to provide", right: "提供" },
+      { left: "to include", right: "包括" },
     ],
   },
   {
     id: "l2-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 礼貌",
-    word: "礼貌",
-    translation: "polite",
-    syllables: [
-      { base: "li", correctTone: 3 },
-      { base: "mao", correctTone: 4 },
+    prompt: "",
+    rounds: [
+      { word: "礼貌", translation: "polite", syllables: [{ base: "li", correctTone: 3 }, { base: "mao", correctTone: 4 }] },
+      { word: "邮箱", translation: "mailbox", syllables: [{ base: "you", correctTone: 2 }, { base: "xiang", correctTone: 1 }] },
+      { word: "注册", translation: "to register", syllables: [{ base: "zhu", correctTone: 4 }, { base: "ce", correctTone: 4 }] },
+      { word: "误解", translation: "misunderstanding", syllables: [{ base: "wu", correctTone: 4 }, { base: "jie", correctTone: 3 }] },
     ],
   },
   {
     id: "l2-t6",
     type: "intuition",
-    prompt: "Fix the word order — Chinese email opening",
-    brokenSentence: ["用语", "开头", "礼貌", "要用"],
-    correctOrder: [1, 3, 2, 0], // 开头 要用 礼貌 用语
-    translation: "The opening should use polite expressions.",
-    hint: "Topic — modal — adjective — noun.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["用语", "开头", "礼貌", "要用"], correctOrder: [1, 3, 2, 0], translation: "The opening should use polite expressions." },
+      { brokenSentence: ["邮箱", "我", "注册了", "一个新"], correctOrder: [1, 2, 3, 0], translation: "I registered a new mailbox." },
+      { brokenSentence: ["误解", "文化差异", "造成", "可能"], correctOrder: [1, 3, 2, 0], translation: "Cultural differences may cause misunderstandings." },
+      { brokenSentence: ["验证", "需要", "邮件", "你"], correctOrder: [3, 1, 0, 2], translation: "You need to verify the email." },
+    ],
   },
   {
     id: "l2-t7",
@@ -1069,33 +1103,41 @@ const lesson3Tasks: Task[] = [
   {
     id: "l3-t4",
     type: "matching",
-    prompt: "Match each carrier / brand to its Chinese name",
+    prompt: "",
     pairs: [
-      { left: "📱", leftLabel: "China Mobile", right: "中国移动" },
-      { left: "📶", leftLabel: "China Unicom", right: "中国联通" },
-      { left: "☎️", leftLabel: "China Telecom", right: "中国电信" },
-      { left: "🍎", leftLabel: "Apple Inc.", right: "苹果公司" },
+      { left: "smartphone", right: "智能手机" },
+      { left: "signal", right: "信号" },
+      { left: "video", right: "视频" },
+      { left: "to call", right: "通话" },
+      { left: "mobile data", right: "流量" },
+      { left: "mobile plan", right: "套餐" },
+      { left: "passport", right: "护照" },
+      { left: "function", right: "功能" },
+      { left: "brand", right: "品牌" },
+      { left: "market", right: "市场" },
     ],
   },
   {
     id: "l3-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 信号",
-    word: "信号",
-    translation: "signal",
-    syllables: [
-      { base: "xin", correctTone: 4 },
-      { base: "hao", correctTone: 4 },
+    prompt: "",
+    rounds: [
+      { word: "信号", translation: "signal", syllables: [{ base: "xin", correctTone: 4 }, { base: "hao", correctTone: 4 }] },
+      { word: "视频", translation: "video", syllables: [{ base: "shi", correctTone: 4 }, { base: "pin", correctTone: 2 }] },
+      { word: "套餐", translation: "package; plan", syllables: [{ base: "tao", correctTone: 4 }, { base: "can", correctTone: 1 }] },
+      { word: "品牌", translation: "brand", syllables: [{ base: "pin", correctTone: 3 }, { base: "pai", correctTone: 2 }] },
     ],
   },
   {
     id: "l3-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'Smartphones have entered every corner of our lives.'",
-    brokenSentence: ["走进了", "每一个角落", "智能手机", "我们生活的"],
-    correctOrder: [2, 0, 3, 1],
-    translation: "Smartphones have entered every corner of our lives.",
-    hint: "Subject — verb — possessive — object.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["走进了", "每一个角落", "智能手机", "我们生活的"], correctOrder: [2, 0, 3, 1], translation: "Smartphones have entered every corner of our lives." },
+      { brokenSentence: ["信号", "这里", "很好", "的"], correctOrder: [1, 3, 0, 2], translation: "The signal here is very good." },
+      { brokenSentence: ["套餐", "我", "选了", "一个新"], correctOrder: [1, 2, 3, 0], translation: "I chose a new mobile plan." },
+      { brokenSentence: ["护照", "需要", "开户", "你"], correctOrder: [3, 1, 0, 2], translation: "You need a passport to open an account." },
+    ],
   },
   {
     id: "l3-t7",
@@ -1436,34 +1478,41 @@ const lesson4Tasks: Task[] = [
   {
     id: "l4-t4",
     type: "matching",
-    prompt: "Match each Chinese platform to what it's known for",
+    prompt: "",
     pairs: [
-      { left: "💬", leftLabel: "WeChat", right: "微信" },
-      { left: "📰", leftLabel: "Weibo", right: "微博" },
-      { left: "🎵", leftLabel: "Douyin", right: "抖音" },
-      { left: "💄", leftLabel: "Xiaohongshu", right: "小红书" },
-      { left: "❓", leftLabel: "Zhihu", right: "知乎" },
+      { left: "social media", right: "社交媒体" },
+      { left: "platform", right: "平台" },
+      { left: "to invite", right: "邀请" },
+      { left: "content", right: "内容" },
+      { left: "interaction", right: "互动" },
+      { left: "to post", right: "发布" },
+      { left: "influencer", right: "网红" },
+      { left: "to share", right: "分享" },
+      { left: "celebrity", right: "明星" },
+      { left: "form", right: "形式" },
     ],
   },
   {
     id: "l4-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 邀请",
-    word: "邀请",
-    translation: "to invite",
-    syllables: [
-      { base: "yao", correctTone: 1 },
-      { base: "qing", correctTone: 3 },
+    prompt: "",
+    rounds: [
+      { word: "邀请", translation: "to invite", syllables: [{ base: "yao", correctTone: 1 }, { base: "qing", correctTone: 3 }] },
+      { word: "互动", translation: "interaction", syllables: [{ base: "hu", correctTone: 4 }, { base: "dong", correctTone: 4 }] },
+      { word: "网红", translation: "influencer", syllables: [{ base: "wang", correctTone: 3 }, { base: "hong", correctTone: 2 }] },
+      { word: "分享", translation: "to share", syllables: [{ base: "fen", correctTone: 1 }, { base: "xiang", correctTone: 3 }] },
     ],
   },
   {
     id: "l4-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'No matter what question you have, you can find an answer here.'",
-    brokenSentence: ["不管", "找到答案", "你有什么问题", "都可以在这里"],
-    correctOrder: [0, 2, 3, 1],
-    translation: "No matter what question you have, you can find an answer here.",
-    hint: "Pattern: 不管 … 都 — 'no matter …, would'.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["不管", "找到答案", "你有什么问题", "都可以在这里"], correctOrder: [0, 2, 3, 1], translation: "No matter what question you have, you can find an answer here." },
+      { brokenSentence: ["平台", "社交媒体", "丰富", "形式"], correctOrder: [1, 0, 3, 2], translation: "Social media platforms have rich forms." },
+      { brokenSentence: ["内容", "网红", "发布", "新的"], correctOrder: [1, 2, 3, 0], translation: "Influencers post new content." },
+      { brokenSentence: ["互动", "我", "粉丝", "和", "进行"], correctOrder: [1, 3, 2, 4, 0], translation: "I interact with fans." },
+    ],
   },
   {
     id: "l4-t7",
@@ -1797,34 +1846,41 @@ const lesson5Tasks: Task[] = [
   {
     id: "l5-t4",
     type: "matching",
-    prompt: "Match each translation platform to its origin",
+    prompt: "",
     pairs: [
-      { left: "🇺🇸", leftLabel: "Google Translate", right: "谷歌翻译" },
-      { left: "🪟", leftLabel: "Microsoft Translator", right: "微软翻译" },
-      { left: "🐻", leftLabel: "Baidu Translate", right: "百度翻译" },
-      { left: "📚", leftLabel: "Youdao Translate", right: "有道翻译" },
-      { left: "🔎", leftLabel: "Sogou Translate", right: "搜狗翻译" },
+      { left: "to translate", right: "翻译" },
+      { left: "platform", right: "平台" },
+      { left: "machine translation", right: "机器翻译" },
+      { left: "to develop", right: "发展" },
+      { left: "structure", right: "结构" },
+      { left: "sentence", right: "句子" },
+      { left: "since then", right: "自从那时" },
+      { left: "report", right: "报告" },
+      { left: "to consider", right: "考虑" },
+      { left: "specific", right: "具体" },
     ],
   },
   {
     id: "l5-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 翻译",
-    word: "翻译",
-    translation: "to translate; translation",
-    syllables: [
-      { base: "fan", correctTone: 1 },
-      { base: "yi", correctTone: 4 },
+    prompt: "",
+    rounds: [
+      { word: "翻译", translation: "to translate", syllables: [{ base: "fan", correctTone: 1 }, { base: "yi", correctTone: 4 }] },
+      { word: "结构", translation: "structure", syllables: [{ base: "jie", correctTone: 2 }, { base: "gou", correctTone: 4 }] },
+      { word: "报告", translation: "report", syllables: [{ base: "bao", correctTone: 4 }, { base: "gao", correctTone: 4 }] },
+      { word: "考虑", translation: "to consider", syllables: [{ base: "kao", correctTone: 3 }, { base: "lü", correctTone: 4 }] },
     ],
   },
   {
     id: "l5-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'Since then, MT has evolved to translation that considers full sentence structure.'",
-    brokenSentence: ["机器翻译", "自从那时以来", "考虑整个句子结构的翻译", "已发展到"],
-    correctOrder: [1, 0, 3, 2],
-    translation: "Since then, machine translation has evolved into translation that considers the full sentence structure.",
-    hint: "Pattern: 自从 … 以来, Subject 已 V 到 …",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["机器翻译", "自从那时以来", "考虑整个句子结构的翻译", "已发展到"], correctOrder: [1, 0, 3, 2], translation: "Since then, machine translation has evolved into translation that considers the full sentence structure." },
+      { brokenSentence: ["平台", "翻译", "我", "用"], correctOrder: [2, 3, 1, 0], translation: "I use a translation platform." },
+      { brokenSentence: ["报告", "课堂", "做", "我要"], correctOrder: [3, 2, 1, 0], translation: "I will give a class report." },
+      { brokenSentence: ["结构", "考虑", "翻译", "的", "句子"], correctOrder: [2, 1, 4, 3, 0], translation: "Translation considers sentence structure." },
+    ],
   },
   {
     id: "l5-t7",
@@ -2143,35 +2199,41 @@ const lesson6Tasks: Task[] = [
   {
     id: "l6-t4",
     type: "matching",
-    prompt: "Match each Chinese platform/payment to its English name",
+    prompt: "",
     pairs: [
-      { left: "🛒", leftLabel: "Taobao", right: "淘宝" },
-      { left: "📦", leftLabel: "JD.com", right: "京东" },
-      { left: "👥", leftLabel: "Pinduoduo", right: "拼多多" },
-      { left: "📦", leftLabel: "Amazon", right: "亚马逊" },
-      { left: "💳", leftLabel: "Alipay", right: "支付宝" },
-      { left: "💬", leftLabel: "WeChat Pay", right: "微信支付" },
+      { left: "business", right: "商务" },
+      { left: "to pay", right: "支付" },
+      { left: "platform", right: "平台" },
+      { left: "convenient", right: "方便" },
+      { left: "secure", right: "安全" },
+      { left: "Taobao", right: "淘宝" },
+      { left: "JD.com", right: "京东" },
+      { left: "Alipay", right: "支付宝" },
+      { left: "WeChat Pay", right: "微信支付" },
+      { left: "delivery", right: "快递" },
     ],
   },
   {
     id: "l6-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 商务",
-    word: "商务",
-    translation: "business; commerce",
-    syllables: [
-      { base: "shang", correctTone: 1 },
-      { base: "wu", correctTone: 4 },
+    prompt: "",
+    rounds: [
+      { word: "商务", translation: "business; commerce", syllables: [{ base: "shang", correctTone: 1 }, { base: "wu", correctTone: 4 }] },
+      { word: "支付", translation: "to pay", syllables: [{ base: "zhi", correctTone: 1 }, { base: "fu", correctTone: 4 }] },
+      { word: "方便", translation: "convenient", syllables: [{ base: "fang", correctTone: 1 }, { base: "bian", correctTone: 4 }] },
+      { word: "淘宝", translation: "Taobao", syllables: [{ base: "tao", correctTone: 2 }, { base: "bao", correctTone: 3 }] },
     ],
   },
   {
     id: "l6-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'Alipay and WeChat Pay are both convenient and secure.'",
-    brokenSentence: ["既方便", "支付宝和微信支付", "又安全"],
-    correctOrder: [1, 0, 2],
-    translation: "Alipay and WeChat Pay are both convenient and secure.",
-    hint: "Pattern: Subject 既 A 又 B — both A and B.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["既方便", "支付宝和微信支付", "又安全"], correctOrder: [1, 0, 2], translation: "Alipay and WeChat Pay are both convenient and secure." },
+      { brokenSentence: ["平台", "我", "用淘宝", "购物"], correctOrder: [1, 2, 3, 0], translation: "I shop on the Taobao platform." },
+      { brokenSentence: ["支付", "我", "用微信", "经常"], correctOrder: [1, 3, 2, 0], translation: "I often pay with WeChat." },
+      { brokenSentence: ["快递", "京东", "很快", "的"], correctOrder: [1, 3, 0, 2], translation: "JD.com's delivery is very fast." },
+    ],
   },
   {
     id: "l6-t7",
@@ -2487,35 +2549,41 @@ const lesson7Tasks: Task[] = [
   {
     id: "l7-t4",
     type: "matching",
-    prompt: "Match each platform/tool to its short description",
+    prompt: "",
     pairs: [
-      { left: "📚", leftLabel: "Qidian", right: "起点中文网" },
-      { left: "🏛", leftLabel: "Jinjiang Lit. City", right: "晋江文学城" },
-      { left: "🎓", leftLabel: "Xiaoxiang Academy", right: "潇湘书院" },
-      { left: "📖", leftLabel: "Youdao Dict.", right: "有道词典" },
-      { left: "⚔️", leftLabel: "Kingsoft PowerWord", right: "金山词霸" },
-      { left: "🌐", leftLabel: "Baidu Translate", right: "百度翻译" },
+      { left: "network", right: "网络" },
+      { left: "to read", right: "阅读" },
+      { left: "novel", right: "小说" },
+      { left: "literature", right: "文学" },
+      { left: "dictionary", right: "词典" },
+      { left: "to translate", right: "翻译" },
+      { left: "platform", right: "平台" },
+      { left: "level", right: "水平" },
+      { left: "to improve", right: "提高" },
+      { left: "writer", right: "作家" },
     ],
   },
   {
     id: "l7-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 网络",
-    word: "网络",
-    translation: "network; internet",
-    syllables: [
-      { base: "wang", correctTone: 3 },
-      { base: "luo", correctTone: 4 },
+    prompt: "",
+    rounds: [
+      { word: "网络", translation: "network; internet", syllables: [{ base: "wang", correctTone: 3 }, { base: "luo", correctTone: 4 }] },
+      { word: "阅读", translation: "to read", syllables: [{ base: "yue", correctTone: 4 }, { base: "du", correctTone: 2 }] },
+      { word: "小说", translation: "novel", syllables: [{ base: "xiao", correctTone: 3 }, { base: "shuo", correctTone: 1 }] },
+      { word: "词典", translation: "dictionary", syllables: [{ base: "ci", correctTone: 2 }, { base: "dian", correctTone: 3 }] },
     ],
   },
   {
     id: "l7-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'I want to improve my Chinese reading through reading books.'",
-    brokenSentence: ["提高我的中文阅读水平", "我想", "通过读书来"],
-    correctOrder: [1, 2, 0],
-    translation: "I want to improve my Chinese reading through reading books.",
-    hint: "Pattern: Subject + 通过 + means + 来 + Verb-Phrase (purpose).",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["提高我的中文阅读水平", "我想", "通过读书来"], correctOrder: [1, 2, 0], translation: "I want to improve my Chinese reading through reading books." },
+      { brokenSentence: ["小说", "我", "看", "网络"], correctOrder: [1, 2, 3, 0], translation: "I read online novels." },
+      { brokenSentence: ["翻译", "查", "用", "词典"], correctOrder: [2, 3, 1, 0], translation: "Use a dictionary to look up translations." },
+      { brokenSentence: ["平台", "上", "文学", "丰富", "的内容", "在"], correctOrder: [5, 0, 1, 2, 4, 3], translation: "There is rich literary content on the platform." },
+    ],
   },
   {
     id: "l7-t7",
@@ -2826,35 +2894,41 @@ const lesson8Tasks: Task[] = [
   {
     id: "l8-t4",
     type: "matching",
-    prompt: "Match each chatbot/company to its Chinese name",
+    prompt: "",
     pairs: [
-      { left: "🤖", leftLabel: "ChatGPT", right: "OpenAI" },
-      { left: "📚", leftLabel: "Ernie Bot", right: "文心一言" },
-      { left: "🔍", leftLabel: "Baidu", right: "百度" },
-      { left: "💎", leftLabel: "Gemini", right: "谷歌" },
-      { left: "🪟", leftLabel: "Copilot", right: "微软" },
-      { left: "💬", leftLabel: "dialog box", right: "对话框" },
+      { left: "intelligence", right: "智能" },
+      { left: "dialog box", right: "对话框" },
+      { left: "to generate", right: "生成" },
+      { left: "image", right: "图片" },
+      { left: "model", right: "模型" },
+      { left: "data", right: "数据" },
+      { left: "training", right: "训练" },
+      { left: "answer", right: "回答" },
+      { left: "question", right: "问题" },
+      { left: "user", right: "用户" },
     ],
   },
   {
     id: "l8-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 智能",
-    word: "智能",
-    translation: "intelligence; intelligent",
-    syllables: [
-      { base: "zhi", correctTone: 4 },
-      { base: "neng", correctTone: 2 },
+    prompt: "",
+    rounds: [
+      { word: "智能", translation: "intelligence", syllables: [{ base: "zhi", correctTone: 4 }, { base: "neng", correctTone: 2 }] },
+      { word: "训练", translation: "training", syllables: [{ base: "xun", correctTone: 4 }, { base: "lian", correctTone: 4 }] },
+      { word: "模型", translation: "model", syllables: [{ base: "mo", correctTone: 2 }, { base: "xing", correctTone: 2 }] },
+      { word: "数据", translation: "data", syllables: [{ base: "shu", correctTone: 4 }, { base: "ju", correctTone: 4 }] },
     ],
   },
   {
     id: "l8-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'Wang Gang runs every day, and that is precisely the reason for his good health.'",
-    brokenSentence: ["他身体健康的原因", "王钢每天坚持跑步", "而这正是"],
-    correctOrder: [1, 2, 0],
-    translation: "Wang Gang runs every day, and that is precisely the reason for his good health.",
-    hint: "Pattern: Clause-1 + 而 + 这 + 正是 + Clause-2.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["他身体健康的原因", "王钢每天坚持跑步", "而这正是"], correctOrder: [1, 2, 0], translation: "Wang Gang runs every day, and that is precisely the reason for his good health." },
+      { brokenSentence: ["智能", "人工", "我们", "用"], correctOrder: [2, 3, 1, 0], translation: "We use artificial intelligence." },
+      { brokenSentence: ["图片", "生成", "可以", "AI"], correctOrder: [3, 2, 1, 0], translation: "AI can generate images." },
+      { brokenSentence: ["问题", "回答", "我的", "请"], correctOrder: [3, 1, 2, 0], translation: "Please answer my question." },
+    ],
   },
   {
     id: "l8-t7",
@@ -3171,35 +3245,41 @@ const lesson9Tasks: Task[] = [
   {
     id: "l9-t4",
     type: "matching",
-    prompt: "Match each platform to its English name",
+    prompt: "",
     pairs: [
-      { left: "🎬", leftLabel: "iQIYI", right: "爱奇艺" },
-      { left: "📺", leftLabel: "Tencent Video", right: "腾讯视频" },
-      { left: "🥔", leftLabel: "Tudou", right: "土豆" },
-      { left: "🎭", leftLabel: "Youku", right: "优酷" },
-      { left: "🅱️", leftLabel: "Bilibili", right: "B站" },
-      { left: "📱", leftLabel: "Douyin", right: "抖音" },
+      { left: "video", right: "视频" },
+      { left: "to sing", right: "唱歌" },
+      { left: "song", right: "歌曲" },
+      { left: "popular", right: "流行" },
+      { left: "to watch", right: "观看" },
+      { left: "TV series", right: "电视剧" },
+      { left: "platform", right: "平台" },
+      { left: "to subscribe / pay", right: "付费" },
+      { left: "especially", right: "尤其" },
+      { left: "online", right: "在线" },
     ],
   },
   {
     id: "l9-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 视频",
-    word: "视频",
-    translation: "video",
-    syllables: [
-      { base: "shi", correctTone: 4 },
-      { base: "pin", correctTone: 2 },
+    prompt: "",
+    rounds: [
+      { word: "视频", translation: "video", syllables: [{ base: "shi", correctTone: 4 }, { base: "pin", correctTone: 2 }] },
+      { word: "流行", translation: "popular", syllables: [{ base: "liu", correctTone: 2 }, { base: "xing", correctTone: 2 }] },
+      { word: "歌曲", translation: "song", syllables: [{ base: "ge", correctTone: 1 }, { base: "qu", correctTone: 3 }] },
+      { word: "电视", translation: "TV", syllables: [{ base: "dian", correctTone: 4 }, { base: "shi", correctTone: 4 }] },
     ],
   },
   {
     id: "l9-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'I like singing, especially pop songs.'",
-    brokenSentence: ["爱唱流行歌曲", "我喜欢唱歌", "尤其"],
-    correctOrder: [1, 2, 0],
-    translation: "I like singing, especially pop songs.",
-    hint: "Pattern: General statement + 尤其 + specific case.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["爱唱流行歌曲", "我喜欢唱歌", "尤其"], correctOrder: [1, 2, 0], translation: "I like singing, especially pop songs." },
+      { brokenSentence: ["视频", "看", "在线", "我"], correctOrder: [3, 2, 1, 0], translation: "I watch videos online." },
+      { brokenSentence: ["电视剧", "都市", "看", "言情"], correctOrder: [2, 1, 3, 0], translation: "Watch urban romance dramas." },
+      { brokenSentence: ["付费", "需要", "这个平台"], correctOrder: [2, 1, 0], translation: "This platform requires payment." },
+    ],
   },
   {
     id: "l9-t7",
@@ -3505,35 +3585,41 @@ const lesson10Tasks: Task[] = [
   {
     id: "l10-t4",
     type: "matching",
-    prompt: "Match each game/company to its English name",
+    prompt: "",
     pairs: [
-      { left: "👑", leftLabel: "Honor of Kings", right: "王者荣耀" },
-      { left: "🪖", leftLabel: "Game for Peace", right: "和平精英" },
-      { left: "🐉", leftLabel: "Jade Dynasty", right: "诛仙" },
-      { left: "🎮", leftLabel: "Tencent Games", right: "腾讯游戏" },
-      { left: "🕸️", leftLabel: "NetEase Games", right: "网易游戏" },
-      { left: "🌏", leftLabel: "Perfect World", right: "完美世界" },
+      { left: "virtual", right: "虚拟" },
+      { left: "game", right: "游戏" },
+      { left: "online game", right: "网游" },
+      { left: "player", right: "玩家" },
+      { left: "feature", right: "特色" },
+      { left: "gameplay", right: "玩法" },
+      { left: "teenager", right: "青少年" },
+      { left: "influence", right: "影响" },
+      { left: "company", right: "公司" },
+      { left: "type", right: "类型" },
     ],
   },
   {
     id: "l10-t5",
     type: "tone",
-    prompt: "Tap the correct tone for each syllable of 虚拟",
-    word: "虚拟",
-    translation: "virtual",
-    syllables: [
-      { base: "xu", correctTone: 1 },
-      { base: "ni", correctTone: 3 },
+    prompt: "",
+    rounds: [
+      { word: "虚拟", translation: "virtual", syllables: [{ base: "xu", correctTone: 1 }, { base: "ni", correctTone: 3 }] },
+      { word: "游戏", translation: "game", syllables: [{ base: "you", correctTone: 2 }, { base: "xi", correctTone: 4 }] },
+      { word: "玩家", translation: "player", syllables: [{ base: "wan", correctTone: 2 }, { base: "jia", correctTone: 1 }] },
+      { word: "影响", translation: "influence", syllables: [{ base: "ying", correctTone: 3 }, { base: "xiang", correctTone: 3 }] },
     ],
   },
   {
     id: "l10-t6",
     type: "intuition",
-    prompt: "Fix the word order — 'These game types each have their own features.'",
-    brokenSentence: ["各有各的特色", "这些游戏类型", "和玩法"],
-    correctOrder: [1, 0, 2],
-    translation: "These game types each have their own features and gameplay.",
-    hint: "Pattern: Subject + 各有各的 + N — 'each has its own…'.",
+    prompt: "",
+    rounds: [
+      { brokenSentence: ["各有各的特色", "这些游戏类型", "和玩法"], correctOrder: [1, 0, 2], translation: "These game types each have their own features and gameplay." },
+      { brokenSentence: ["游戏", "玩", "我", "网络"], correctOrder: [2, 1, 3, 0], translation: "I play online games." },
+      { brokenSentence: ["影响", "网游", "对青少年", "有"], correctOrder: [1, 2, 3, 0], translation: "Online games have an influence on teenagers." },
+      { brokenSentence: ["世界", "虚拟", "进入", "玩家"], correctOrder: [3, 2, 1, 0], translation: "Players enter virtual worlds." },
+    ],
   },
   {
     id: "l10-t7",

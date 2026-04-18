@@ -41,9 +41,6 @@ export function DialogueScreen({ dialogue, onContinue, ctaLabel = "I've listened
       <AudioPlayer src={dialogue.audio} label={`Full audio · ${dialogue.lines.length} lines`} />
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          Show:
-        </span>
         {(["hanzi", "pinyin", "translation"] as Visibility[]).map((k) => (
           <button
             key={k}
@@ -55,7 +52,7 @@ export function DialogueScreen({ dialogue, onContinue, ctaLabel = "I've listened
             }`}
           >
             {show[k] ? <Eye className="h-3 w-3" /> : <EyeOff className="h-3 w-3" />}
-            {k}
+            {k === "hanzi" ? "汉字" : k}
           </button>
         ))}
       </div>
