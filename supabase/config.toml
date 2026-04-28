@@ -1,1 +1,4 @@
 project_id = "vlmpnnjmjkgpssnlnmcq"
+
+[functions.send-developer-message]
+verify_jwt = false
