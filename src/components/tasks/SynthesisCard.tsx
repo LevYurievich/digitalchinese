@@ -16,6 +16,18 @@ function matchesPattern(text: string, requirement: string): boolean {
   }
   // strip parenthetical
   const token = requirement.replace(/\s*\(.*\)/, "").trim();
+  // patterns with ellipsis (…  or ...) — match A…B as A<anything>B
+  if (token.includes("…") || token.includes("...")) {
+    const parts = token
+      .split(/…|\.{3}/)
+      .map((p) => p.trim())
+      .filter(Boolean)
+      .map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    if (parts.length >= 2) {
+      const re = new RegExp(parts.join("[\\s\\S]{0,40}?"));
+      return re.test(text);
+    }
+  }
   return text.includes(token);
 }
 
