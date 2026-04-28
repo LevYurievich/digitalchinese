@@ -107,7 +107,7 @@ export function ContactDeveloperButton() {
       );
       if (fnErr) throw fnErr;
 
-      toast.success("Сообщение отправлено! Проверьте почту — мы отправили подтверждение.");
+      toast.success("Ваше сообщение отправлено");
       reset();
       setOpen(false);
     } catch (err) {
@@ -124,10 +124,9 @@ export function ContactDeveloperButton() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        size="lg"
-        className="fixed bottom-6 right-6 z-40 shadow-lg rounded-full gap-2 h-12 px-5"
+        className="fixed bottom-6 right-6 z-40 shadow-lg rounded-full gap-1.5 h-8 px-3 text-xs"
       >
-        <MessageSquare className="h-5 w-5" />
+        <MessageSquare className="h-3.5 w-3.5" />
         <span className="hidden sm:inline">Написать разработчику</span>
       </Button>
 
