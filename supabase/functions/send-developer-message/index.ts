@@ -104,19 +104,23 @@ Deno.serve(async (req) => {
       `,
     });
 
-    // Авто-ответ пользователю
-    await sendEmail(apiKey, {
-      from: FROM_EMAIL,
-      to: [email],
-      subject: "Мы получили ваше сообщение — Digital Chinese",
-      html: `
-        <h2>Спасибо, ${escapeHtml(name)}!</h2>
-        <p>Мы получили ваше сообщение и ответим вам в ближайшее время.</p>
-        <h3>Ваше сообщение:</h3>
-        <p style="white-space: pre-wrap; color: #555;">${escapeHtml(message)}</p>
-        <p style="color: #888; font-size: 12px;">— Команда Digital Chinese</p>
-      `,
-    });
+    // Авто-ответ пользователю не должен ломать отправку обращения разработчику
+    try {
+      await sendEmail(apiKey, {
+        from: FROM_EMAIL,
+        to: [email],
+        subject: "Мы получили ваше сообщение — Digital Chinese",
+        html: `
+          <h2>Спасибо, ${escapeHtml(name)}!</h2>
+          <p>Мы получили ваше сообщение и ответим вам в ближайшее время.</p>
+          <h3>Ваше сообщение:</h3>
+          <p style="white-space: pre-wrap; color: #555;">${escapeHtml(message)}</p>
+          <p style="color: #888; font-size: 12px;">— Команда Digital Chinese</p>
+        `,
+      });
+    } catch (autoReplyError) {
+      console.warn("Auto-reply email was not sent:", autoReplyError);
+    }
 
     return new Response(
       JSON.stringify({ success: true }),
