@@ -95,23 +95,31 @@ export function Dashboard() {
               </Link>
             );
           })}
+
+          <Link to="/review">
+            <motion.div
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative flex h-full min-h-[170px] flex-col justify-between overflow-hidden rounded-2xl border-2 border-primary/40 bg-surface p-5 shadow-[var(--shadow-glow-soft)] transition hover:border-primary hover:shadow-[var(--shadow-glow)]"
+            >
+              <div className="flex items-start justify-between">
+                <span className="font-mono text-xs uppercase text-primary">REVIEW</span>
+                <ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-0.5" />
+              </div>
+              <div>
+                <div className="font-hanzi text-2xl font-semibold tracking-tight">复习</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  Повторение
+                </div>
+                <div className="mt-2 font-mono text-[10px] text-primary/70">
+                  300 most common words
+                </div>
+              </div>
+              <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+            </motion.div>
+          </Link>
         </div>
 
-        <Link to="/review" className="mt-4 block">
-          <motion.div
-            whileHover={{ y: -4 }}
-            className="group flex items-center justify-between rounded-2xl border-2 border-primary/30 bg-surface p-5 transition hover:border-primary hover:shadow-[var(--shadow-glow)]"
-          >
-            <div>
-              <span className="font-mono text-xs text-muted-foreground">REVIEW</span>
-              <div className="font-hanzi mt-1 text-2xl font-semibold">复习</div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-                Review · 300 most common words
-              </div>
-            </div>
-            <ArrowRight className="h-5 w-5 text-primary transition group-hover:translate-x-1" />
-          </motion.div>
-        </Link>
 
         <p className="mt-12 font-mono text-xs text-muted-foreground">
           Каждый урок:{" "}
