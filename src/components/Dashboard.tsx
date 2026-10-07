@@ -97,6 +97,22 @@ export function Dashboard() {
           })}
         </div>
 
+        <Link to="/review" className="mt-4 block">
+          <motion.div
+            whileHover={{ y: -4 }}
+            className="group flex items-center justify-between rounded-2xl border-2 border-primary/30 bg-surface p-5 transition hover:border-primary hover:shadow-[var(--shadow-glow)]"
+          >
+            <div>
+              <span className="font-mono text-xs text-muted-foreground">REVIEW</span>
+              <div className="font-hanzi mt-1 text-2xl font-semibold">复习</div>
+              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                Review · 300 most common words
+              </div>
+            </div>
+            <ArrowRight className="h-5 w-5 text-primary transition group-hover:translate-x-1" />
+          </motion.div>
+        </Link>
+
         <p className="mt-12 font-mono text-xs text-muted-foreground">
           Каждый урок:{" "}
           <span className="text-primary">Listen → Vocab → Practice → Recap</span>.
