@@ -79,7 +79,8 @@ function ReviewPage() {
                 style={{ backfaceVisibility: "hidden" }}
               >
                 <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">English</span>
-                <p className="mt-4 text-3xl font-semibold">{w.meaning}</p>
+                <p className="mt-4 text-2xl font-semibold">{w.meaning}</p>
+                <p className="mt-2 text-lg text-primary">{w.ru}</p>
                 <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                   Нажми, чтобы перевернуть
                 </p>
