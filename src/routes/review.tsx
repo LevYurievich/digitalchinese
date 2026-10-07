@@ -89,9 +89,10 @@ function ReviewPage() {
                 className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border-2 border-primary/40 bg-card p-6 text-center shadow-[var(--shadow-glow-soft)]"
                 style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
-                <p className="font-hanzi text-6xl tracking-wider text-glow">{w.hanzi}</p>
-                <p className="font-pinyin mt-4 text-2xl text-primary">{w.pinyin}</p>
-                <p className="mt-4 text-sm text-muted-foreground">{w.meaning}</p>
+                <p className="font-hanzi text-5xl tracking-wider text-glow sm:text-6xl">{w.hanzi}</p>
+                <p className="font-pinyin mt-3 text-xl text-primary">{w.pinyin}</p>
+                <p className="mt-4 text-sm text-primary">{w.ru}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{w.meaning}</p>
                 <p className="mt-3 font-mono text-[10px] text-muted-foreground">Урок {w.lesson}</p>
               </div>
             </motion.button>
